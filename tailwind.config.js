@@ -25,7 +25,7 @@ module.exports = {
         // aggiungi le tue famiglie personalizzate
       },
       colors: {
-        // aggiungi colori custom se vuoi
+        black: "#1e211e",
       },
     },
   },

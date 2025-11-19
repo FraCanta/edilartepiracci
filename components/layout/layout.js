@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 
-function Layout(props) {
+function Layout({ children }) {
+  const [showNavbar, setShowNavbar] = useState(false);
+
   return (
     <>
-      <Navbar />
-      <main>{props.children}</main>
-      {/* <Footer /> */}
+      {/* Navbar sempre montata, ma animata */}
+      <Navbar show={showNavbar} />
+
+      {/* Passo la funzione onHeroFinished ai figli */}
+      {React.cloneElement(children, {
+        onHeroFinished: () => setShowNavbar(true),
+      })}
     </>
   );
 }
