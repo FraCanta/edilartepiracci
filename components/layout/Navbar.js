@@ -12,11 +12,16 @@ function Navbar({ show }) {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: show ? 1 : 0, y: show ? 0 : -20 }}
       transition={{ duration: 0.35, ease: "easeOut" }}
-      className="w-full h-[70px] lg:h-[100px] fixed top-0 z-[100000] backdrop-blur-sm bg-transparent"
+      className="w-full h-[70px] lg:h-[100px] fixed top-0 z-[9999] backdrop-blur-sm bg-transparent"
     >
       <nav className="grid items-center w-full h-full grid-cols-2 lg:grid-cols-3">
         {/* Logo */}
-        <Link href="/" title="homepage" className="z-20 pl-4 lg:pl-6">
+        <Link
+          href="/"
+          title="homepage"
+          className="z-20 pl-4 lg:pl-6"
+          onClick={() => setMenuOpen(false)}
+        >
           <Image
             src="/assets/logo/logo.svg"
             alt="logo piracci"
@@ -68,7 +73,9 @@ function Navbar({ show }) {
               className="fixed lg:hidden pt-[8rem] top-0 left-0 w-full h-dvh bg-white "
             >
               <div className="flex flex-col uppercase w-[90%] mx-auto h-full gap-6 text-lg overflow-y-auto pb-8">
-                <Link href="/chi-siamo">chi siamo</Link>
+                <Link href="/chi-siamo" onClick={() => setMenuOpen(false)}>
+                  chi siamo
+                </Link>
 
                 {/* Ispirazioni dropdown mobile */}
                 <div className="flex flex-col">
@@ -103,18 +110,33 @@ function Navbar({ show }) {
                         transition={{ duration: 0.3, ease: "easeOut" }}
                         className="flex flex-col gap-4 pl-4 mt-3 overflow-hidden text-base"
                       >
-                        <Link href="/ispirazioni/materiali">Bagno</Link>
-                        <Link href="/ispirazioni/stili">Living</Link>
+                        <Link
+                          href="/ispirazioni/materiali"
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          Bagno
+                        </Link>
+                        <Link
+                          href="/ispirazioni/stili"
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          Living
+                        </Link>
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
 
-                <Link href="/">progetti realizzati</Link>
-                <Link href="/">contatti</Link>
+                <Link href="/" onClick={() => setMenuOpen(false)}>
+                  progetti realizzati
+                </Link>
+                <Link href="/" onClick={() => setMenuOpen(false)}>
+                  contatti
+                </Link>
                 <Link
                   href="/"
                   className="uppercase bg-[#BCA70D] text-white px-[20px] py-[20px] text-center text-lg xl:text-sm lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5"
+                  onClick={() => setMenuOpen(false)}
                 >
                   la nostra consulenza
                 </Link>

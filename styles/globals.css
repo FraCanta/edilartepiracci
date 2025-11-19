@@ -76,3 +76,18 @@ a {
 .opacity-100 {
   opacity: 1;
 }
+
+.transition {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10000; /* più alto di qualsiasi overlay della Hero */
+}
+
+.transition__layer {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
