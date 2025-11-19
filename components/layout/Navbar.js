@@ -14,7 +14,7 @@ function Navbar({ show }) {
       transition={{ duration: 0.35, ease: "easeOut" }}
       className="w-full h-[70px] lg:h-[100px] fixed top-0 z-[100000] backdrop-blur-sm bg-transparent"
     >
-      <nav className="grid items-center w-full grid-cols-2 lg:grid-cols-3">
+      <nav className="grid items-center w-full h-full grid-cols-2 lg:grid-cols-3">
         {/* Logo */}
         <Link href="/" title="homepage" className="z-20 pl-4 lg:pl-6">
           <Image
@@ -22,7 +22,7 @@ function Navbar({ show }) {
             alt="logo piracci"
             width={150}
             height={80}
-            className="w-32 h-20 fxl:w-[150px] fxl:h-20 lg:w-[130px] lg:h-[80px] 2xl:w-[150px] 2xl:h-20"
+            className="w-32  fxl:w-[150px]  lg:w-[130px]  2xl:w-[150px] "
           />
         </Link>
 
