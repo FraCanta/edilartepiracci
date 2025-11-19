@@ -1,10 +1,23 @@
 import Hero from "@/components/layout/Hero";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home({ onHeroFinished }) {
   return (
     <>
+      <Head>
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <meta name="apple-mobile-web-app-title" content="Edilarte Piracci" />
+        <link rel="manifest" href="/site.webmanifest" />
+      </Head>
       <Hero onHeroFinished={onHeroFinished} />
       <div className="w-full min-h-[42svh] lg:min-h-[20vh] bg-[#BCA70D] px-4 py-6 lg:py-10 lg:px-10 sticky top-[calc(100svh-40svh)] lg:top-[calc(100vh-20vh)] z-50 flex flex-col lg:flex-row  items-center lg:justify-between gap-4">
         {/* wrapper testo */}
