@@ -38,11 +38,11 @@ export default function Hero({ onHeroFinished }) {
           damping: 6.67,
         }}
         onAnimationComplete={onHeroFinished}
-        className="absolute bottom-0 left-0 p-4 lg:p-10 fxl:p-20 w-full xs:h-[32vh] sm:h-[28vh] fxl:h-[30vh] backdrop-blur-sm bg-black/10 lg:rounded-t-[60px] flex items-center gap-10 text-white"
+        className="absolute bottom-0 left-0 px-4 py-4  lg:py-20 lg:px-10  w-full xs:h-[32vh] sm:h-[28vh] fxl:h-[30vh] backdrop-blur-sm bg-black/10 lg:rounded-t-[60px] flex items-center gap-10 text-white"
       >
-        <div className="flex flex-col items-center gap-6 lg:flex-row lg:gap-10">
+        <div className="relative flex flex-col items-center w-full gap-6 lg:flex-row lg:gap-10">
           {/* Logo */}
-          <div className="absolute md:top-4 right-6 lg:static">
+          <div className="absolute right-0 md:top-4 lg:static">
             <Image
               src="/assets/flower_logo.svg"
               alt="flower"
