@@ -6,7 +6,7 @@ export default function Hero({ onHeroFinished }) {
     <div className="relative min-h-screen overflow-hidden">
       {/* Background Image animata */}
       <motion.div
-        initial={{ filter: "blur(14px)", scale: 1.05 }}
+        initial={{ filter: "blur(14px)", scale: 1.2 }}
         animate={{ filter: "blur(0px)", scale: 1 }}
         transition={{
           delay: 0.8,
