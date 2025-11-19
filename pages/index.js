@@ -34,13 +34,13 @@ export default function Home({ onHeroFinished }) {
         </div>
       </div>
 
-      <div className="flex flex-col  lg:justify-center min-h-screen lg:min-h-[40vh] gap-20 px-4 py-4 lg:px-10 lg:py-10 -my-[38vh] lg:-my-[15vh]">
+      <div className="flex flex-col  lg:justify-center min-h-screen lg:min-h-[40vh] gap-20  -my-[38vh] lg:-my-[15vh]">
         <h2 className="text-4xl font-medium fxl:text-5xl">Dicono di noi</h2>
-        <script src="https://elfsightcdn.com/platform.js" async></script>
+        {/* <script src="https://elfsightcdn.com/platform.js" async></script>
         <div
           className="elfsight-app-91403e13-7093-478f-a7c3-731b0445758e"
           data-elfsight-app-lazy
-        ></div>
+        ></div> */}
       </div>
 
       <div className="flex flex-col min-h-screen gap-20 py-4 mt-20 lg:py-10">
