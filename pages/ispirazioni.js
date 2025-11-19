@@ -1,5 +1,7 @@
 import React from "react";
 
-export const Ispirazioni = () => {
+const Ispirazioni = () => {
   return <div>Ispirazioni</div>;
 };
+
+export default Ispirazioni;
