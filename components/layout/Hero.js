@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Hero({ onHeroFinished }) {
   return (
-    <div className="relative  min-h-[calc(100vh-70px)] lg:min-h-screen overflow-hidden ">
+    <div className="relative h-screen pt-[70px] overflow-hidden ">
       {/* Background Image animata */}
       <motion.div
         initial={{ filter: "blur(14px)", scale: 1.15 }}
