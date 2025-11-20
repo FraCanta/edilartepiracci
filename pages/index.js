@@ -47,7 +47,7 @@ export default function Home({ onHeroFinished }) {
         </div>
       </div>
 
-      <div className="flex flex-col gap-10 px-4 py-6 -mt-[150px] mb-20 lg:mb-0 overflow-x-hidden lg:py-10 lg:px-10 lg:justify-center lg:gap-20">
+      <div className="flex flex-col gap-10 px-4 py-6 overflow-hidden -mt-[150px] mb-20 lg:mb-0 overflow-x-hidden lg:py-10 lg:px-10 lg:justify-center lg:gap-20">
         <h2 className="text-3xl font-medium lg:text-4xl fxl:text-5xl">
           Dicono di noi
         </h2>
@@ -67,7 +67,7 @@ export default function Home({ onHeroFinished }) {
             height={1080}
             className="object-cover w-full h-full"
           />
-          <div className="absolute left-0 -bottom-24 lg:bottom-0  bg-[#DDD2C0] w-full  flex flex-col justify-center lg:gap-10 ">
+          <div className="absolute left-0 -bottom-24 lg:bottom-0 overflow-hidden bg-[#DDD2C0] w-full  flex flex-col justify-center lg:gap-10 ">
             <h2 className="px-4 py-6 text-3xl font-medium lg:text-4xl fxl:text-5xl lg:px-10">
               Alcuni nostri fornitori
             </h2>
