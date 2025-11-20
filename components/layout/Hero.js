@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Hero({ onHeroFinished }) {
   return (
-    <div className="relative min-h-[100svh]  lg:h-screen overflow-hidden ">
+    <div className="relative min-h-[100svh]  lg:h-screen">
       {/* Background Image animata */}
       <motion.div
         initial={{ filter: "blur(14px)", scale: 1.15 }}
@@ -42,7 +42,7 @@ export default function Hero({ onHeroFinished }) {
       >
         <div className="relative flex flex-col items-center w-full gap-6 lg:flex-row lg:gap-10">
           {/* Logo */}
-          <div className="absolute right-0 md:top-4 lg:static">
+          <div className="absolute top-0 right-0 lg:static">
             <Image
               src="/assets/flower_logo.svg"
               alt="flower"
@@ -54,16 +54,16 @@ export default function Hero({ onHeroFinished }) {
 
           {/* Testo */}
           <div className="flex flex-col gap-2 md:gap-3 fxl:gap-4 lg:text-left">
-            <p className="text-xs md:text-xl lg::text-lg xl:text-lg">
+            <p className="text-xs sm:text-sm md:text-xl lg:text-lg xl:text-lg">
               Con noi scegli bene, una volta sola
             </p>
 
-            <h1 className="text-[38px] md:text-[77px] xl:text-[56px] fxl:text-[64px] font-medium leading-none flex flex-wrap md:gap-1 lg:gap-4">
+            <h1 className="text-[38px] sm:text-[42px] md:text-[77px] xl:text-[56px] fxl:text-[64px] font-medium leading-none flex flex-wrap md:gap-1 lg:gap-4">
               <span>Ogni cosa</span>
               <span>per ogni casa</span>
             </h1>
 
-            <p className="text-[14px] md:text-2xl lg:text-xl">
+            <p className="text-[14px] sm:text-base md:text-2xl lg:text-xl">
               Selezioniamo materiali certificati e introvabili, ti guidiamo con
               una consulenza sartoriale fino a qui
             </p>

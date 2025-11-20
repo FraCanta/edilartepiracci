@@ -27,7 +27,7 @@ function Navbar({ show }) {
             alt="logo piracci"
             width={150}
             height={80}
-            className="w-32  fxl:w-[150px]  lg:w-[130px]  2xl:w-[150px] "
+            className="w-28  fxl:w-[150px]  lg:w-[130px]  2xl:w-[150px] "
           />
         </Link>
 
