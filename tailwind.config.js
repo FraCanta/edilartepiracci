@@ -22,7 +22,8 @@ module.exports = {
         "4xl": "3840px",
       },
       fontFamily: {
-        // aggiungi le tue famiglie personalizzate
+        jost: ["Jost", "sans-serif"],
+        work: ["Work Sans", "sans-serif"],
       },
       colors: {
         black: "#1e211e",

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Hero({ onHeroFinished }) {
   return (
-    <div className="relative min-h-[100svh]  lg:h-screen">
+    <div className="relative min-h-[100svh]  lg:h-screen overflow-hidden">
       {/* Background Image animata */}
       <motion.div
         initial={{ filter: "blur(14px)", scale: 1.15 }}
@@ -58,12 +58,12 @@ export default function Hero({ onHeroFinished }) {
               Con noi scegli bene, una volta sola
             </p>
 
-            <h1 className="text-[38px] sm:text-[42px] md:text-[77px] xl:text-[56px] fxl:text-[64px] font-medium leading-none flex flex-wrap md:gap-1 lg:gap-4">
+            <h1 className="text-[38px] font-jost sm:text-[42px] md:text-[77px] xl:text-[56px] fxl:text-[64px] font-medium leading-none flex flex-wrap md:gap-1 lg:gap-4">
               <span>Ogni cosa</span>
               <span>per ogni casa</span>
             </h1>
 
-            <p className="text-[14px] sm:text-base md:text-2xl lg:text-xl">
+            <p className="text-[14px] sm:text-sm md:text-2xl lg:text-xl">
               Selezioniamo materiali certificati e introvabili, ti guidiamo con
               una consulenza sartoriale fino a qui
             </p>
