@@ -16,7 +16,7 @@ const nextConfig = {
 };
 
 const ContentSecurityPolicy = `
-  default-src 'self' https://static.elfsight.com/ https://api.simplesvg.com/ https://api.iconify.design/ https://core.service.elfsight.com/ https://elfsightcdn.com/ https://universe-static.elfsightcdn.com/ https://service-reviews-ultimate.elfsight.com/ https://service-reviews-ultimate.elfsight.com/ 'unsafe-inline' 'unsafe-eval';
+  default-src 'self'  https://static.elfsight.com/ https://api.simplesvg.com/ https://api.iconify.design/ https://core.service.elfsight.com/ https://elfsightcdn.com/ https://universe-static.elfsightcdn.com/ https://service-reviews-ultimate.elfsight.com/ https://service-reviews-ultimate.elfsight.com/ 'unsafe-inline' 'unsafe-eval';
   child-src 'self' ;
   style-src 'self' https://fonts.googleapis.com/ 'unsafe-inline' data:;
   font-src 'self' https://fonts.gstatic.com/ 'unsafe-inline' data:;

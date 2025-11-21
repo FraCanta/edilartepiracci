@@ -98,3 +98,17 @@ a {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.bg-bagno {
+  background-image: url("/assets/ispirazioni/bagno/bagno.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-living {
+  background-image: url("/assets/ispirazioni/living/living.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

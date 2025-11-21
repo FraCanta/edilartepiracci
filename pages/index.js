@@ -1,5 +1,6 @@
 import Banner from "@/components/layout/Banner";
 import Hero from "@/components/layout/Hero";
+import Ispirazione from "@/components/layout/Sections/Ispirazione/Ispirazione";
 import { Icon } from "@iconify/react";
 import Head from "next/head";
 import Image from "next/image";
@@ -19,7 +20,8 @@ export default function Home({ onHeroFinished }) {
       </Head>
       <Hero onHeroFinished={onHeroFinished} />
       {/* <Banner /> */}
-      <div className="w-full min-h-[20svh] lg:min-h-[20vh] bg-gradient-to-r from-[#DDD2C0] to-[#BCA70D] px-4 py-6 lg:py-10 lg:px-10 sticky top-[calc(100svh-27svh)] lg:top-[calc(100vh-20vh)] z-50 flex flex-col lg:flex-row  items-center lg:justify-between gap-4">
+      {/* <div className="w-full min-h-[20svh] lg:min-h-[20vh] bg-gradient-to-r from-[#DDD2C0] to-yellow px-4 py-6 lg:py-10 lg:px-10 sticky top-[calc(100svh-20svh)] lg:top-[calc(100vh-20vh)] z-50 flex flex-col lg:flex-row  items-center lg:justify-between gap-4"> */}
+      <div className="w-full bg-gradient-to-r from-[#DDD2C0] to-yellow px-4 py-6 lg:py-10 lg:px-10  flex flex-col lg:flex-row  items-center lg:justify-between gap-4">
         {/* wrapper testo */}
         <div className="flex flex-col justify-center gap-2">
           <h2 className="text-[28px] fxl:text-[42px] text-white leading-none font-medium">
@@ -30,24 +32,24 @@ export default function Home({ onHeroFinished }) {
           </p>
         </div>
 
-        <div className="flex items-center w-full gap-4 lg:w-fit">
+        <div className="flex items-center w-full gap-2 lg:w-fit">
           {" "}
           <Link
             href="/"
-            className="uppercase bg-[#306D93] text-white px-[10px] py-[20px] text-center text-xs lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5 w-full lg:max-w-max"
+            className="uppercase bg-blue text-white px-[10px] py-[20px] text-center text-[0.7rem] lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5 w-full lg:max-w-max"
           >
             prenota
           </Link>
           <Link
             href="/"
-            className="uppercase border border-white text-white px-[10px] py-[20px] text-center text-xs lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5 w-full lg:max-w-max"
+            className="uppercase border border-white text-white px-[10px] py-[20px] text-center text-[0.73rem] lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5 w-full lg:max-w-max"
           >
             scopri come funziona
           </Link>
         </div>
       </div>
 
-      <div className="flex flex-col gap-10 px-4 py-6 overflow-hidden -mt-[150px] mb-20 lg:mb-0 overflow-x-hidden lg:py-10 lg:px-10 lg:justify-center lg:gap-20">
+      <div className="flex flex-col gap-10 px-4 py-6 my-10 overflow-hidden lg:mb-0 lg:py-10 lg:px-10 lg:justify-center lg:gap-20">
         <h2 className="text-3xl font-medium lg:text-4xl fxl:text-5xl">
           Dicono di noi
         </h2>
@@ -79,7 +81,7 @@ export default function Home({ onHeroFinished }) {
           </div>
         </div>
       </div>
-      <div className="grid items-center justify-center w-full grid-cols-1 gap-10 px-6 mt-32 mb-10 lg:min-h-screen lg:gap-10 lg:grid-cols-2 lg:p-10">
+      <div className="grid items-center justify-center w-full grid-cols-1 gap-10 px-6 mt-36 lg:min-h-screen lg:gap-10 lg:grid-cols-2 lg:p-10">
         <div className="flex flex-col gap-6 text-black">
           <h2 className="text-[32px] lg:text-[38px] fxl:text-[52px] font-medium leading-none">
             Un lavoro che cresce in famiglia
@@ -92,7 +94,7 @@ export default function Home({ onHeroFinished }) {
           </p>
           <Link
             href="/"
-            className="uppercase bg-[#BCA70D] text-center text-white px-6 py-4 text-lg xl:text-sm lg:px-10 2xl:text-base md:py-5 w-full lg:max-w-max"
+            className="w-full px-6 py-4 text-lg text-center text-white uppercase bg-yellow xl:text-sm lg:px-10 2xl:text-base md:py-5 lg:max-w-max"
           >
             scopri di più
           </Link>
@@ -106,19 +108,19 @@ export default function Home({ onHeroFinished }) {
           />
         </div>
       </div>
-      <div className="my-20">
+      <div>
         <h2 className="px-4 py-6 text-3xl font-medium lg:text-4xl fxl:text-5xl lg:px-10">
           Perchè sceglierci
         </h2>
-        <div className="grid items-center justify-center w-full grid-cols-2 text-center gap-y-6 lg:gap-20 lg:grid-cols-4 lg:px-10">
+        <div className="grid items-center justify-center w-full grid-cols-2 mb-10 text-center text-blue gap-y-6 lg:mb-0 lg:gap-20 lg:grid-cols-4 lg:px-10">
           <div className="flex flex-col items-center justify-center w-full lg:p-10">
             <Icon
               icon="material-symbols-light:editor-choice-outline"
               width="100px"
               height="100px"
-              className="text-[#BCA70D]"
+              className="text-yellow w-16 h-16 lg:w-[100px] lg:h-[100px]"
             />
-            <h3 className="mt-4 mb-2 text-lg font-medium">
+            <h3 className="mt-4 mb-2 text-sm font-medium lg:text-lg">
               Qualità certificata
             </h3>
           </div>
@@ -127,10 +129,10 @@ export default function Home({ onHeroFinished }) {
               icon="material-symbols-light:extension-outline"
               width="100px"
               height="100px"
-              className="text-[#BCA70D]"
+              className="text-yellow  w-16 h-16 lg:w-[100px] lg:h-[100px]"
             />
-            <h3 className="mt-4 mb-2 text-lg font-medium">
-              Qualità certificata
+            <h3 className="mt-4 mb-2 text-sm font-medium lg:text-lg">
+              Sartorialità
             </h3>
           </div>
           <div className="flex flex-col items-center justify-center w-full lg:p-10">
@@ -138,10 +140,10 @@ export default function Home({ onHeroFinished }) {
               icon="material-symbols-light:crown-outline"
               width="100px"
               height="100px"
-              className="text-[#BCA70D]"
+              className="text-yellow  w-16 h-16 lg:w-[100px] lg:h-[100px]"
             />
-            <h3 className="mt-4 mb-2 text-lg font-medium">
-              Qualità certificata
+            <h3 className="mt-4 mb-2 text-sm font-medium lg:text-lg">
+              Esclusività dei fornitori
             </h3>
           </div>
           <div className="flex flex-col items-center justify-center w-full lg:p-10">
@@ -149,14 +151,104 @@ export default function Home({ onHeroFinished }) {
               icon="material-symbols-light:shield-with-heart-outline"
               width="100px"
               height="100px"
-              className="text-[#BCA70D]"
+              className="text-yellow  w-16 h-16 lg:w-[100px] lg:h-[100px]"
             />
-            <h3 className="mt-4 mb-2 text-lg font-medium">
-              Qualità certificata
+            <h3 className="mt-4 mb-2 text-sm font-medium lg:text-lg">
+              Asssistenza post-vendita garantita
             </h3>
           </div>
         </div>
       </div>
+      <Banner />
+      <div className="flex flex-col justify-between min-h-screen p-4 lg:p-10 bg-blue/20">
+        <div className="flex flex-col gap-4 lg:gap-10">
+          <div className="flex flex-col lg:gap-1">
+            <h2 className="mb-6 text-3xl font-medium lg:text-4xl fxl:text-[50px]">
+              Il vero risparmio è evitare gli errori
+            </h2>
+            <h3 className="text-lg text-black lg:text-2xl">
+              Il giusto equilibrio tra la qualità, prezzo e assistenza
+            </h3>
+          </div>
+          <p className="text-base text-black fxl:text-xl">
+            Comprare singoli materiali direttamente dal produttore può sembrare
+            conveniente. Finché non ti accorgi che formati, colori e finiture
+            non dialogano tra loro, o che manca un ricambio quando serve. La
+            nostra consulenza unisce estetica, tecnica e assistenza: scegli oggi
+            con serenità, vivi meglio domani.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 gap-3 my-10 lg:my-0 lg:gap-20 lg:grid-cols-4">
+          <div className="flex flex-col items-center justify-center w-full text-center lg:p-10">
+            <Icon
+              icon="material-symbols-light:360"
+              width="120px"
+              height="120px"
+              className="text-yellow w-14 h-14 lg:w-[120px] lg:h-[120px]"
+            />
+            <h3 className="mt-4 mb-2 text-lg font-medium lg:text-3xl text-blue">
+              Coerenza estetica
+            </h3>
+            <p className="text-sm text-black lg:text-xl">
+              abbinamenti pensati sull’architettura della tua casa
+            </p>
+          </div>
+          <div className="flex flex-col items-center justify-center w-full text-center lg:p-10">
+            <Icon
+              icon="material-symbols-light:star-shine-rounded"
+              width="120px"
+              height="120px"
+              className="text-yellow w-14 h-14 lg:w-[120px] lg:h-[120px]"
+            />
+            <h3 className="mt-4 mb-2 text-lg font-medium lg:text-3xl text-blue">
+              Qualità verificabile
+            </h3>
+            <p className="text-sm text-black lg:text-xl">
+              certificazioni e schede tecniche, niente sorprese.
+            </p>
+          </div>
+          <div className="flex flex-col items-center justify-center w-full text-center lg:p-10">
+            <Icon
+              icon="material-symbols-light:clock-loader-40"
+              width="120px"
+              height="120px"
+              className="text-yellow w-14 h-14 lg:w-[120px] lg:h-[120px]"
+            />
+            <h3 className="mt-4 mb-2 text-lg font-medium lg:text-3xl text-blue">
+              Tempo risparmiato
+            </h3>
+            <p className="text-sm text-black lg:text-xl">
+              un referente unico, zero giri a vuoto.
+            </p>
+          </div>
+          <div className="flex flex-col items-center justify-center w-full text-center lg:p-10">
+            <Icon
+              icon="material-symbols-light:person-celebrate-rounded"
+              width="120px"
+              height="120px"
+              className="text-yellow w-14 h-14 lg:w-[120px] lg:h-[120px]"
+            />
+            <h3 className="mt-4 mb-2 text-lg font-medium lg:text-3xl text-blue">
+              Tranquillità nel tempo
+            </h3>
+            <p className="text-sm text-black lg:text-xl">
+              ricambi originali e supporto anche tra molti anni.{" "}
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-col gap-4 mx-auto text-center max-w-max-lg">
+          <h3 className="text-xl font-medium lg:text-2xl">
+            La tua casa, con materiali che durano nel tempo e raccontano chi sei
+          </h3>
+          <Link
+            href="/"
+            className="uppercase bg-yellow text-white px-[20px] py-[20px] text-center text-lg xl:text-sm lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5"
+          >
+            Approfondisci i passaggi
+          </Link>
+        </div>
+      </div>
+      <Ispirazione />
     </>
   );
 }

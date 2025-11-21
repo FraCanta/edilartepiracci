@@ -69,7 +69,7 @@ function Footer() {
                 <li className="w-full">
                   <Link
                     href="/"
-                    className="uppercase flex items-center  bg-[#BCA70D] text-white px-[20px] py-[20px] xl:px-10 text-center text-lg xl:text-sm lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5"
+                    className="uppercase flex items-center  bg-yellow text-white px-[20px] py-[20px] xl:px-10 text-center text-lg xl:text-sm lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5"
                   >
                     prenota ora
                     <Icon

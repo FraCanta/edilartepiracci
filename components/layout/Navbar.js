@@ -135,7 +135,7 @@ function Navbar({ show }) {
                 </Link>
                 <Link
                   href="/"
-                  className="uppercase bg-[#BCA70D] text-white px-[20px] py-[20px] text-center text-lg xl:text-sm lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5"
+                  className="uppercase bg-yellow text-white px-[20px] py-[20px] text-center text-lg xl:text-sm lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5"
                   onClick={() => setMenuOpen(false)}
                 >
                   la nostra consulenza
@@ -180,7 +180,7 @@ function Navbar({ show }) {
         <div className="items-center justify-end hidden lg:flex">
           <Link
             href="/"
-            className="uppercase bg-[#BCA70D] text-white lg:text-lg xl:text-sm lg:px-[42px] 2xl:text-base fxl:px-[60px] py-5"
+            className="uppercase bg-yellow text-white lg:text-lg xl:text-sm lg:px-[42px] 2xl:text-base fxl:px-[60px] py-5"
           >
             la nostra consulenza
           </Link>
