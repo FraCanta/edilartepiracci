@@ -112,8 +112,8 @@ export default function Home({ onHeroFinished }) {
         <h2 className="px-4 py-6 text-3xl font-medium lg:text-4xl fxl:text-5xl lg:px-10">
           Perchè sceglierci
         </h2>
-        <div className="grid items-center justify-center w-full grid-cols-2 mb-10 text-center text-blue gap-y-6 lg:mb-0 lg:gap-20 lg:grid-cols-4 lg:px-10">
-          <div className="flex flex-col items-center justify-center w-full lg:p-10">
+        <div className="grid items-center justify-center w-full grid-cols-2 my-10 text-center text-blue gap-y-6 fxl:gap-20 lg:grid-cols-4 lg:px-10">
+          <div className="flex flex-col items-center justify-center w-full fxl:p-10">
             <Icon
               icon="material-symbols-light:editor-choice-outline"
               width="100px"
@@ -124,7 +124,7 @@ export default function Home({ onHeroFinished }) {
               Qualità certificata
             </h3>
           </div>
-          <div className="flex flex-col items-center justify-center w-full lg:p-10">
+          <div className="flex flex-col items-center justify-center w-full fxl:p-10">
             <Icon
               icon="material-symbols-light:extension-outline"
               width="100px"
@@ -135,7 +135,7 @@ export default function Home({ onHeroFinished }) {
               Sartorialità
             </h3>
           </div>
-          <div className="flex flex-col items-center justify-center w-full lg:p-10">
+          <div className="flex flex-col items-center justify-center w-full fxl:p-10">
             <Icon
               icon="material-symbols-light:crown-outline"
               width="100px"
@@ -146,7 +146,7 @@ export default function Home({ onHeroFinished }) {
               Esclusività dei fornitori
             </h3>
           </div>
-          <div className="flex flex-col items-center justify-center w-full lg:p-10">
+          <div className="flex flex-col items-center justify-center w-full fxl:p-10">
             <Icon
               icon="material-symbols-light:shield-with-heart-outline"
               width="100px"
@@ -160,8 +160,8 @@ export default function Home({ onHeroFinished }) {
         </div>
       </div>
       <Banner />
-      <div className="flex flex-col justify-between min-h-screen p-4 lg:p-10 bg-blue/20">
-        <div className="flex flex-col gap-4 lg:gap-10">
+      <div className="relative flex flex-col justify-between min-h-screen p-4 lg:p-10 bg-consulenza">
+        <div className="z-10 flex flex-col gap-4 lg:gap-10">
           <div className="flex flex-col lg:gap-1">
             <h2 className="mb-6 text-3xl font-medium lg:text-4xl fxl:text-[50px]">
               Il vero risparmio è evitare gli errori
@@ -178,65 +178,65 @@ export default function Home({ onHeroFinished }) {
             con serenità, vivi meglio domani.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-3 my-10 lg:my-0 lg:gap-20 lg:grid-cols-4">
-          <div className="flex flex-col items-center justify-center w-full text-center lg:p-10">
+        <div className="z-10 grid grid-cols-2 gap-3 my-10 lg:my-0 lg:gap-20 lg:grid-cols-4">
+          <div className="flex flex-col items-center justify-center w-full text-center fxl:p-10">
             <Icon
               icon="material-symbols-light:360"
               width="120px"
               height="120px"
-              className="text-yellow w-14 h-14 lg:w-[120px] lg:h-[120px]"
+              className="text-yellow w-14 h-14 lg:w-[100px] lg:h-[100px] fxl:w-[120px] fxl:h-[120px]"
             />
-            <h3 className="mt-4 mb-2 text-lg font-medium lg:text-3xl text-blue">
+            <h3 className="mt-4 mb-2 text-lg font-medium lg:text-2xl fxl:text-3xl text-blue">
               Coerenza estetica
             </h3>
-            <p className="text-sm text-black lg:text-xl">
+            <p className="text-sm text-black lg:text-lg fxl:text-xl">
               abbinamenti pensati sull’architettura della tua casa
             </p>
           </div>
-          <div className="flex flex-col items-center justify-center w-full text-center lg:p-10">
+          <div className="flex flex-col items-center justify-center w-full text-center fxl:p-10">
             <Icon
               icon="material-symbols-light:star-shine-rounded"
               width="120px"
               height="120px"
-              className="text-yellow w-14 h-14 lg:w-[120px] lg:h-[120px]"
+              className="text-yellow w-14 h-14 lg:w-[100px] lg:h-[100px] fxl:w-[120px] fxl:h-[120px]"
             />
-            <h3 className="mt-4 mb-2 text-lg font-medium lg:text-3xl text-blue">
+            <h3 className="mt-4 mb-2 text-lg font-medium lg:text-2xl fxl:text-3xl text-blue">
               Qualità verificabile
             </h3>
-            <p className="text-sm text-black lg:text-xl">
+            <p className="text-sm text-black lg:text-lg fxl:text-xl">
               certificazioni e schede tecniche, niente sorprese.
             </p>
           </div>
-          <div className="flex flex-col items-center justify-center w-full text-center lg:p-10">
+          <div className="flex flex-col items-center justify-center w-full text-center fxl:p-10">
             <Icon
               icon="material-symbols-light:clock-loader-40"
               width="120px"
               height="120px"
-              className="text-yellow w-14 h-14 lg:w-[120px] lg:h-[120px]"
+              className="text-yellow w-14 h-14 lg:w-[100px] lg:h-[100px] fxl:w-[120px] fxl:h-[120px]"
             />
-            <h3 className="mt-4 mb-2 text-lg font-medium lg:text-3xl text-blue">
+            <h3 className="mt-4 mb-2 text-lg font-medium lg:text-2xl fxl:text-3xl text-blue">
               Tempo risparmiato
             </h3>
-            <p className="text-sm text-black lg:text-xl">
+            <p className="text-sm text-black lg:text-lg fxl:text-xl">
               un referente unico, zero giri a vuoto.
             </p>
           </div>
-          <div className="flex flex-col items-center justify-center w-full text-center lg:p-10">
+          <div className="flex flex-col items-center justify-center w-full text-center fxl:p-10">
             <Icon
               icon="material-symbols-light:person-celebrate-rounded"
               width="120px"
               height="120px"
-              className="text-yellow w-14 h-14 lg:w-[120px] lg:h-[120px]"
+              className="text-yellow w-14 h-14 lg:w-[100px] lg:h-[100px] fxl:w-[120px] fxl:h-[120px]"
             />
-            <h3 className="mt-4 mb-2 text-lg font-medium lg:text-3xl text-blue">
+            <h3 className="mt-4 mb-2 text-lg font-medium lg:text-2xl fxl:text-3xl text-blue">
               Tranquillità nel tempo
             </h3>
-            <p className="text-sm text-black lg:text-xl">
+            <p className="text-sm text-black lg:text-lg fxl:text-xl">
               ricambi originali e supporto anche tra molti anni.{" "}
             </p>
           </div>
         </div>
-        <div className="flex flex-col gap-4 mx-auto text-center max-w-max-lg">
+        <div className="z-10 flex flex-col gap-4 mx-auto text-center max-w-max-lg">
           <h3 className="text-xl font-medium lg:text-2xl">
             La tua casa, con materiali che durano nel tempo e raccontano chi sei
           </h3>
@@ -247,8 +247,110 @@ export default function Home({ onHeroFinished }) {
             Approfondisci i passaggi
           </Link>
         </div>
+        <div className="absolute inset-0 bg-white/10 backdrop-blur-md"></div>
       </div>
       <Ispirazione />
+      <div className="w-full aspect-square lg:h-screen bg-showroom"></div>
+      <div className="relative flex flex-col justify-center min-h-screen px-4 py-10 lg:px-10 lg:py-20 bg-flower">
+        {/* Overlay SEMPRE sotto */}
+        <div className="absolute inset-0 z-0 pointer-events-none bg-white/85"></div>
+
+        {/* Tutto il resto SEMPRE sopra */}
+        <div className="relative z-10 flex flex-col h-full gap-6 text-black">
+          <div className="grid w-full gap-6 lg:grid-cols-[1fr_auto]">
+            {/* Titolo */}
+            <h2 className="order-1 text-[32px] lg:text-[38px] fxl:text-[52px] font-medium leading-none">
+              Dalle parole ai fatti
+            </h2>
+
+            {/* Bottone */}
+            <Link
+              href="/"
+              className="order-3 w-full px-6 py-4 text-center text-white uppercase bg-yellow lg:order-2 lg:w-auto"
+            >
+              Vedi tutti
+            </Link>
+
+            {/* Testo */}
+            <p className="order-2 text-sm text-black lg:order-3 lg:col-span-2 lg:text-xl">
+              Residenze, appartamenti, strutture ricettive del territorio.
+              Stessa promessa: bellezza, funzionalità e durata.
+            </p>
+          </div>
+
+          <div className="relative z-10 grid justify-between w-full grid-cols-1 gap-10 mt-10 lg:grid-cols-3">
+            <div className="block w-full ">
+              <Link href="/">
+                <Image
+                  width={400}
+                  height={300}
+                  src="/assets/placeholder.png"
+                  className="w-full"
+                  alt=""
+                />
+
+                <h4 className="mt-6 mb-2 text-2xl font-semibold tracking-tight text-blue text-heading">
+                  Appartamento vista mare
+                </h4>
+                <p className="text-xl text-black">Vieste, [Anno]</p>
+
+                <p className="my-6 text-black text-body">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris
+                </p>
+              </Link>
+            </div>
+            <div className="block w-full ">
+              <Link href="/">
+                <Image
+                  width={400}
+                  height={300}
+                  src="/assets/placeholder.png"
+                  className="w-full"
+                  alt=""
+                />
+
+                <h4 className="mt-6 mb-2 text-2xl font-semibold tracking-tight text-blue text-heading">
+                  Appartamento vista mare
+                </h4>
+                <p className="text-xl text-black">Vieste, [Anno]</p>
+
+                <p className="my-6 text-black text-body">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris
+                </p>
+              </Link>
+            </div>
+            <div className="block w-full ">
+              <Link href="/">
+                <Image
+                  width={400}
+                  height={300}
+                  src="/assets/placeholder.png"
+                  className="w-full"
+                  alt=""
+                />
+
+                <h4 className="mt-6 mb-2 text-2xl font-semibold tracking-tight text-blue text-heading">
+                  Appartamento vista mare
+                </h4>
+                <p className="text-xl text-black">Vieste, [Anno]</p>
+
+                <p className="my-6 text-black text-body">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris
+                </p>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

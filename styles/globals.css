@@ -112,3 +112,31 @@ a {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.bg-flower {
+  background-image: url("/assets/flower_logo.svg");
+  background-size: cover;
+  background-position: -500px center;
+  background-repeat: no-repeat;
+}
+
+.bg-showroom {
+  background-image: url("/assets/showroom.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-consulenza {
+  background-image: url("/assets/consulenza.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+  .bg-flower {
+    background-size: cover;
+    background-position: -600px center;
+  }
+}
