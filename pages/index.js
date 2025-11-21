@@ -1,6 +1,6 @@
 import Banner from "@/components/layout/Banner";
 import Hero from "@/components/layout/Hero";
-import Ispirazione from "@/components/layout/Sections/Ispirazione/Ispirazione";
+import Ispirazione from "@/components/Sections/Ispirazione/Ispirazione";
 import { Icon } from "@iconify/react";
 import Head from "next/head";
 import Image from "next/image";
