@@ -1,5 +1,6 @@
 import Banner from "@/components/layout/Banner";
 import Hero from "@/components/layout/Hero";
+import StickyBanner from "@/components/layout/StickyBanner";
 import Ispirazione from "@/components/Sections/Ispirazione/Ispirazione";
 import { Icon } from "@iconify/react";
 import Head from "next/head";
@@ -19,35 +20,7 @@ export default function Home({ onHeroFinished }) {
         <link rel="manifest" href="/manifest" />
       </Head>
       <Hero onHeroFinished={onHeroFinished} />
-      {/* <Banner /> */}
-      {/* <div className="w-full min-h-[20svh] lg:min-h-[20vh] bg-gradient-to-r from-[#DDD2C0] to-yellow px-4 py-6 lg:py-10 lg:px-10 sticky top-[calc(100svh-20svh)] lg:top-[calc(100vh-20vh)] z-50 flex flex-col lg:flex-row  items-center lg:justify-between gap-4"> */}
-      <div className="w-full bg-gradient-to-r from-[#DDD2C0] to-yellow px-4 py-6 lg:py-10 lg:px-10  flex flex-col lg:flex-row  items-center lg:justify-between gap-4">
-        {/* wrapper testo */}
-        <div className="flex flex-col justify-center gap-2">
-          <h2 className="text-[28px] fxl:text-[42px] text-white leading-none font-medium">
-            Affidati alla nostra consulenza in showroom
-          </h2>
-          <p className="text-[15px] fxl:text-[21px] text-white leading-none">
-            Qualità certificata, fornitori esclusivi, consulenza sartoriale
-          </p>
-        </div>
-
-        <div className="flex items-center w-full gap-2 lg:w-fit">
-          {" "}
-          <Link
-            href="/"
-            className="uppercase bg-blue text-white px-[10px] py-[20px] text-center text-[0.7rem] lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5 w-full lg:max-w-max"
-          >
-            prenota
-          </Link>
-          <Link
-            href="/"
-            className="uppercase border border-white text-white px-[10px] py-[20px] text-center text-[0.73rem] lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5 w-full lg:max-w-max"
-          >
-            scopri come funziona
-          </Link>
-        </div>
-      </div>
+      <StickyBanner />
 
       <div className="flex flex-col gap-10 px-4 py-6 my-10 overflow-hidden lg:mb-0 lg:py-10 lg:px-10 lg:justify-center lg:gap-20">
         <h2 className="text-3xl font-medium lg:text-4xl fxl:text-5xl">

@@ -79,27 +79,39 @@ function Navbar({ show }) {
 
                 {/* Ispirazioni dropdown mobile */}
                 <div className="flex flex-col">
-                  <button
-                    onClick={() => setInspirationOpen((prev) => !prev)}
-                    className="flex items-center justify-between w-full uppercase"
-                  >
-                    <span>ispirazioni</span>
-                    <svg
-                      className={`w-5 h-5 transition-transform duration-300 ${
-                        inspirationOpen ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
+                  <div className="flex items-center justify-between w-full uppercase">
+                    {/* Testo = LINK */}
+                    <Link
+                      href="/ispirazioni"
+                      onClick={() => setMenuOpen(false)}
+                      className="flex-1"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
+                      ispirazioni
+                    </Link>
+
+                    {/* Chevron = apre sottomenu */}
+                    <button
+                      onClick={() => setInspirationOpen((prev) => !prev)}
+                      aria-label="Apri ispirazioni"
+                      className="p-2"
+                    >
+                      <svg
+                        className={`w-5 h-5 transition-transform duration-300 ${
+                          inspirationOpen ? "rotate-180" : ""
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                  </div>
 
                   <AnimatePresence>
                     {inspirationOpen && (
@@ -130,11 +142,11 @@ function Navbar({ show }) {
                 <Link href="/" onClick={() => setMenuOpen(false)}>
                   progetti realizzati
                 </Link>
-                <Link href="/" onClick={() => setMenuOpen(false)}>
+                <Link href="/contatti" onClick={() => setMenuOpen(false)}>
                   contatti
                 </Link>
                 <Link
-                  href="/"
+                  href="/la-nostra-consulenza"
                   className="uppercase bg-yellow text-white px-[20px] py-[20px] text-center text-lg xl:text-sm lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5"
                   onClick={() => setMenuOpen(false)}
                 >
@@ -150,8 +162,10 @@ function Navbar({ show }) {
           <Link href="/chi-siamo">chi siamo</Link>
 
           {/* Ispirazioni dropdown desktop */}
-          <div className="relative cursor-pointer group">
-            <div className="uppercase">ispirazioni</div>
+          <div className="relative group">
+            <Link href="/ispirazioni" className="uppercase cursor-pointer">
+              ispirazioni
+            </Link>
             <div className="absolute left-0 pt-2 transition-opacity duration-200 opacity-0 pointer-events-none top-full group-hover:opacity-100 group-hover:pointer-events-auto">
               <div className="bg-white shadow-lg py-3 px-4 rounded-md min-w-[180px] text-black">
                 <div className="flex flex-col gap-3 text-sm">
@@ -173,13 +187,13 @@ function Navbar({ show }) {
           </div>
 
           <Link href="/">progetti realizzati</Link>
-          <Link href="/">contatti</Link>
+          <Link href="/contatti">contatti</Link>
         </div>
 
         {/* Bottone desktop */}
         <div className="items-center justify-end hidden lg:flex">
           <Link
-            href="/"
+            href="/la-nostra-consulenza"
             className="uppercase bg-yellow text-white lg:text-lg xl:text-sm lg:px-[42px] 2xl:text-base fxl:px-[60px] py-5"
           >
             la nostra consulenza

@@ -9,7 +9,7 @@ function Footer() {
       <div className="w-full p-4 py-6 lg:py-8">
         <div className="gap-10 md:flex md:justify-between">
           <div className="flex flex-col justify-between gap-2 mb-6 md:mb-0">
-            <Link href="https://flowbite.com/">
+            <Link href="/">
               <Image
                 src="/assets/logo/logo.svg"
                 width={170}

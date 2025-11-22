@@ -1,7 +1,17 @@
+import HeroPage from "@/components/layout/HeroPage";
 import React from "react";
 
 function Consulenza() {
-  return <div>consulenza</div>;
+  return (
+    <>
+      <HeroPage
+        title={"La consulenza che <br/> ti fa scegliere bene."}
+        paragraph={
+          "Mezza giornata in showroom per capire cosa comprare e perchè, con rendering e abbinamenti. <br/>Poi un'offerta chiara e un post-vendita che non ti lascia mai solo."
+        }
+      />
+    </>
+  );
 }
 
 export default Consulenza;

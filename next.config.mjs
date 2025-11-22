@@ -20,7 +20,7 @@ const ContentSecurityPolicy = `
   child-src 'self' ;
   style-src 'self' https://fonts.googleapis.com/ 'unsafe-inline' data:;
   font-src 'self' https://fonts.gstatic.com/ 'unsafe-inline' data:;
-  img-src 'self' https://files.elfsightcdn.com/ https://phosphor.utils.elfsightcdn.com/ data: blob:;
+  img-src 'self' https://cdn-icons-png.flaticon.com/ https://a.tile.openstreetmap.org/ https://c.tile.openstreetmap.org/ https://b.tile.openstreetmap.org/ https://files.elfsightcdn.com/ https://phosphor.utils.elfsightcdn.com/ data: blob:;
 `;
 
 const securityHeaders = [

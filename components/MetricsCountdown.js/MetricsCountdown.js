@@ -91,20 +91,28 @@ export default function MetricsCountdown() {
     <div ref={ref} className="flex justify-center w-full">
       <div className="flex items-center justify-between w-full max-w-5xl px-6 pt-16 lg:px-0 pb-14 lg:pb-4 lg:pt-14">
         {METRICS.map((m, idx) => (
-          <div key={m.id} className="flex flex-col items-center flex-1">
-            <div
-              className={
-                "text-3xl md:text-6xl text-blue font-extrabold tracking-tight transition-transform duration-200 " +
-                (bump[m.id] ? "transform scale-105 -translate-y-1" : "")
-              }
-              // aria-hidden for decorative animation
-              aria-hidden
-            >
-              <h2>{values[idx]}</h2>
+          <div key={m.id} className="flex items-center flex-1">
+            {/* Contenuto della metrica */}
+            <div className="flex flex-col items-center flex-1">
+              <div
+                className={
+                  "text-3xl md:text-6xl text-blue font-extrabold tracking-tight transition-transform duration-200 " +
+                  (bump[m.id] ? "transform scale-105 -translate-y-1" : "")
+                }
+                aria-hidden
+              >
+                <h2>{values[idx]}</h2>
+              </div>
+
+              <div className="mt-2 text-sm text-black lg:text-base">
+                <p>{m.label}</p>
+              </div>
             </div>
-            <div className="mt-2 text-sm text-black lg:text-base ">
-              <p>{m.label}</p>
-            </div>
+
+            {/* SEPARATORE - solo se non è l'ultimo */}
+            {idx !== METRICS.length - 1 && (
+              <div className="mx-3 lg:mx-6 w-[1px] h-12 lg:h-20 bg-black/20"></div>
+            )}
           </div>
         ))}
       </div>
