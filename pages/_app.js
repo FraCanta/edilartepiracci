@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 
 export default function App({ Component, pageProps }) {
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [pageName, setPageName] = useState("");
   const router = useRouter();
 
   // Stato per far comparire la navbar dal layout
@@ -14,7 +13,6 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     const handleStart = (url) => {
-      setPageName(url.replace("/", "") || "Homepage");
       setIsTransitioning(true);
     };
 

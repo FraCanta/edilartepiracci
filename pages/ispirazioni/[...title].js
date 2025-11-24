@@ -1,16 +1,25 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
-import Lightbox from "@/components/Lightbox"; // lightbox aggiornato con categoryName e loghi
+import Lightbox from "@/components/Lightbox";
 import { Icon } from "@iconify/react";
+import { motion, useInView } from "framer-motion";
 
 function IspirazionePage() {
   const [currentSlides, setCurrentSlides] = useState([]);
   const [currentCategory, setCurrentCategory] = useState("");
   const [index, setIndex] = useState(null);
 
-  // Categorie con immagini
+  const heroRef = useRef(null);
+  const section2Ref = useRef(null);
+
+  const isHeroInView = useInView(heroRef, { once: true, margin: "-100px" });
+  const isSection2InView = useInView(section2Ref, {
+    once: true,
+    margin: "-100px",
+  });
+
   const categories = {
     bagno: [
       { src: "https://picsum.photos/900/900?1" },
@@ -59,22 +68,37 @@ function IspirazionePage() {
     ],
   };
 
-  // Funzioni Lightbox
   const openCategory = (categoryName, slideIndex = 0) => {
     setCurrentCategory(categoryName);
     setCurrentSlides(categories[categoryName]);
     setIndex(slideIndex);
   };
+
   const close = () => setIndex(null);
   const next = () => setIndex((i) => (i + 1) % currentSlides.length);
   const prev = () =>
     setIndex((i) => (i - 1 + currentSlides.length) % currentSlides.length);
 
+  const itemVariant = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
+    }),
+  };
+
   return (
     <>
       {/* ================== HERO ================== */}
       <section className="grid grid-cols-1 gap-4 px-4 pt-6 mx-auto mt-20 lg:px-6 md:grid-cols-2 lg:grid-cols-4">
-        <div className="relative flex flex-col justify-center h-[400px] col-span-1 p-6 overflow-hidden 2xl:p-10 rounded-xl md:col-span-2 lg:col-span-2 lg:row-span-2 md:h-auto">
+        <motion.div
+          ref={heroRef}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative flex flex-col justify-center h-[400px] col-span-1 p-6 overflow-hidden 2xl:p-10 rounded-xl md:col-span-2 lg:col-span-2 lg:row-span-2 md:h-auto"
+        >
           <Image
             src="/assets/ispirazioni/bagno/mansory/mansory_1.jpg"
             fill
@@ -96,82 +120,60 @@ function IspirazionePage() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* 4 quadrati */}
-        {["bagno", "cucina", "soggiorno", "camera"].map((cat, i) => (
-          <div
-            key={cat}
-            className="relative overflow-hidden cursor-pointer aspect-square rounded-xl"
-            onClick={() => openCategory(cat, 0)}
-          >
-            <Image
-              src={categories[cat][0].src}
-              fill
-              alt=""
-              className="object-cover"
-            />
-            {/* Icona gallery sempre visibile */}
-            <div className="absolute flex items-center justify-center w-6 h-6 rounded-full bottom-2 right-2">
-              <Icon
-                icon="ph:browsers-simple-light"
-                width="32px"
-                height="32px"
-                className="text-white"
+        {/* ================== GALLERY MANSORY ================== */}
+        {["bagno", "cucina", "soggiorno", "camera", "ingresso", "terrazzo"].map(
+          (cat, i) => (
+            <motion.div
+              key={cat}
+              custom={i}
+              variants={itemVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              className={`relative overflow-hidden cursor-pointer rounded-xl ${
+                ["bagno", "cucina", "soggiorno", "camera"].includes(cat)
+                  ? "aspect-square"
+                  : cat === "ingresso"
+                  ? "h-48 md:h-64 lg:col-span-3"
+                  : "h-48 md:h-64"
+              }`}
+              onClick={() => openCategory(cat, 0)}
+            >
+              <Image
+                src={categories[cat][0].src}
+                fill
+                alt=""
+                className="object-cover"
               />
-            </div>
-          </div>
-        ))}
-
-        {/* orizzontale */}
-        <div
-          className="relative h-48 overflow-hidden cursor-pointer md:h-64 lg:col-span-3 rounded-xl"
-          onClick={() => openCategory("ingresso", 0)}
-        >
-          <Image
-            src={categories.ingresso[0].src}
-            fill
-            alt=""
-            className="object-cover"
-          />
-          <div className="absolute flex items-center justify-center w-6 h-6 rounded-full bottom-2 right-2">
-            <Icon
-              icon="ph:browsers-simple-light"
-              width="32px"
-              height="32px"
-              className="text-white"
-            />
-          </div>
-        </div>
-
-        {/* rettangolo */}
-        <div
-          className="relative h-48 overflow-hidden cursor-pointer md:h-64 rounded-xl"
-          onClick={() => openCategory("terrazzo", 0)}
-        >
-          <Image
-            src={categories.terrazzo[0].src}
-            fill
-            alt=""
-            className="object-cover"
-          />
-          <div className="absolute flex items-center justify-center w-6 h-6 rounded-full bottom-2 right-2">
-            <Icon
-              icon="ph:browsers-simple-light"
-              width="32px"
-              height="32px"
-              className="text-white"
-            />
-          </div>
-        </div>
+              <div className="absolute flex items-center justify-center w-6 h-6 rounded-full bottom-2 right-2">
+                <Icon
+                  icon="ph:browsers-simple-light"
+                  width="32px"
+                  height="32px"
+                  className="text-white"
+                />
+              </div>
+            </motion.div>
+          )
+        )}
       </section>
 
       {/* ================== SEZIONE 2 ================== */}
-      <section className="grid grid-cols-1 gap-4 px-6 py-6 mx-auto md:grid-cols-2 lg:grid-cols-4">
+      <section
+        ref={section2Ref}
+        className="grid grid-cols-1 gap-4 px-6 py-6 mx-auto md:grid-cols-2 lg:grid-cols-4"
+      >
         <div className="grid grid-cols-1 col-span-1 gap-4 md:grid-cols-2 lg:col-span-2">
-          {["giardino", "ufficio", "corridoio", "lavanderia"].map((cat) => (
-            <div
+          {["giardino", "ufficio", "corridoio", "lavanderia"].map((cat, i) => (
+            <motion.div
               key={cat}
+              custom={i}
+              variants={itemVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
               className="relative overflow-hidden cursor-pointer aspect-square rounded-xl"
               onClick={() => openCategory(cat, 0)}
             >
@@ -189,10 +191,15 @@ function IspirazionePage() {
                   className="text-white"
                 />
               </div>
-            </div>
+            </motion.div>
           ))}
 
-          <div
+          <motion.div
+            custom={4}
+            variants={itemVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
             className="relative h-40 col-span-1 overflow-hidden cursor-pointer md:h-48 md:col-span-2 rounded-xl"
             onClick={() => openCategory("ripostiglio", 0)}
           >
@@ -210,10 +217,15 @@ function IspirazionePage() {
                 className="text-white"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        <div
+        <motion.div
+          custom={5}
+          variants={itemVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
           className="relative rounded-xl overflow-hidden cursor-pointer min-h-[300px] md:min-h-[500px] lg:min-h-[700px] col-span-1 lg:col-span-2"
           onClick={() => openCategory("soggiorno", 0)}
         >
@@ -231,7 +243,7 @@ function IspirazionePage() {
               className="text-white"
             />
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* ================== LIGHTBOX ================== */}
