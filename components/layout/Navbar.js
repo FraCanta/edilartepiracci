@@ -79,7 +79,7 @@ function Navbar({ show }) {
 
                 {/* Ispirazioni dropdown mobile */}
                 <div className="flex flex-col">
-                  <div className="flex items-center justify-between w-full uppercase">
+                  <div className="flex items-center justify-between w-full uppercase ">
                     {/* Testo = LINK */}
                     <Link
                       href="/ispirazioni"
@@ -120,17 +120,23 @@ function Navbar({ show }) {
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3, ease: "easeOut" }}
-                        className="flex flex-col gap-4 pl-4 mt-3 overflow-hidden text-base"
+                        className="flex flex-col gap-4 pl-4 mt-3 overflow-hidden text-base border-b-2 border-b-yellow"
                       >
                         <Link
                           href="/ispirazioni/bagno"
-                          onClick={() => setMenuOpen(false)}
+                          onClick={() => {
+                            setMenuOpen(false); // chiude menu principale
+                            setInspirationOpen(false); // chiude dropdown
+                          }}
                         >
                           Bagno
                         </Link>
                         <Link
                           href="/ispirazioni/living"
-                          onClick={() => setMenuOpen(false)}
+                          onClick={() => {
+                            setMenuOpen(false); // chiude menu principale
+                            setInspirationOpen(false); // chiude dropdown
+                          }}
                         >
                           Living
                         </Link>
@@ -167,7 +173,7 @@ function Navbar({ show }) {
               ispirazioni
             </Link>
             <div className="absolute left-0 pt-2 transition-opacity duration-200 opacity-0 pointer-events-none top-full group-hover:opacity-100 group-hover:pointer-events-auto">
-              <div className="bg-white shadow-lg py-3 px-4 rounded-md min-w-[180px] text-black">
+              <div className="bg-white shadow-lg py-3 px-4  min-w-[180px] text-black border-b-2 border-b-yellow">
                 <div className="flex flex-col gap-3 text-sm">
                   <Link
                     href="/ispirazioni/bagno"
