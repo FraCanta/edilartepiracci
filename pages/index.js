@@ -42,7 +42,7 @@ export default function Home({ onHeroFinished }) {
             height={1080}
             className="object-cover w-full h-full"
           />
-          <div className="absolute left-0 -bottom-24 lg:bottom-0 overflow-hidden bg-[#DDD2C0] w-full  flex flex-col justify-center lg:gap-10 ">
+          <div className="absolute left-0 flex flex-col justify-center w-full overflow-hidden -bottom-24 lg:bottom-0 bg-sand lg:gap-10 ">
             <h2 className="px-4 py-6 text-3xl font-medium lg:text-4xl fxl:text-5xl lg:px-10">
               Alcuni nostri fornitori
             </h2>

@@ -123,13 +123,13 @@ function Navbar({ show }) {
                         className="flex flex-col gap-4 pl-4 mt-3 overflow-hidden text-base"
                       >
                         <Link
-                          href="/ispirazioni/materiali"
+                          href="/ispirazioni/bagno"
                           onClick={() => setMenuOpen(false)}
                         >
                           Bagno
                         </Link>
                         <Link
-                          href="/ispirazioni/stili"
+                          href="/ispirazioni/living"
                           onClick={() => setMenuOpen(false)}
                         >
                           Living
@@ -170,13 +170,13 @@ function Navbar({ show }) {
               <div className="bg-white shadow-lg py-3 px-4 rounded-md min-w-[180px] text-black">
                 <div className="flex flex-col gap-3 text-sm">
                   <Link
-                    href="/ispirazioni/materiali"
+                    href="/ispirazioni/bagno"
                     className="transition-opacity hover:opacity-70"
                   >
                     Bagno
                   </Link>
                   <Link
-                    href="/ispirazioni/stili"
+                    href="/ispirazioni/living"
                     className="transition-opacity hover:opacity-70"
                   >
                     Living
