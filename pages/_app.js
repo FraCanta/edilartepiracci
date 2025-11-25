@@ -6,19 +6,13 @@ import { useEffect, useState } from "react";
 
 export default function App({ Component, pageProps }) {
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(false);
   const router = useRouter();
 
-  // Stato per far comparire la navbar dal layout
-  const [showNavbar, setShowNavbar] = useState(false);
-
   useEffect(() => {
-    const handleStart = (url) => {
-      setIsTransitioning(true);
-    };
-
-    const handleComplete = () => {
+    const handleStart = () => setIsTransitioning(true);
+    const handleComplete = () =>
       setTimeout(() => setIsTransitioning(false), 500);
-    };
 
     router.events.on("routeChangeStart", handleStart);
     router.events.on("routeChangeComplete", handleComplete);
@@ -31,6 +25,13 @@ export default function App({ Component, pageProps }) {
     };
   }, [router]);
 
+  // Mostra subito la navbar solo se la pagina NON ha Hero animato
+  useEffect(() => {
+    if (!pageProps.hasHeroAnimated) {
+      setShowNavbar(true);
+    }
+  }, [pageProps.hasHeroAnimated]);
+
   return (
     <Layout showNavbar={showNavbar}>
       <PageTransition
@@ -39,7 +40,7 @@ export default function App({ Component, pageProps }) {
       />
       <Component
         {...pageProps}
-        onHeroFinished={() => setShowNavbar(true)} // 🔥 modo corretto
+        onHeroFinished={() => setShowNavbar(true)} // comparirà alla fine dell’animazione
       />
     </Layout>
   );

@@ -134,6 +134,13 @@ a {
   background-repeat: no-repeat;
 }
 
+.bg-progetti {
+  background-image: url("/assets/progetti/hero_progetti.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 @media screen and (max-width: 768px) {
   .bg-flower {
     background-size: cover;

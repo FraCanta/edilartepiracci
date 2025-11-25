@@ -1,5 +1,6 @@
 import Banner from "@/components/layout/Banner";
 import Hero from "@/components/layout/Hero";
+import Reviews from "@/components/layout/Reviews";
 import StickyBanner from "@/components/layout/StickyBanner";
 import Ispirazione from "@/components/Sections/Ispirazione/Ispirazione";
 import { Icon } from "@iconify/react";
@@ -8,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function Home({ onHeroFinished }) {
+export default function Home({ onHeroFinished, hasHeroAnimated }) {
   return (
     <>
       <Head>
@@ -22,16 +23,7 @@ export default function Home({ onHeroFinished }) {
       <Hero onHeroFinished={onHeroFinished} />
       <StickyBanner />
 
-      <div className="flex flex-col gap-10 px-4 py-6 my-10 overflow-hidden lg:mb-0 lg:py-10 lg:px-10 lg:justify-center lg:gap-20">
-        <h2 className="text-3xl font-medium lg:text-4xl fxl:text-5xl">
-          Dicono di noi
-        </h2>
-        <script src="https://elfsightcdn.com/platform.js" async></script>
-        <div
-          className="elfsight-app-91403e13-7093-478f-a7c3-731b0445758e"
-          data-elfsight-app-lazy
-        ></div>
-      </div>
+      <Reviews />
 
       <div className="flex flex-col gap-20 ">
         <div className="relative">
@@ -66,7 +58,7 @@ export default function Home({ onHeroFinished }) {
             fornitori, ascolto del cliente, responsabilità nel tempo.
           </p>
           <Link
-            href="/"
+            href="/chi-siamo"
             className="w-full px-6 py-4 text-lg text-center text-white uppercase bg-yellow xl:text-sm lg:px-10 2xl:text-base md:py-5 lg:max-w-max"
           >
             scopri di più
@@ -209,13 +201,13 @@ export default function Home({ onHeroFinished }) {
             </p>
           </div>
         </div>
-        <div className="z-10 flex flex-col gap-4 mx-auto text-center max-w-max-lg">
+        <div className="z-10 flex flex-col items-center gap-4 mx-auto text-center max-w-max-lg">
           <h3 className="text-xl font-medium lg:text-2xl">
             La tua casa, con materiali che durano nel tempo e raccontano chi sei
           </h3>
           <Link
             href="/"
-            className="uppercase bg-yellow text-white px-[20px] py-[20px] text-center text-lg xl:text-sm lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5"
+            className="uppercase bg-yellow max-w-max text-white px-[20px] py-[20px] text-center text-lg xl:text-sm lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5"
           >
             Approfondisci i passaggi
           </Link>
@@ -238,7 +230,7 @@ export default function Home({ onHeroFinished }) {
 
             {/* Bottone */}
             <Link
-              href="/"
+              href="/progetti-realizzati"
               className="order-3 w-full px-6 py-4 text-center text-white uppercase bg-yellow lg:order-2 lg:w-auto"
             >
               Vedi tutti
@@ -327,3 +319,11 @@ export default function Home({ onHeroFinished }) {
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  return {
+    props: {
+      hasHeroAnimated: true,
+    },
+  };
+};

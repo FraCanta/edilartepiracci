@@ -2,17 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
 
 function Navbar({ show }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [inspirationOpen, setInspirationOpen] = useState(false);
+  const { locale, pathname } = useRouter();
 
   return (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: show ? 1 : 0, y: show ? 0 : -20 }}
       transition={{ duration: 0.35, ease: "easeOut" }}
-      className="w-full h-[70px] lg:h-[100px] fixed top-0 z-[9999] backdrop-blur-sm bg-transparent"
+      className="w-full h-[70px] lg:h-[100px] fixed top-0 z-[9999] backdrop-blur-sm bg-transparent "
     >
       <nav className="grid items-center w-full h-full grid-cols-2 lg:grid-cols-3">
         {/* Logo */}
@@ -73,18 +75,40 @@ function Navbar({ show }) {
               className="fixed lg:hidden pt-[8rem] top-0 left-0 w-full h-dvh bg-white "
             >
               <div className="flex flex-col uppercase w-[90%] mx-auto h-full gap-6 text-lg overflow-y-auto pb-8">
-                <Link href="/chi-siamo" onClick={() => setMenuOpen(false)}>
+                <Link
+                  href="/chi-siamo"
+                  className={`${
+                    pathname === "/chi-siamo"
+                      ? "font-semibold transition-all ease-linear"
+                      : ""
+                  }`}
+                  onClick={() => setMenuOpen(false)}
+                >
                   chi siamo
                 </Link>
 
                 {/* Ispirazioni dropdown mobile */}
-                <div className="flex flex-col">
+                <div
+                  className={`flex flex-col  ${
+                    inspirationOpen
+                      ? "border border-yellow px-2 py-2 transition-all"
+                      : "border-none px-0 py-0 transition-all"
+                  }`}
+                >
+                  {" "}
                   <div className="flex items-center justify-between w-full uppercase ">
                     {/* Testo = LINK */}
                     <Link
                       href="/ispirazioni"
-                      onClick={() => setMenuOpen(false)}
-                      className="flex-1"
+                      onClick={() => {
+                        setMenuOpen(false); // chiude menu principale
+                        setInspirationOpen(false); // chiude dropdown
+                      }}
+                      className={`${
+                        pathname === "/ispirazioni"
+                          ? "font-semibold transition-all ease-linear"
+                          : "flex-1"
+                      }`}
                     >
                       ispirazioni
                     </Link>
@@ -112,7 +136,6 @@ function Navbar({ show }) {
                       </svg>
                     </button>
                   </div>
-
                   <AnimatePresence>
                     {inspirationOpen && (
                       <motion.div
@@ -120,7 +143,7 @@ function Navbar({ show }) {
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3, ease: "easeOut" }}
-                        className="flex flex-col gap-4 pl-4 mt-3 overflow-hidden text-base border-b-2 border-b-yellow"
+                        className="flex flex-col gap-4 mt-3 overflow-hidden text-base "
                       >
                         <Link
                           href="/ispirazioni/bagno"
@@ -128,6 +151,11 @@ function Navbar({ show }) {
                             setMenuOpen(false); // chiude menu principale
                             setInspirationOpen(false); // chiude dropdown
                           }}
+                          className={`${
+                            pathname === "/ispirazioni/bagno"
+                              ? "font-semibold transition-all ease-linear"
+                              : ""
+                          }`}
                         >
                           Bagno
                         </Link>
@@ -137,6 +165,11 @@ function Navbar({ show }) {
                             setMenuOpen(false); // chiude menu principale
                             setInspirationOpen(false); // chiude dropdown
                           }}
+                          className={`${
+                            pathname === "/ispirazioni/living"
+                              ? "font-semibold transition-all ease-linear"
+                              : ""
+                          }`}
                         >
                           Living
                         </Link>
@@ -145,10 +178,26 @@ function Navbar({ show }) {
                   </AnimatePresence>
                 </div>
 
-                <Link href="/" onClick={() => setMenuOpen(false)}>
+                <Link
+                  href="/progetti-realizzati"
+                  onClick={() => setMenuOpen(false)}
+                  className={`${
+                    pathname === "/progetti-realizzati"
+                      ? "font-semibold transition-all ease-linear"
+                      : ""
+                  }`}
+                >
                   progetti realizzati
                 </Link>
-                <Link href="/contatti" onClick={() => setMenuOpen(false)}>
+                <Link
+                  className={`${
+                    pathname === "/contatti"
+                      ? "font-semibold transition-all ease-linear"
+                      : ""
+                  }`}
+                  href="/contatti"
+                  onClick={() => setMenuOpen(false)}
+                >
                   contatti
                 </Link>
                 <Link
@@ -164,36 +213,78 @@ function Navbar({ show }) {
         </AnimatePresence>
 
         {/* MENU DESKTOP */}
-        <div className="items-center justify-between hidden text-black uppercase xl:text-sm 2xl:text-base fxl:text-lg lg:flex">
-          <Link href="/chi-siamo">chi siamo</Link>
+        <div className="relative items-center justify-between hidden text-black uppercase lg:flex xl:text-sm 2xl:text-base fxl:text-lg">
+          <Link
+            className={`${
+              pathname === "/chi-siamo"
+                ? "font-semibold transition-all ease-linear"
+                : ""
+            }`}
+            href="/chi-siamo"
+          >
+            chi siamo
+          </Link>
 
-          {/* Ispirazioni dropdown desktop */}
+          {/* Wrapper per ispirazioni + dropdown */}
           <div className="relative group">
-            <Link href="/ispirazioni" className="uppercase cursor-pointer">
+            <Link
+              className={`${
+                pathname === "/ispirazioni"
+                  ? "font-semibold transition-all ease-linear px-3 py-2 border border-transparent group-hover:border-t-yellow group-hover:border-l-yellow group-hover:border-r-yellow"
+                  : "inline-flex items-center px-3 py-2 uppercase border border-transparent group-hover:border-t-yellow group-hover:border-l-yellow group-hover:border-r-yellow"
+              }`}
+              href="/ispirazioni"
+            >
               ispirazioni
             </Link>
-            <div className="absolute left-0 pt-2 transition-opacity duration-200 opacity-0 pointer-events-none top-full group-hover:opacity-100 group-hover:pointer-events-auto">
-              <div className="bg-white shadow-lg py-3 px-4  min-w-[180px] text-black border-b-2 border-b-yellow">
-                <div className="flex flex-col gap-3 text-sm">
-                  <Link
-                    href="/ispirazioni/bagno"
-                    className="transition-opacity hover:opacity-70"
-                  >
-                    Bagno
-                  </Link>
-                  <Link
-                    href="/ispirazioni/living"
-                    className="transition-opacity hover:opacity-70"
-                  >
-                    Living
-                  </Link>
-                </div>
+
+            {/* Dropdown assoluto */}
+            <div className="absolute inset-0 transition-opacity duration-300 opacity-0 top-full group-hover:opacity-100">
+              <div className="flex flex-col gap-3 p-3 text-sm bg-transparent border-b border-l border-r backdrop-blur-sm border-l-yellow border-r-yellow border-b-yellow">
+                <Link
+                  className={`${
+                    pathname === "/ispirazioni/bagno"
+                      ? "underline"
+                      : "hover:opacity-70"
+                  }`}
+                  href="/ispirazioni/bagno"
+                >
+                  Bagno
+                </Link>
+                <Link
+                  href="/ispirazioni/living"
+                  className={`${
+                    pathname === "/ispirazioni/living"
+                      ? "underline"
+                      : "hover:opacity-70"
+                  }`}
+                >
+                  Living
+                </Link>
               </div>
             </div>
           </div>
 
-          <Link href="/">progetti realizzati</Link>
-          <Link href="/contatti">contatti</Link>
+          <Link
+            href="/progetti-realizzati"
+            className={`${
+              pathname === "/progetti-realizzati"
+                ? "font-semibold transition-all ease-linear"
+                : ""
+            }`}
+          >
+            progetti realizzati
+          </Link>
+          <Link
+            href="/contatti"
+            className={`${
+              pathname === "/contatti"
+                ? "font-semibold transition-all ease-linear"
+                : ""
+            }`}
+          >
+            contatti
+          </Link>
         </div>
 
         {/* Bottone desktop */}
