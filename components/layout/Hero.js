@@ -19,10 +19,10 @@ export default function Hero({ onHeroFinished }) {
         className="absolute inset-0"
       >
         <Image
-          src="/assets/hero_piracci.jpg"
+          src="/assets/hero_home2.jpg"
           alt="hero pagina"
           fill
-          className="object-cover object-right lg:object-center"
+          className="object-cover object-center lg:object-center"
         />
       </motion.div>
 

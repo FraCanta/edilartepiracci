@@ -19,6 +19,7 @@ function ChiSiamo({ onHeroFinished }) {
         paragraph="Storia familiare, competenza tecnica e responsabilità verso chi ci sceglie. Ogni cosa per ogni casa."
         link="/"
         linkName="incontriamoci in showroom"
+        backgroundClass="bg-[url('/assets/hero_chisiamo.jpg')]"
       />
       <MetricsCountdown />
       <div className="px-6 pb-10 lg:p-10">

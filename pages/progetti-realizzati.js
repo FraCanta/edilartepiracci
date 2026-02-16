@@ -15,7 +15,7 @@ Scorri i progetti e vieni in showroom a dirci: “Voglio un risultato così, pe
         linkCta2="/"
         linkName1="guarda i progetti"
         linkName2="prenota la consulenza"
-        backgroundClass="bg-progetti"
+        backgroundClass="bg-[url('/assets/hero_progetti.jpg')]"
       />
       <Reviews />
       <CardGrid />

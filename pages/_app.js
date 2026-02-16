@@ -1,6 +1,8 @@
 import Layout from "@/components/layout/layout";
 import PageTransition from "@/components/layout/PageTransition";
 import "@/styles/globals.css";
+import "@/styles/swiper.css";
+
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 

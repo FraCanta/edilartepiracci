@@ -100,14 +100,14 @@ a {
 }
 
 .bg-bagno {
-  background-image: url("/assets/ispirazioni/bagno/bagno.jpg");
+  background-image: url("/assets/home/card_bagno.webp");
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
 }
 
 .bg-living {
-  background-image: url("/assets/ispirazioni/living/living.jpg");
+  background-image: url("/assets/home/card_living.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -121,14 +121,14 @@ a {
 }
 
 .bg-showroom {
-  background-image: url("/assets/showroom.jpg");
+  background-image: url("/assets/home/showroom_section.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .bg-consulenza {
-  background-image: url("/assets/consulenza.jpg");
+  background-image: url("/assets/home/consulenza_section.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -16,23 +16,21 @@ function HeroPage({
 }) {
   return (
     <div
-      className={`h-[calc(90svh-70px)] lg:h-[calc(70svh-100px)] w-full flex flex-col justify-end relative ${
-        backgroundClass ? backgroundClass : "bg-blue/60"
-      }`}
+      className={`h-[90svh]  w-full flex flex-col justify-end relative ${backgroundClass} bg-cover bg-center"}`}
     >
       <div
-        className={`${backgroundClass ? "absolute inset-0 bg-black/30" : ""}`}
+        className={`${backgroundClass ? "absolute inset-0 bg-black/20" : ""}`}
       />
       <div className="z-50 px-4 pb-6 lg:pb-20 lg:px-10">
         <div className="flex flex-wrap items-end justify-between w-full h-full gap-y-4">
           {/* Titolo e paragrafo */}
           <div className="flex flex-col gap-2 lg:gap-6">
             <h1
-              className="text-[32px] lg:text-5xl fxl:text-[64px] text-white font-medium"
+              className="text-[32px] lg:text-5xl fxl:text-[64px] text-black font-medium"
               dangerouslySetInnerHTML={{ __html: title }}
             />
             <p
-              className="text-lg text-white lg:max-w-3xl fxl:max-w-max lg:text-xl fxl:text-2xl"
+              className="text-lg text-black lg:max-w-3xl fxl:max-w-max lg:text-xl fxl:text-2xl"
               dangerouslySetInnerHTML={{ __html: paragraph }}
             />
             {/* Secondo link sotto il testo */}

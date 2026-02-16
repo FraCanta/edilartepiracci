@@ -13,6 +13,7 @@ export default function Contatti() {
       <HeroPage
         title={"Parliamone: <br/> ti aspettiamo in showroom"}
         paragraph={"Chiamaci e prenota un appuntamento"}
+        backgroundClass="bg-[url('/assets/hero_contatti.jpg')]"
       />
 
       <section className="relative w-full">
