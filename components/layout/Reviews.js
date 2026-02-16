@@ -6,9 +6,10 @@ function Reviews() {
       <h2 className="text-3xl font-medium lg:text-4xl fxl:text-5xl">
         Dicono di noi
       </h2>
+
       <script src="https://elfsightcdn.com/platform.js" async></script>
       <div
-        className="elfsight-app-91403e13-7093-478f-a7c3-731b0445758e"
+        className="elfsight-app-d3944196-da86-4ad6-84aa-5c985058fd61"
         data-elfsight-app-lazy
       ></div>
     </div>
