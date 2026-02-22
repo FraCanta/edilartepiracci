@@ -11,26 +11,22 @@ export default function FAQ() {
 
   const faqs = [
     {
-      q: "Do you charge for each upgrade?",
-      a: "Lemon drops chocolate cake gummies carrot cake chupa chups muffin topping. Sesame snaps icing marzipan gummi bears macaroon dragée danish caramels powder.",
+      q: "La consulenza è gratuita?",
+      a: "Sì: offriamo gratuitamente consulenza e progettazione.",
     },
     {
-      q: "Do I need to purchase a license for each website?",
-      a: "Yes, you need to purchase a separate license for each website where you plan to use our components. Each license is tied to a single domain and its subdomains.",
+      q: "Si possono richiedere campioni di materiali?",
+      a: "Possiamo fornire le campionature dei materiali gratuitamente",
     },
     {
-      q: "What is regular license?",
-      a: "A regular license grants you the right to use our components on a single website or project. It includes access to all basic features and support.",
-    },
-    {
-      q: "What is extended license?",
-      a: "An extended license provides usage rights for multiple websites, priority support, and premium components. Ideal for agencies and enterprises.",
+      q: "Offrite supporto tecnico?",
+      a: "Per ogni prodotto da noi fornito, offriamo il supporto tecnico necessario.",
     },
   ];
 
   return (
-    <div className="py-8 lg:py-20">
-      <div className="px-6 lg:px-10">
+    <div className="py-8 lg:py-20 lg:w-[60%] mx-auto ">
+      <div className="px-4 lg:px-6">
         {/* HEADER */}
         <div className="mb-10 lg:mb-24">
           <h2 className="text-2xl font-semibold text-base-content md:text-3xl lg:text-4xl fxl:text-5xl">
@@ -39,7 +35,7 @@ export default function FAQ() {
         </div>
 
         {/* ACCORDION */}
-        <div className="w-full divide-y divide-neutral/20">
+        <div className="divide-y divide-neutral/20">
           {faqs.map((item, i) => (
             <div key={i} className="py-4 accordion-item">
               {/* Toggle Button */}
@@ -48,7 +44,9 @@ export default function FAQ() {
                 onClick={() => toggle(i)}
                 aria-expanded={openIndex === i}
               >
-                <span className="font-medium">{item.q}</span>
+                <span className="text-base font-medium lg:text-xl">
+                  {item.q}
+                </span>
 
                 {openIndex === i ? (
                   <Icon icon="mdi-light:minus" className="w-5 text-black" />

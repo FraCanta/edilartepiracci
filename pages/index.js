@@ -33,7 +33,10 @@ export default function Home({ onHeroFinished, hasHeroAnimated }) {
           property="og:title"
           content="Edilarte Piracci | La vostra casa, come l’avete immaginata"
         />
-
+        <meta
+          property="og:image"
+          content="https://edilartepiracci.vercel.app/assets/hero_home2.jpg"
+        />
         <meta
           property="og:description"
           content="Da 50 anni una realtà unica dove tradizione, innovazione e ricerca dei brand di eccellenza sul mercato si incontrano per dare forma alla casa dei tuoi sogni."
@@ -43,6 +46,10 @@ export default function Home({ onHeroFinished, hasHeroAnimated }) {
           property="twitter:domain"
           content="edilartepiracci.com
 "
+        />
+        <meta
+          name="twitter:image"
+          content="https://edilartepiracci.vercel.app/assets/hero_home2.jpg"
         />
         <meta
           property="twitter:url"

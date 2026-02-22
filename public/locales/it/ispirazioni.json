@@ -1,0 +1,258 @@
+{
+  "ispirazioni": {
+    "ispirazionePage": {
+      "bagno": {
+        "head": {
+          "seoImg": "/assets/ispirazioni/bagno/hero_bagno.webp",
+
+          "seoTitle": "Edilarte Piracci | Area bagno",
+          "seoDescription": "Rivestimenti, colori, carte da parati, sanitari e rubinetterie per vestire il vostro spazio con comfort ed eleganza."
+        },
+        "hero": {
+          "img": "/assets/ispirazioni/bagno/hero_bagno.webp",
+          "title": "<span class='font-medium'>Il bagno ideale per il vostro</span> <span><strong>relax</strong></span>, <span class='font-medium'>fatto di design e funzionalità</span>",
+          "description": "Rivestimento, colori, carte da parati, sanitari e rubinetterie per vestire il vostro spazio con comfort ed eleganza."
+        },
+        "masonry": {
+          "box-doccia": {
+            "label": "Box Doccia",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/box_doccia/box_doccia1.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/box_doccia/box_doccia2.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/box_doccia/box_doccia3.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/box_doccia/box_doccia4.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/box_doccia/box_doccia5.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/box_doccia/box_doccia6.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/box_doccia/box_doccia7.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/box_doccia/box_doccia8.webp"
+              }
+            ]
+          },
+          "doccioni": {
+            "label": "Doccioni",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/doccioni/doccioni1.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/doccioni/doccioni2.webp"
+              }
+            ]
+          },
+          "idromassaggio": {
+            "label": "Idromassaggio",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/idromassaggio/idromassaggio1.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/idromassaggio/idromassaggio2.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/idromassaggio/idromassaggio3.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/idromassaggio/idromassaggio4.webp"
+              }
+            ]
+          },
+          "lavabi": {
+            "label": "Lavabi",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/lavabi/lavabi3.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/lavabi/lavabi1.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/lavabi/lavabi2.webp"
+              },
+
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/lavabi/lavabi4.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/lavabi/lavabi5.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/lavabi/lavabi6.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/lavabi/lavabi7.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/lavabi/lavabi8.webp"
+              }
+            ]
+          },
+          "mobile-bagno": {
+            "label": "Mobile Bagno",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/mobilebagno/mobile_bagno1.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/mobilebagno/mobile_bagno2.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/mobilebagno/mobile_bagno3.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/mobilebagno/mobile_bagno4.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/mobilebagno/mobile_bagno5.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/mobilebagno/mobile_bagno6.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/mobilebagno/mobile_bagno7.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/mobilebagno/mobile_bagno8.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/mobilebagno/mobile_bagno9.webp"
+              }
+            ]
+          },
+          "pavimenti": { "label": "Pavimenti", "images": [] },
+          "porte": {
+            "label": "Porte",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/porte/porte1.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/porte/porte2.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/porte/porte3.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/porte/porte4.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/porte/porte5.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/porte/porte6.webp"
+              }
+            ]
+          },
+          "radiatori": {
+            "label": "Radiatori",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/radiatori/radiatori1.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/radiatori/radiatori2.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/radiatori/radiatori3.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/radiatori/radiatori4.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/radiatori/radiatori5.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/radiatori/radiatori6.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/radiatori/radiatori7.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/radiatori/radiatori8.webp"
+              }
+            ]
+          },
+          "rivestimenti": {
+            "label": "Rivestimenti",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/rivestimenti/rivestimenti1.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/rivestimenti/rivestimenti2.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/rivestimenti/rivestimenti3.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/rivestimenti/rivestimenti4.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/rivestimenti/rivestimenti5.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/rivestimenti/rivestimenti6.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/rivestimenti/rivestimenti7.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/rivestimenti/rivestimenti8.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/rivestimenti/rivestimenti9.webp"
+              }
+            ]
+          },
+          "rubinetteria": { "label": "Rubinetteria", "images": [] },
+          "sanitari": { "label": "Sanitari", "images": [] },
+          "spa": { "label": "SPA", "images": [] },
+          "termoarredi": { "label": "Termoarredi", "images": [] },
+          "vaporizzatore": { "label": "Vaporizzatore", "images": [] },
+          "vasche": { "label": "Vasche da bagno", "images": [] }
+        }
+      },
+      "spazio-living": {
+        "head": {
+          "seoImg": "/assets/ispirazioni/living/hero_living.webp",
+          "seoTitle": "Edilarte Piracci | Spazio living",
+          "seoDescription": "Pavimenti, carte da parati, colori ed elementi di arredo per accogliere i vostri momenti di condivisione, gioia e serenità."
+        },
+        "hero": {
+          "img": "/assets/ispirazioni/living/hero_living.webp",
+
+          "title": "<span class='font-medium'>Lo spazio living,</span> <span><strong>sorgente</strong></span> <span class='font-medium'>di vitalità quotidiana</span>",
+          "description": "Pavimenti, carte da parati, colori ed elementi di arredo per accogliere i vostri momenti di condivisione, gioia e serenità."
+        },
+        "masonry": {
+          "battiscopa": { "label": "Battiscopa", "images": [] },
+          "camini": { "label": "Camini", "images": [] },
+          "carta-da-parati": { "label": "Carta da parati", "images": [] },
+          "forni": { "label": "Forni", "images": [] },
+          "miscelatori": { "label": "Miscelatori", "images": [] },
+          "parquet": { "label": "Parquet", "images": [] },
+          "pavimenti": { "label": "Pavimenti", "images": [] },
+          "piastrelle": { "label": "Piastrelle", "images": [] },
+          "porte": { "label": "Porte", "images": [] },
+          "radiatori": { "label": "Radiatori", "images": [] },
+          "rivestimenti": { "label": "Rivestimenti", "images": [] },
+          "stufe": { "label": "Stufe", "images": [] }
+        }
+      }
+    }
+  }
+}

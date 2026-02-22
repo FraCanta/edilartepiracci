@@ -6,6 +6,8 @@ import MetricsCountdown from "@/components/MetricsCountdown.js/MetricsCountdown"
 import Team from "@/components/Sections/Team/Team";
 import HeroPage from "@/components/layout/HeroPage";
 import Head from "next/head";
+import Banner from "@/components/layout/Banner";
+import StickyBanner from "@/components/layout/StickyBanner";
 
 function ChiSiamo({ onHeroFinished }) {
   useEffect(() => {
@@ -203,7 +205,7 @@ function ChiSiamo({ onHeroFinished }) {
         </div>
       </div>
       {/* <Banner /> */}
-      {/* <div className="w-full min-h-[20svh] lg:min-h-[20vh] bg-gradient-to-r from-[#DDD2C0] to-yellow px-4 py-6 lg:py-10 lg:px-10 sticky top-[calc(100svh-20svh)] lg:top-[calc(100vh-20vh)] z-50 flex flex-col lg:flex-row  items-center lg:justify-between gap-4"> */}
+      <StickyBanner />
     </>
   );
 }

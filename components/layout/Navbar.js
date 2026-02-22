@@ -160,7 +160,7 @@ function Navbar({ show }) {
                           Bagno
                         </Link>
                         <Link
-                          href="/ispirazioni/living"
+                          href="/ispirazioni/spazio-living"
                           onClick={() => {
                             setMenuOpen(false); // chiude menu principale
                             setInspirationOpen(false); // chiude dropdown
@@ -252,7 +252,7 @@ function Navbar({ show }) {
                   Bagno
                 </Link>
                 <Link
-                  href="/ispirazioni/living"
+                  href="/ispirazioni/spazio-living"
                   className={`${
                     pathname === "/ispirazioni/living"
                       ? "underline"

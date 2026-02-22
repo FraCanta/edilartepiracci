@@ -18,7 +18,7 @@ function Ispirazione() {
         </Link>
 
         <Link
-          href="/ispirazioni/living"
+          href="/ispirazioni/spazio-living"
           className="flex items-center justify-center w-full rounded-sm shadow-lg aspect-square bg-living backdrop-blur-sm shadow-black/25"
         >
           <p className="px-5 lg:px-10 py-4 lg:py-[20px] text-xl 2xl:text-3xl font-medium backdrop-blur-sm text-white bg-white/30 rounded-sm">
