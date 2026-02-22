@@ -23,7 +23,7 @@ function HeroPage({
       />
       <div className="absolute bottom-0 left-0 flex items-end w-full gap-6 px-4 py-10 text-white lg:px-10 backdrop-blur-sm bg-black/10">
         {" "}
-        <div className="flex flex-wrap items-end w-full h-full gap-y-2 gap-x-14">
+        <div className="flex flex-wrap items-end w-full h-full gap-y-6 gap-x-14">
           {/* Titolo e paragrafo */}
           <div className="flex flex-col gap-3 lg:gap-6">
             <h1

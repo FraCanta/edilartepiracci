@@ -3,24 +3,13 @@ import Image from "next/image";
 const teamMembers = [
   {
     id: 1,
-    name: "Bonnie Green",
-    role: "CEO/Co-founder",
+    name: "Enzo Piracci",
     image: "/assets/avatar.png",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
   },
   {
     id: 2,
-    name: "Helene Fischer",
-    role: "Project Lead",
+    name: "Pino Piracci",
     image: "/assets/avatar.png",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
-  },
-  {
-    id: 3,
-    name: "Jese Leos",
-    role: "Marketing Strategist",
-    image: "/assets/avatar.png",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
   },
 ];
 
@@ -29,21 +18,31 @@ export default function Team() {
     <section className="my-10">
       <div className="px-4 py-8 mx-auto lg:py-16 lg:px-6">
         <div className="mx-auto mb-10">
-          <h2 className="mb-4 text-3xl font-medium leading-none text-black lg:text-4xl fxl:text-[50px]">
-            Volti reali, consulenti che ascoltano prima di proporre.
+          <h2 className="mb-6 text-3xl leading-tight text-black lg:text-5xl ">
+            <span className="font-medium">
+              La scelta quotidiana di dare ascolto ai vostri
+            </span>{" "}
+            <strong>desideri</strong>
           </h2>
           <p className="text-base text-black lg:text-lg">
-            Volti reali, consulenti dedicati e spazi aggiornati per toccare con
-            mano i materiali.
+            Raccogliere le vostre aspirazioni è alla base del nostro lavoro,
+            motivazione e fonte creativa per dare forma e comfort ai vostri
+            ambienti.
+            <br /> Spesso i nostri progetti iniziano dal passaparola di chi
+            racconta la propria esperienza, dalla consulenza nella scelta dei
+            materiali, al relativo equilibrio di forme e colori, <br />
+            fino alla progettazione di ciò che dovrà custodire le vostre
+            emozioni
           </p>
         </div>
 
         {/* FLEX RIGA + relative per allineare i separators */}
-        <div className="relative grid justify-between grid-cols-1 pt-10 lg:grid-cols-3 gap-y-10">
+        <div className="relative grid justify-between grid-cols-2 gap-10 pt-10">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-full bg-black/20"></div>
           {teamMembers.map((member, idx) => (
             <div
               key={member.id}
-              className="relative flex flex-col items-center flex-1 px-4 text-center text-black lg:px-6"
+              className="relative flex flex-col items-center flex-1 text-center text-black "
             >
               {/* Avatar */}
               <Image
@@ -59,20 +58,23 @@ export default function Team() {
                 {member.name}
               </h3>
 
-              {/* Ruolo */}
-              <p className="text-base text-black">{member.role}</p>
-
               {/* Bio */}
-              <p className="mt-2 text-sm text-black max-w-max lg:max-w-md lg:text-base ">
-                {member.bio}
-              </p>
-
-              {/* ★ SEPARATORE tra card (solo se non è l'ultima card) */}
-              {idx !== teamMembers.length - 1 && (
-                <div className="hidden md:block w-[1px] bg-black/20 h-full absolute right-0 top-0"></div>
-              )}
             </div>
           ))}
+        </div>
+
+        <div className="flex flex-col gap-6 mx-auto mt-20 lg:gap-10">
+          <h2 className="mb-6 text-3xl font-medium leading-tight text-black lg:text-5xl ">
+            Noi tutti al vostro servizio
+          </h2>
+          <div className="relative w-full lg:min-h-screen aspect-square lg:aspect-video">
+            <Image
+              src="/assets/placeholder.png"
+              alt="Tutto lo staff"
+              fill
+              className="object-cover w-full h-full "
+            />
+          </div>
         </div>
       </div>
     </section>
