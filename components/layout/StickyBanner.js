@@ -12,22 +12,22 @@ function StickyBanner() {
           <h2 className="text-[28px] fxl:text-[42px] text-white leading-none font-medium">
             Consulenza in showroom
           </h2>
-          <p className="text-[15px] fxl:text-[21px] text-white leading-none">
+          <p className="text-[16px] fxl:text-[21px] text-white leading-none">
             Assistenza, qualità, design e affidabilità nel tempo
           </p>
         </div>
 
-        <div className="flex items-center w-full gap-2 lg:w-fit">
+        <div className="flex flex-wrap items-center w-full gap-2 lg:w-fit">
           {" "}
           <Link
             href="/"
-            className="uppercase bg-blue text-white px-[10px] py-[20px] text-center text-[0.7rem] lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5 w-full lg:max-w-max"
+            className="uppercase bg-blue text-white px-[10px] py-[20px] text-center text-base lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5 w-full lg:max-w-max"
           >
             Prenotate la vostra visita
           </Link>
           <Link
             href="/"
-            className="uppercase border border-white text-white px-[10px] py-[20px] text-center text-[0.73rem] lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5 w-full lg:max-w-max"
+            className="uppercase border border-white text-white px-[10px] py-[20px] text-center text-base lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5 w-full lg:max-w-max"
           >
             Come funziona?
           </Link>

@@ -11,7 +11,7 @@ export default function Banner() {
           <h2 className="text-[25px] lg:text-[28px] fxl:text-[42px] text-white leading-none font-medium">
             Avete bisogno di assistenza?
           </h2>
-          <p className="text-[15px] fxl:text-[21px] text-white leading-none">
+          <p className="text-[16px] fxl:text-[21px] text-white leading-none">
             Chiamateci o prenotate un appuntamento in showroom
           </p>
         </div>

@@ -87,7 +87,7 @@ export default function Home({ onHeroFinished, hasHeroAnimated }) {
           <h2 className="text-[32px] lg:text-[38px] fxl:text-[52px] font-medium leading-none">
             Un lavoro che <strong>cresce in famiglia</strong>
           </h2>
-          <p className="text-sm text-black lg:text-lg fxl:text-xl">
+          <p className="text-base text-black lg:text-lg fxl:text-xl">
             Siamo un’<strong>azienda familiare alla seconda generazione</strong>
             : la nostra filosofia portante si fonda sull’
             <strong>ascolto</strong> delle esigenze e delle idee dei nostri
