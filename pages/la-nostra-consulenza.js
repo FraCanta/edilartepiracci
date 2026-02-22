@@ -6,9 +6,9 @@ function Consulenza() {
   return (
     <>
       <HeroPage
-        title={"La consulenza che <br/> ti fa scegliere bene."}
+        title={"Una consulenza <strong>personalizzata</strong>"}
         paragraph={
-          "Mezza giornata in showroom per capire cosa comprare e perchè, con rendering e abbinamenti. <br/>Poi un'offerta chiara e un post-vendita che non ti lascia mai solo."
+          "Iniziate a dare forma ai vostri spazi prenotando una <strong>consulenza gratuita</strong> nel nostro showroom"
         }
         backgroundClass="bg-[url('/assets/hero_consulenza.webp')]"
       />

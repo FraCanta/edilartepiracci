@@ -8,7 +8,7 @@ const Ispirazioni = () => {
   return (
     <>
       <HeroPage
-        title="<strong>Ispirazione, progetto e forma</strong>"
+        title="<strong>Ispirazione, <br/>progetto e forma</strong>"
         paragraph="Un mondo in ogni stanza: dalle vostre idee alle nostre proposte di <strong>materiali, forme e colori</strong> per realizzare con charme ed originalità i vostri spazi."
         backgroundClass="bg-[url('/assets/hero_ispirazioni.webp')]"
       />

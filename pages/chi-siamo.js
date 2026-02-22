@@ -5,6 +5,7 @@ import { Icon } from "@iconify/react";
 import MetricsCountdown from "@/components/MetricsCountdown.js/MetricsCountdown";
 import Team from "@/components/Sections/Team/Team";
 import HeroPage from "@/components/layout/HeroPage";
+import Head from "next/head";
 
 function ChiSiamo({ onHeroFinished }) {
   useEffect(() => {
@@ -14,6 +15,48 @@ function ChiSiamo({ onHeroFinished }) {
   }, []);
   return (
     <>
+      <Head>
+        <link rel="icon" type="image/png" href="/icon1.png" />
+        <link rel="icon" type="image/svg+xml" href="/icon0.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="Edilarte Piracci" />
+        <link rel="manifest" href="/manifest" />
+        <title>
+          Edilarte Piracci | La vostra casa, come l’avete immaginata
+        </title>
+        <meta
+          name="description"
+          content="Da 50 anni una realtà unica dove tradizione, innovazione e ricerca dei brand di eccellenza sul mercato si incontrano per dare forma alla casa dei tuoi sogni."
+        />
+        <meta name="author" content="Edilarte Piracci" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Edilarte Piracci | La vostra casa, come l’avete immaginata"
+        />
+
+        <meta
+          property="og:description"
+          content="Da 50 anni una realtà unica dove tradizione, innovazione e ricerca dei brand di eccellenza sul mercato si incontrano per dare forma alla casa dei tuoi sogni."
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:domain"
+          content="edilartepiracci.com
+"
+        />
+        <meta
+          property="twitter:url"
+          content="https://www.edilartepiracci.com
+/"
+        />
+        <meta
+          name="twitter:title"
+          content="Edilarte Piracci | La vostra casa, come l’avete immaginata"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+      </Head>
       <HeroPage
         title="Da oltre 50 anni, <br />  
 <strong>passione che veste gli spazi</strong>"
