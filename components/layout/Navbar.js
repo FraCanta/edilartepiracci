@@ -34,7 +34,7 @@ function Navbar({ show }) {
         </Link>
 
         {/* MENU MOBILE */}
-        <div className="flex justify-end pr-6 lg:hidden">
+        <div className="flex justify-end pr-6 lg:hidden ">
           <button
             className="nav__burger"
             style={{ "--length": 2 }}

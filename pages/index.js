@@ -82,7 +82,7 @@ export default function Home({ onHeroFinished, hasHeroAnimated }) {
         </div>
       </div>
 
-      <div className="grid items-center justify-center w-full grid-cols-1 gap-10 px-6 mt-36 lg:min-h-screen lg:gap-10 lg:grid-cols-2 lg:p-10">
+      <div className="grid items-center justify-center w-full grid-cols-1 gap-10 px-4 mt-36 lg:min-h-screen lg:gap-10 lg:grid-cols-2 lg:p-10">
         <div className="flex flex-col gap-6 text-black">
           <h2 className="text-[32px] lg:text-[38px] fxl:text-[52px] font-medium leading-none">
             Un lavoro che <strong>cresce in famiglia</strong>

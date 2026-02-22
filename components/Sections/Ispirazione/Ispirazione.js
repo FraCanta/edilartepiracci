@@ -3,7 +3,7 @@ import React from "react";
 
 function Ispirazione() {
   return (
-    <div className="flex flex-col gap-10 px-6 py-10 lg:px-10 lg:py-20 ">
+    <div className="flex flex-col gap-10 px-4 py-10 lg:px-10 lg:py-20 ">
       <h2 className="mb-6 text-3xl  lg:text-4xl fxl:text-[50px]">
         Trovate la vostra <strong>ispirazione</strong>
       </h2>
