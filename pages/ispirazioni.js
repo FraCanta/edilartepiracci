@@ -8,9 +8,9 @@ const Ispirazioni = () => {
   return (
     <>
       <HeroPage
-        title="Ispirazioni che <br/> diventano progetti."
-        paragraph="Clicca sulla stanza che preferisci per trovare tutte le idee che ti servono!"
-        backgroundClass="bg-[url('/assets/hero_ispirazioni.jpg')]"
+        title="<strong>Ispirazione, progetto e forma</strong>"
+        paragraph="Un mondo in ogni stanza: dalle vostre idee alle nostre proposte di <strong>materiali, forme e colori</strong> per realizzare con charme ed originalità i vostri spazi."
+        backgroundClass="bg-[url('/assets/hero_ispirazioni.webp')]"
       />
 
       <div className="grid justify-between w-full grid-cols-1 gap-10 lg:grid-cols-2 h-[490px] my-20 px-6 lg:px-10">

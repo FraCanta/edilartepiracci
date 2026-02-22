@@ -10,9 +10,9 @@ function Consulenza() {
         paragraph={
           "Mezza giornata in showroom per capire cosa comprare e perchè, con rendering e abbinamenti. <br/>Poi un'offerta chiara e un post-vendita che non ti lascia mai solo."
         }
-        backgroundClass="bg-[url('/assets/hero_consulenza.jpg')]"
+        backgroundClass="bg-[url('/assets/hero_consulenza.webp')]"
       />
-      <ConsulenzaSection />
+      {/* <ConsulenzaSection /> */}
     </>
   );
 }

@@ -7,15 +7,15 @@ function ProgettiRealizzati() {
   return (
     <>
       <HeroPage
-        title="Dalle idee ai risultati: <br /> progetti che durano."
-        paragraph="Materiali certificati, abbinamenti coerenti, assistenza nel tempo. <br/> 
-Scorri i progetti e vieni in showroom a dirci: “Voglio un risultato così, per casa mia.”"
+        title="Dalle idee alla realtà:<br/>
+<strong>spazi che vivono nel tempo</strong>"
+        paragraph="Da 50 anni uniamo tradizione, innovazione e ricerca di brand affermati sul mercato per <br/> realizzare i vostri spazi, trasformandoli da un desiderio a una casa che vi emoziona ogni giorno."
         link2={true}
         linkCta1="/"
         linkCta2="/"
-        linkName1="guarda i progetti"
-        linkName2="prenota la consulenza"
-        backgroundClass="bg-[url('/assets/hero_progetti.jpg')]"
+        linkName1="sfogliate i progetti"
+        linkName2="prenotate la vostra consulenza"
+        backgroundClass="bg-[url('/assets/hero_progetti.webp')]"
       />
       <Reviews />
       <CardGrid />

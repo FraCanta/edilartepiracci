@@ -15,14 +15,15 @@ function ChiSiamo({ onHeroFinished }) {
   return (
     <>
       <HeroPage
-        title="Da oltre 50 anni, <br /> la bellezza che resiste."
-        paragraph="Storia familiare, competenza tecnica e responsabilità verso chi ci sceglie. Ogni cosa per ogni casa."
+        title="Da oltre 50 anni, <br />  
+<strong>passione che veste gli spazi</strong>"
+        paragraph="Una realtà dove esperienza generazionale, dedizione al lavoro, ascolto del cliente e ricerca dell’eccellenza rendono <strong>ogni spazio un progetto unico</strong>."
         link="/"
-        linkName="incontriamoci in showroom"
-        backgroundClass="bg-[url('/assets/hero_chisiamo.jpg')]"
+        linkName="Prenota un appuntamento"
+        backgroundClass="bg-[url('/assets/hero_chisiamo.webp')]"
       />
-      <MetricsCountdown />
-      <div className="px-6 pb-10 lg:p-10">
+      {/* <MetricsCountdown /> */}
+      <div className="px-4 pb-10 lg:py-20 lg:px-6">
         <div className="grid justify-center grid-cols-1 gap-10 lg:grid-cols-2 min-h-[40vh]">
           <div>
             <h2 className="mb-6 text-3xl font-semibold leading-tight text-black lg:text-5xl ">

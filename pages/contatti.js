@@ -11,9 +11,13 @@ export default function Contatti() {
   return (
     <div>
       <HeroPage
-        title={"Parliamone: <br/> ti aspettiamo in showroom"}
-        paragraph={"Chiamaci e prenota un appuntamento"}
-        backgroundClass="bg-[url('/assets/hero_contatti.jpg')]"
+        title={
+          "Un <strong>viaggio creativo</strong> <br/>che inizia dallo showroom"
+        }
+        paragraph={
+          "Prenotate un appuntamento nel nostro showroom per parlarci vostre idee: <br/> vi aiuteremo a trasformare i vostri spazi in un’<strong>esperienza unica di stile e comfort</strong>, su misura per voi."
+        }
+        backgroundClass="bg-[url('/assets/hero_contatti.webp')]"
       />
 
       <section className="relative w-full">
