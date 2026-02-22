@@ -117,7 +117,7 @@ export default function Home({ onHeroFinished, hasHeroAnimated }) {
         <h2 className="px-4 py-6 text-3xl font-medium lg:text-4xl fxl:text-5xl lg:px-10">
           La nostra <strong>anima</strong>
         </h2>
-        <div className="grid items-center justify-center w-full grid-cols-2 my-10 text-center text-blue gap-y-6 fxl:gap-20 lg:grid-cols-5 lg:px-10">
+        <div className="grid items-center justify-center w-full grid-cols-3 my-10 text-center text-blue gap-y-6 fxl:gap-20 lg:grid-cols-5 lg:px-10">
           <div className="flex flex-col items-center justify-center w-full fxl:p-10">
             <Icon
               icon="material-symbols-light:editor-choice-outline"
