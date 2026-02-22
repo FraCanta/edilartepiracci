@@ -38,7 +38,7 @@ export default function Hero({ onHeroFinished }) {
           damping: 6.67,
         }}
         onAnimationComplete={onHeroFinished}
-        className="absolute bottom-0 left-0 px-4 py-4   lg:px-10  w-full xs:h-[64vh] sm:h-[58vh] lg:h-[38vh] 2xl:h-[42vh] fxl:h-[31vh] backdrop-blur-sm bg-black/10 lg:rounded-t-[60px] flex items-center gap-10 text-white"
+        className="absolute bottom-0 left-0 px-4 py-4   lg:px-10  w-full xs:h-[64vh] 2xs:h-[58vh] lg:h-[38vh] 2xl:h-[42vh] fxl:h-[31vh] backdrop-blur-sm bg-black/10 lg:rounded-t-[60px] flex items-center gap-10 text-white"
       >
         <div className="relative flex flex-col items-center w-full gap-6 lg:flex-row lg:gap-10">
           {/* Logo */}
