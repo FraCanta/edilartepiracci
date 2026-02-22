@@ -33,7 +33,10 @@ function ChiSiamo({ onHeroFinished }) {
           property="og:title"
           content="Edilarte Piracci | Una storia generazionale"
         />
-
+        <meta
+          property="og:image"
+          content="https://edilartepiracci.vercel.app/assets/hero_chisiamo.webp"
+        />
         <meta
           property="og:description"
           content="Da 50 anni vi guidiamo nella scelta degli elementi migliori per realizzare i vostri spazi, attraverso l’esplorazione di materiali, l’accostamento di forme, genere e colori."
@@ -48,6 +51,10 @@ function ChiSiamo({ onHeroFinished }) {
           property="twitter:url"
           content="https://www.edilartepiracci.com/chi-siamo
 /"
+        />
+        <meta
+          name="twitter:image"
+          content="https://edilartepiracci.vercel.app/assets/hero_chisiamo.webp"
         />
         <meta
           name="twitter:title"
