@@ -3,6 +3,7 @@ import Hero from "@/components/layout/Hero";
 import Reviews from "@/components/layout/Reviews";
 import StickyBanner from "@/components/layout/StickyBanner";
 import Ispirazione from "@/components/Sections/Ispirazione/Ispirazione";
+import Progetti from "@/components/Sections/Progetti/Progetti";
 import { Icon } from "@iconify/react";
 import Head from "next/head";
 import Image from "next/image";
@@ -19,10 +20,44 @@ export default function Home({ onHeroFinished, hasHeroAnimated }) {
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
         <meta name="apple-mobile-web-app-title" content="Edilarte Piracci" />
         <link rel="manifest" href="/manifest" />
+        <title>
+          Edilarte Piracci | La vostra casa, come l’avete immaginata
+        </title>
+        <meta
+          name="description"
+          content="Da 50 anni una realtà unica dove tradizione, innovazione e ricerca dei brand di eccellenza sul mercato si incontrano per dare forma alla casa dei tuoi sogni."
+        />
+        <meta name="author" content="Edilarte Piracci" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Edilarte Piracci | La vostra casa, come l’avete immaginata"
+        />
+
+        <meta
+          property="og:description"
+          content="Da 50 anni una realtà unica dove tradizione, innovazione e ricerca dei brand di eccellenza sul mercato si incontrano per dare forma alla casa dei tuoi sogni."
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:domain"
+          content="edilartepiracci.com
+"
+        />
+        <meta
+          property="twitter:url"
+          content="https://www.edilartepiracci.com
+/"
+        />
+        <meta
+          name="twitter:title"
+          content="Edilarte Piracci | La vostra casa, come l’avete immaginata"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <Hero onHeroFinished={onHeroFinished} />
       <StickyBanner />
-
+      <Progetti />
       <Reviews />
 
       <div className="flex flex-col gap-20 ">
@@ -46,22 +81,27 @@ export default function Home({ onHeroFinished, hasHeroAnimated }) {
           </div>
         </div>
       </div>
+
       <div className="grid items-center justify-center w-full grid-cols-1 gap-10 px-6 mt-36 lg:min-h-screen lg:gap-10 lg:grid-cols-2 lg:p-10">
         <div className="flex flex-col gap-6 text-black">
           <h2 className="text-[32px] lg:text-[38px] fxl:text-[52px] font-medium leading-none">
-            Un lavoro che cresce in famiglia
+            Un lavoro che <strong>cresce in famiglia</strong>
           </h2>
-          <p className="text-sm text-black fxl:text-xl">
-            Siamo un’azienda familiare con oltre 40 anni di esperienza nella
-            rivendita di materiali edili e finiture per privati. Oggi la seconda
-            generazione porta avanti gli stessi principi: scelta accurata dei
-            fornitori, ascolto del cliente, responsabilità nel tempo.
+          <p className="text-sm text-black lg:text-lg fxl:text-xl">
+            Siamo un’<strong>azienda familiare alla seconda generazione</strong>
+            : la nostra filosofia portante si fonda sull’
+            <strong>ascolto</strong> delle esigenze e delle idee dei nostri
+            clienti, sulla <strong>selezione</strong> dei marchi più prestigiosi
+            e sulla <strong>consulenza sartoriale</strong> nella scelta dei
+            materiali. Questo ci consente di dare vita a spazi su misura e
+            curati in ogni dettaglio, trasformando i sogni dei clienti in
+            progetti unici
           </p>
           <Link
             href="/chi-siamo"
             className="w-full px-6 py-4 text-lg text-center text-white uppercase bg-yellow xl:text-sm lg:px-10 2xl:text-base md:py-5 lg:max-w-max"
           >
-            scopri di più
+            la nostra storia
           </Link>
         </div>
         <div className="relative aspect-square">
@@ -75,9 +115,9 @@ export default function Home({ onHeroFinished, hasHeroAnimated }) {
       </div>
       <div>
         <h2 className="px-4 py-6 text-3xl font-medium lg:text-4xl fxl:text-5xl lg:px-10">
-          Perchè sceglierci
+          La nostra <strong>anima</strong>
         </h2>
-        <div className="grid items-center justify-center w-full grid-cols-2 my-10 text-center text-blue gap-y-6 fxl:gap-20 lg:grid-cols-4 lg:px-10">
+        <div className="grid items-center justify-center w-full grid-cols-2 my-10 text-center text-blue gap-y-6 fxl:gap-20 lg:grid-cols-5 lg:px-10">
           <div className="flex flex-col items-center justify-center w-full fxl:p-10">
             <Icon
               icon="material-symbols-light:editor-choice-outline"
@@ -86,7 +126,7 @@ export default function Home({ onHeroFinished, hasHeroAnimated }) {
               className="text-yellow w-16 h-16 lg:w-[100px] lg:h-[100px]"
             />
             <h3 className="mt-4 mb-2 text-sm font-medium lg:text-lg">
-              Qualità certificata
+              Consulenza
             </h3>
           </div>
           <div className="flex flex-col items-center justify-center w-full fxl:p-10">
@@ -97,7 +137,7 @@ export default function Home({ onHeroFinished, hasHeroAnimated }) {
               className="text-yellow  w-16 h-16 lg:w-[100px] lg:h-[100px]"
             />
             <h3 className="mt-4 mb-2 text-sm font-medium lg:text-lg">
-              Sartorialità
+              Qualità
             </h3>
           </div>
           <div className="flex flex-col items-center justify-center w-full fxl:p-10">
@@ -107,8 +147,17 @@ export default function Home({ onHeroFinished, hasHeroAnimated }) {
               height="100px"
               className="text-yellow  w-16 h-16 lg:w-[100px] lg:h-[100px]"
             />
+            <h3 className="mt-4 mb-2 text-sm font-medium lg:text-lg">Design</h3>
+          </div>
+          <div className="flex flex-col items-center justify-center w-full fxl:p-10">
+            <Icon
+              icon="material-symbols-light:shield-with-heart-outline"
+              width="100px"
+              height="100px"
+              className="text-yellow  w-16 h-16 lg:w-[100px] lg:h-[100px]"
+            />
             <h3 className="mt-4 mb-2 text-sm font-medium lg:text-lg">
-              Esclusività dei fornitori
+              Affidabilità
             </h3>
           </div>
           <div className="flex flex-col items-center justify-center w-full fxl:p-10">
@@ -119,13 +168,13 @@ export default function Home({ onHeroFinished, hasHeroAnimated }) {
               className="text-yellow  w-16 h-16 lg:w-[100px] lg:h-[100px]"
             />
             <h3 className="mt-4 mb-2 text-sm font-medium lg:text-lg">
-              Asssistenza post-vendita garantita
+              Storicità
             </h3>
           </div>
         </div>
       </div>
       <Banner />
-      <div className="relative flex flex-col justify-between min-h-screen p-4 lg:p-10 bg-consulenza">
+      {/* <div className="relative flex flex-col justify-between min-h-screen p-4 lg:p-10 bg-consulenza">
         <div className="z-10 flex flex-col gap-4 lg:gap-10">
           <div className="flex flex-col lg:gap-1">
             <h2 className="mb-6 text-3xl font-medium lg:text-4xl fxl:text-[50px]">
@@ -213,109 +262,9 @@ export default function Home({ onHeroFinished, hasHeroAnimated }) {
           </Link>
         </div>
         <div className="absolute inset-0 bg-white/10 backdrop-blur-md"></div>
-      </div>
+      </div> */}
       <Ispirazione />
       <div className="w-full aspect-square lg:h-screen bg-showroom"></div>
-      <div className="relative flex flex-col justify-center min-h-screen px-4 py-10 lg:px-10 lg:py-20 bg-flower">
-        {/* Overlay SEMPRE sotto */}
-        <div className="absolute inset-0 z-0 pointer-events-none bg-white/85"></div>
-
-        {/* Tutto il resto SEMPRE sopra */}
-        <div className="relative z-10 flex flex-col h-full gap-6 text-black">
-          <div className="grid w-full gap-6 lg:grid-cols-[1fr_auto]">
-            {/* Titolo */}
-            <h2 className="order-1 text-[32px] lg:text-[38px] fxl:text-[52px] font-medium leading-none">
-              Dalle parole ai fatti
-            </h2>
-
-            {/* Bottone */}
-            <Link
-              href="/progetti-realizzati"
-              className="order-3 w-full px-6 py-4 text-center text-white uppercase bg-yellow lg:order-2 lg:w-auto"
-            >
-              Vedi tutti
-            </Link>
-
-            {/* Testo */}
-            <p className="order-2 text-sm text-black lg:order-3 lg:col-span-2 lg:text-xl">
-              Residenze, appartamenti, strutture ricettive del territorio.
-              Stessa promessa: bellezza, funzionalità e durata.
-            </p>
-          </div>
-
-          <div className="relative z-10 grid justify-between w-full grid-cols-1 gap-10 mt-10 lg:grid-cols-3">
-            <div className="block w-full ">
-              <Link href="/">
-                <Image
-                  width={400}
-                  height={300}
-                  src="/assets/placeholder.png"
-                  className="w-full"
-                  alt=""
-                />
-
-                <h4 className="mt-6 mb-2 text-2xl font-semibold tracking-tight text-blue text-heading">
-                  Appartamento vista mare
-                </h4>
-                <p className="text-xl text-black">Vieste, [Anno]</p>
-
-                <p className="my-6 text-black text-body">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris
-                </p>
-              </Link>
-            </div>
-            <div className="block w-full ">
-              <Link href="/">
-                <Image
-                  width={400}
-                  height={300}
-                  src="/assets/placeholder.png"
-                  className="w-full"
-                  alt=""
-                />
-
-                <h4 className="mt-6 mb-2 text-2xl font-semibold tracking-tight text-blue text-heading">
-                  Appartamento vista mare
-                </h4>
-                <p className="text-xl text-black">Vieste, [Anno]</p>
-
-                <p className="my-6 text-black text-body">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris
-                </p>
-              </Link>
-            </div>
-            <div className="block w-full ">
-              <Link href="/">
-                <Image
-                  width={400}
-                  height={300}
-                  src="/assets/placeholder.png"
-                  className="w-full"
-                  alt=""
-                />
-
-                <h4 className="mt-6 mb-2 text-2xl font-semibold tracking-tight text-blue text-heading">
-                  Appartamento vista mare
-                </h4>
-                <p className="text-xl text-black">Vieste, [Anno]</p>
-
-                <p className="my-6 text-black text-body">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris
-                </p>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
     </>
   );
 }

@@ -6,25 +6,32 @@ import React from "react";
 function Footer() {
   return (
     <footer className="text-white footer_bg">
-      <div className="w-full p-4 py-6 lg:py-8">
+      <div className="w-full p-4 py-8 lg:py-8">
         <div className="gap-10 md:flex md:justify-between">
-          <div className="flex flex-col justify-between gap-2 mb-6 md:mb-0">
-            <Link href="/">
-              <Image
-                src="/assets/logo/logo.svg"
-                width={170}
-                height={80}
-                className="w-28 lg:w-[170px]"
-                alt="Edilarte Piracci Logo"
-              />
-            </Link>
-            <p>Edilarte Piracci s.a.s. di Piracci Giuseppe e Vincenzo & C.</p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-            </p>
+          <div className="flex flex-col justify-between gap-6 mb-6 md:mb-0 md:w-[40%] lg:w-[30%] pb-4 md:pb-0 border-b-[1px] border-white md:border-b-0">
+            <div className="flex flex-col gap-2">
+              <Link href="/">
+                <Image
+                  src="/assets/logo/logo.svg"
+                  width={170}
+                  height={80}
+                  className="w-28 lg:w-[170px]"
+                  alt="Edilarte Piracci Logo"
+                />
+              </Link>
+              <p className="text-lg">
+                <strong>Edilarte Piracci s.a.s.</strong> <br /> di Piracci
+                Giuseppe e Vincenzo & C.
+              </p>
+            </div>
+
+            <div>
+              <p>Da 50 anni arrediamo i vostri spazi, su misura per voi.</p>
+              <p>Sede legale: Contrada Valle Castellana 71010 Peschici (FG)</p>
+            </div>
           </div>
-          <div className="grid justify-between w-full grid-cols-1 gap-8 sm:gap-6 md:grid-cols-3">
+          <div className="grid justify-between w-full grid-cols-1 gap-8 sm:gap-6 md:grid-cols-3 md:w-[60%] lg:w-[70%]">
+            {" "}
             <div className="pb-4 border-b-[1px] border-white md:border-b-0 2xl:pl-4 lg:pl-3 md:border-l-[1px]">
               <h2 className="mb-6 text-sm font-medium uppercase text-heading">
                 Edilarte piracci
@@ -36,51 +43,42 @@ function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="https://tailwindcss.com/"
-                    className="hover:underline"
-                  >
+                  <Link href="/ispirazioni" className="hover:underline">
                     Ispirazioni
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="https://tailwindcss.com/"
-                    className="hover:underline"
-                  >
+                  <Link href="/progetti-realizzati" className="hover:underline">
                     Progetti realizzati
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="https://tailwindcss.com/"
-                    className="hover:underline"
-                  >
+                  <Link href="/contatti" className="hover:underline">
                     Lavora con noi
                   </Link>
                 </li>
               </ul>
             </div>
-            <div className="pb-4 border-b-[1px] border-white md:border-b-0 2xl:pl-4 lg:pl-2 md:border-l-[1px]">
-              <h2 className="mb-6 text-sm font-medium uppercase text-heading">
-                Consulenza
-              </h2>
-              <ul className="flex flex-col gap-2 max-w-max text-body ">
-                <li className="w-full">
-                  <Link
-                    href="/"
-                    className="uppercase flex items-center  bg-yellow text-white px-[20px] py-[20px] xl:px-10 text-center text-lg xl:text-sm lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5"
-                  >
-                    prenota ora
-                    <Icon
-                      icon="heroicons:chevron-right-20-solid"
-                      width="28px"
-                      height="28px"
-                      style={{ color: "#fff" }}
-                    />
-                  </Link>
-                </li>
-              </ul>
+            <div className="pb-4 border-b-[1px] border-white md:border-b-0 2xl:pl-4 lg:pl-2 md:border-l-[1px] flex flex-col gap-4">
+              <div className="flex flex-col gap-2">
+                <h2 className="text-sm font-medium uppercase text-heading">
+                  Consulenza
+                </h2>
+                <p>Scopri come funziona</p>
+              </div>
+
+              <Link
+                href="/"
+                className="uppercase flex items-center  bg-yellow text-white px-[20px] py-[20px] xl:px-10 justify-center text-lg xl:text-sm lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5 "
+              >
+                prenota ora
+                <Icon
+                  icon="heroicons:chevron-right-20-solid"
+                  width="28px"
+                  height="28px"
+                  style={{ color: "#fff" }}
+                />
+              </Link>
             </div>
             <div className="border-white md:pl-4 md:border-l-[1px]">
               <h2 className="mb-6 text-sm font-medium uppercase text-heading">
@@ -96,14 +94,19 @@ function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="tel:0884963016" className="hover:underline">
-                    0884.963016
+                  <Link href="tel:0884963001" className="hover:underline">
+                    Ufficio - 0884 963001
                   </Link>
                 </li>
                 <li>
-                  <p>
-                    Sede legale: Contrada Valle Castellana 71010 Peschici (FG)
-                  </p>
+                  <Link href="tel:0884964027" className="hover:underline">
+                    Edilizia - 0884 964027
+                  </Link>
+                </li>
+                <li>
+                  <Link href="tel:0884963016" className="hover:underline">
+                    Termoidraulica - 0884 963016
+                  </Link>
                 </li>
                 <li>
                   <div className="flex mt-4 ">

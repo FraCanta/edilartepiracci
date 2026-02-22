@@ -9,10 +9,10 @@ export default function Banner() {
       <div className="flex flex-col items-center w-full gap-4 py-6 lg:py-10 lg:flex-row lg:justify-between">
         <div className="flex flex-col justify-center w-full gap-2">
           <h2 className="text-[25px] lg:text-[28px] fxl:text-[42px] text-white leading-none font-medium">
-            Hai bisogno di assistenza?
+            Avete bisogno di assistenza?
           </h2>
           <p className="text-[15px] fxl:text-[21px] text-white leading-none">
-            Contattaci subito
+            Chiamateci o prenotate un appuntamento in showroom
           </p>
         </div>
 
@@ -21,7 +21,7 @@ export default function Banner() {
             href="/"
             className="w-full px-6 py-4 text-lg text-white uppercase lg:w-fit bg-yellow xl:text-sm lg:px-10 2xl:text-base md:py-5 lg:max-w-max"
           >
-            chiama
+            Contatti
           </Link>
         </div>
       </div>

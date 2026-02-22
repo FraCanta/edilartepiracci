@@ -38,34 +38,38 @@ export default function Hero({ onHeroFinished }) {
           damping: 6.67,
         }}
         onAnimationComplete={onHeroFinished}
-        className="absolute bottom-0 left-0 px-4 py-4  lg:py-20 lg:px-10  w-full xs:h-[32vh] sm:h-[28vh] fxl:h-[30vh] backdrop-blur-sm bg-black/10 lg:rounded-t-[60px] flex items-center gap-10 text-white"
+        className="absolute bottom-0 left-0 px-4 py-4   lg:px-10  w-full xs:h-[55vh] lg:h-[38vh] 2xl:h-[42vh] fxl:h-[31vh] backdrop-blur-sm bg-black/10 lg:rounded-t-[60px] flex items-center gap-10 text-white"
       >
         <div className="relative flex flex-col items-center w-full gap-6 lg:flex-row lg:gap-10">
           {/* Logo */}
-          <div className="absolute top-0 right-0 lg:static">
+          <div className="absolute right-0 top-6 lg:static">
             <Image
               src="/assets/flower_logo.svg"
               alt="flower"
               width={184}
               height={184}
-              className="w-20 h-20 md:w-[150px] md:h-[150px] xl:w-[120px] xl:h-[120px] fxl:w-[184px] fxl:h-[184px]"
+              className="w-20 h-20 md:w-[150px] md:h-[150px] 2xl:w-[180px] 2xl:h-[180px] fxl:w-[184px] fxl:h-[184px]"
             />
           </div>
 
           {/* Testo */}
-          <div className="flex flex-col gap-2 md:gap-3 fxl:gap-4 lg:text-left">
-            <p className="text-xs sm:text-sm md:text-xl lg:text-lg xl:text-lg">
-              Con noi scegli bene, una volta sola
-            </p>
+          <div className="flex flex-col gap-2 py-10 md:gap-3 fxl:gap-4 lg:text-left">
+            <h1 className="text-[38px] font-jost sm:text-[42px] xl:text-[48px] 2xl:text-[54px] fxl:text-[64px]  leading-none flex flex-col md:gap-1 lg:gap-2">
+              <span className="font-medium">La vostra casa,</span>
 
-            <h1 className="text-[38px] font-jost sm:text-[42px] md:text-[77px] xl:text-[56px] fxl:text-[64px] font-medium leading-none flex flex-wrap md:gap-1 lg:gap-4">
-              <span>Ogni cosa</span>
-              <span>per ogni casa</span>
+              <span className="font-bold">come l’avete immaginata.</span>
             </h1>
 
-            <p className="text-[14px] sm:text-sm md:text-2xl lg:text-xl">
-              Selezioniamo materiali certificati e introvabili, ti guidiamo con
-              una consulenza sartoriale fino a qui
+            <p className="text-[14px] sm:text-sm xl:text-base xl:max-w-[65rem] fxl:max-w-max">
+              Da 50 anni arrediamo i vostri spazi,{" "}
+              <strong>su misura per voi</strong>.
+              <br /> Una realtà unica dove tradizione, innovazione e ricerca dei
+              brand di eccellenza sul mercato si incontrano per dare forma alla
+              casa dei tuoi sogni.
+              <br /> Attraverso l’esplorazione di materiali, l’accostamento di
+              forme, genere e colori, vi guidiamo nella scelta degli elementi
+              migliori per{" "}
+              <strong>tradurre in realtà le idee dei vostri spazi</strong>.
             </p>
           </div>
         </div>

@@ -10,10 +10,10 @@ function StickyBanner() {
         {/* wrapper testo */}
         <div className="flex flex-col justify-center gap-2">
           <h2 className="text-[28px] fxl:text-[42px] text-white leading-none font-medium">
-            Affidati alla nostra consulenza in showroom
+            Consulenza in showroom
           </h2>
           <p className="text-[15px] fxl:text-[21px] text-white leading-none">
-            Qualità certificata, fornitori esclusivi, consulenza sartoriale
+            Assistenza, qualità, design e affidabilità nel tempo
           </p>
         </div>
 
@@ -23,13 +23,13 @@ function StickyBanner() {
             href="/"
             className="uppercase bg-blue text-white px-[10px] py-[20px] text-center text-[0.7rem] lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5 w-full lg:max-w-max"
           >
-            prenota
+            Prenotate la vostra visita
           </Link>
           <Link
             href="/"
             className="uppercase border border-white text-white px-[10px] py-[20px] text-center text-[0.73rem] lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5 w-full lg:max-w-max"
           >
-            scopri come funziona
+            Come funziona?
           </Link>
         </div>
       </div>
