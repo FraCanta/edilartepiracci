@@ -48,7 +48,7 @@ function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/progetti-realizzati" className="hover:underline">
+                  <Link href="/progetti" className="hover:underline">
                     Progetti realizzati
                   </Link>
                 </li>

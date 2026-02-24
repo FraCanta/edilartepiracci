@@ -23,7 +23,7 @@ function HeroPage({
       />
       <div className="absolute bottom-0 left-0 flex items-end w-full gap-6 px-4 py-10 text-white lg:px-10 backdrop-blur-sm bg-black/10">
         {" "}
-        <div className="flex flex-wrap items-end w-full h-full gap-y-6 gap-x-14">
+        <div className="flex flex-wrap items-end justify-between w-full h-full gap-y-6 gap-x-14">
           {/* Titolo e paragrafo */}
           <div className="flex flex-col gap-3 lg:gap-6">
             <h1
@@ -31,7 +31,7 @@ function HeroPage({
               dangerouslySetInnerHTML={{ __html: title }}
             />
             <p
-              className="text-base text-white lg:max-w-3xl fxl:max-w-max lg:text-xl fxl:text-xl"
+              className="text-base text-white max-w-max lg:text-xl fxl:text-xl"
               dangerouslySetInnerHTML={{ __html: paragraph }}
             />
             {/* Secondo link sotto il testo */}
@@ -54,7 +54,7 @@ function HeroPage({
                 {linkCta2 && (
                   <Link
                     href={linkCta2}
-                    className="uppercase w-full lg:w-fit bg-yellow text-white px-[20px] py-[20px] text-center text-base xl:text-sm lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5"
+                    className="flex place-self-end uppercase w-full lg:w-fit bg-yellow text-white px-[20px] py-[20px] text-center text-base xl:text-sm lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5"
                   >
                     {linkName2}
                   </Link>

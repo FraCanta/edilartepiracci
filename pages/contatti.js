@@ -1,6 +1,7 @@
 import HeroPage from "@/components/layout/HeroPage";
 import { Icon } from "@iconify/react";
 import dynamic from "next/dynamic";
+import Head from "next/head";
 import Link from "next/link";
 
 const ContattiMap = dynamic(() => import("../components/ContattiMap"), {
@@ -9,7 +10,58 @@ const ContattiMap = dynamic(() => import("../components/ContattiMap"), {
 
 export default function Contatti() {
   return (
-    <div>
+    <>
+      <Head>
+        <link rel="icon" type="image/png" href="/icon1.png" />
+        <link rel="icon" type="image/svg+xml" href="/icon0.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="Edilarte Piracci" />
+        <link rel="manifest" href="/manifest" />
+        <title>Edilarte Piracci | Contatti</title>
+        <meta
+          name="description"
+          content="Prenotate un appuntamento nel nostro showroom per parlarci vostre idee.
+"
+        />
+        <meta name="author" content="Edilarte Piracci" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Edilarte Piracci | Contatti
+"
+        />
+        <meta
+          property="og:image"
+          content="https://edilartepiracci.vercel.app/assets/hero_contatti.webp"
+        />
+        <meta
+          property="og:description"
+          content="Prenotate un appuntamento nel nostro showroom per parlarci vostre idee.
+"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:domain"
+          content="edilartepiracci.com
+"
+        />
+        <meta
+          name="twitter:image"
+          content="https://edilartepiracci.vercel.app/assets/hero_contatti.webp"
+        />
+        <meta
+          property="twitter:url"
+          content="https://www.edilartepiracci.com
+/"
+        />
+        <meta
+          name="twitter:title"
+          content="Edilarte Piracci | Contatti
+"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+      </Head>
       <HeroPage
         title={
           "Un <strong>viaggio creativo</strong> <br/>che inizia dallo showroom"
@@ -136,6 +188,6 @@ export default function Contatti() {
 
         <ContattiMap />
       </section>
-    </div>
+    </>
   );
 }

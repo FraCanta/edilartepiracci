@@ -1,0 +1,51 @@
+{
+  "progetti": {
+    "method": {
+      "title": "Il nostro <strong>metodo di lavoro</strong>",
+      "steps": [
+        {
+          "number": "1",
+          "title": "Visita personalizzata <br /> in showroom"
+        },
+        {
+          "number": "2",
+          "title": "Proposta di progetto"
+        },
+        {
+          "number": "3",
+          "title": "Offerta economica"
+        },
+        {
+          "number": "4",
+          "title": "Supporto al cantiere"
+        },
+        {
+          "number": "5",
+          "title": "Supporto post-vendita e ricambi"
+        }
+      ]
+    },
+    "singleProjects": {
+      "vieste-2023": {
+        "type": [{ "posto": "Bagno" }, { "stile": "Stile" }],
+        "title": "Vieste, 2023",
+        "description": "Un progetto che unisce la bellezza del mare alla funzionalità degli spazi, creando un ambiente accogliente e raffinato. La scelta di materiali naturali e colori ispirati alla costa rende questa casa un rifugio perfetto per chi ama la vita marina."
+      },
+      "foggia-2023": {
+        "type": [{ "posto": "Living" }, { "stile": "Stile" }],
+        "title": "Foggia, 2023",
+        "description": "Un progetto che fonde eleganza e modernità, con un design contemporaneo e materiali di alta qualità. Gli spazi sono stati ottimizzati per creare un ambiente funzionale e accogliente, perfetto per la vita urbana foggiana."
+      },
+      "vico-del-gargano-2021": {
+        "type": [{ "posto": "Bagno" }, { "stile": "Stile" }],
+        "title": "Vico del Gargano, 2021",
+        "description": "Un progetto che celebra la storia e l'arte di Vico del Gargano, con un design classico e raffinato. L'uso di materiali pregiati e dettagli architettonici rende questa casa un vero gioiello nel cuore della città eterna."
+      },
+      "rodi-garganico-2020": {
+        "type": [{ "posto": "Living" }, { "stile": "Stile" }],
+        "title": "Rodi Garganico, 2020",
+        "description": "Un progetto che incarna lo spirito innovativo di Rodi Garganico, con un design moderno e minimalista. Gli spazi sono stati progettati per massimizzare la funzionalità e l'estetica, creando un ambiente urbano e sofisticato."
+      }
+    }
+  }
+}

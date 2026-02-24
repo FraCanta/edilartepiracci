@@ -1,16 +1,46 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import CtaPrimary from "./layout/Cta/CtaPrimary";
 const cardsData = [
-  { id: 1, title: "Card 1", img: "/assets/placeholder.png" },
-  { id: 2, title: "Card 2", img: "/assets/placeholder.png" },
-  { id: 3, title: "Card 3", img: "/assets/placeholder.png" },
-  { id: 4, title: "Card 4", img: "/assets/placeholder.png" },
-  { id: 5, title: "Card 5", img: "/assets/placeholder.png" },
-  { id: 6, title: "Card 6", img: "/assets/placeholder.png" },
-  { id: 7, title: "Card 7", img: "/assets/placeholder.png" },
-  { id: 8, title: "Card 8", img: "/assets/placeholder.png" },
+  {
+    id: 1,
+    sub: [{ posto: "Bagno" }, { stile: "Stile" }],
+    title: "Vieste - 2023",
+    desc: "Palette [stile] con [materiali/finitura] per un risultato coerente e funzionale.",
+    img: "/assets/placeholder.png",
+  },
+  {
+    id: 2,
+    sub: [{ posto: "Living" }, { stile: "Stile" }],
+
+    title: "Foggia - 2023",
+    desc: "Palette [stile] con [materiali/finitura] per un risultato coerente e funzionale.",
+    img: "/assets/placeholder.png",
+  },
+  {
+    id: 3,
+    sub: [{ posto: "Bagno" }, { stile: "Stile" }],
+    title: "Vico del Gargano - 2021",
+    desc: "Palette [stile] con [materiali/finitura] per un risultato coerente e funzionale.",
+    img: "/assets/placeholder.png",
+  },
+  {
+    id: 4,
+    sub: [{ posto: "Living" }, { stile: "Stile" }],
+    title: "Rodi Garganico - 2020",
+    desc: "Palette [stile] con [materiali/finitura] per un risultato coerente e funzionale.",
+    img: "/assets/placeholder.png",
+  },
 ];
+
+const slugify = (text) =>
+  text
+    .toLowerCase()
+    .replace(/\s+/g, "-") // spazi → trattini
+    .replace(/[^\w\-]+/g, "") // rimuove simboli strani
+    .replace(/\-\-+/g, "-") // evita doppi trattini
+    .trim();
 function CardGrid() {
   const [visibleCount, setVisibleCount] = useState(4);
 
@@ -20,35 +50,54 @@ function CardGrid() {
     <div className="px-4 py-10 lg:px-10">
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {cardsData.slice(0, visibleCount).map((card) => (
-          <div
+          <Link
+            href={`/progetti/${slugify(card.title)}`}
+            passHref
             key={card.id}
-            className="relative w-full overflow-hidden bg-white shadow-md aspect-square lg:aspect-auto lg:h-[650px] rounded-xl"
           >
-            <Image
-              src={card.img}
-              alt={card.title}
-              fill
-              className="object-cover w-full h-full"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(359.99deg,rgba(21,52,72,0.8)_1.62%,rgba(21,52,72,0)_65.37%)]" />
-
-            <div className="absolute p-4 bottom-6 left-6">
-              <h3 className="text-lg font-medium">{card.title}</h3>
+            <div className="relative w-full overflow-hidden bg-white rounded-sm shadow-md h-[400px] lg:h-[600px] fxl:h-[800px]">
+              <Image
+                src={card.img}
+                alt={card.title}
+                fill
+                className="object-cover w-full h-full"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(359.99deg,rgba(21,52,72,0.8)_1.62%,rgba(21,52,72,0)_65.37%)]" />
+              <div className="absolute p-4 lg:top-6 lg:left-4">
+                <div className="flex flex-wrap gap-4 font-medium text-white uppercase">
+                  {card.sub.map((item, index) => (
+                    <p
+                      className="text-sm lg:text-base tracking-wide uppercase bg-yellow max-w-max py-[5px] px-[20px] rounded-full"
+                      key={index}
+                    >
+                      {item.posto || item.stile}
+                    </p>
+                  ))}
+                </div>
+              </div>
+              <div className="absolute left-0 p-4 bottom-6 lg:bottom-10 lg:left-6">
+                <h2 className="text-3xl font-medium text-white lg:text-5xl fxl:text-6xl">
+                  {card.title}
+                </h2>
+                <p className="max-w-lg mt-4 text-white lg:text-lg fxl:text-2xl">
+                  {card.desc}
+                </p>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
-
-      {visibleCount < cardsData.length && (
-        <div className="flex justify-center w-full mt-6">
+      <div className="flex justify-center w-full gap-10 my-6">
+        <CtaPrimary link="/consulenza">Prenota la tua consulenza</CtaPrimary>
+        {visibleCount < cardsData.length && (
           <button
             onClick={loadMore}
-            className="px-6 py-3 text-white uppercase rounded-lg bg-yellow hover:bg-yellow-600 max-w-max"
+            className="uppercase justify-center flex w-full lg:w-fit items-end border border-yellow text-yellow px-[20px] py-[20px] xl:px-10 text-center text-base xl:text-sm lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5"
           >
             Carica altri
           </button>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }

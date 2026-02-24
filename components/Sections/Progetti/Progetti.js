@@ -18,7 +18,7 @@ function Progetti() {
 
           {/* Bottone */}
           <Link
-            href="/progetti-realizzati"
+            href="/progetti"
             className="order-3 w-full px-6 py-4 text-center text-white uppercase bg-yellow lg:order-2 lg:w-auto"
           >
             Vedi tutti
@@ -27,7 +27,7 @@ function Progetti() {
 
         <div className="relative z-10 grid justify-between w-full grid-cols-1 gap-10 mt-10 lg:grid-cols-3">
           <div className="block w-full ">
-            <Link href="/">
+            <Link href="/progetti/vieste-2023">
               <Image
                 width={400}
                 height={300}
@@ -39,7 +39,7 @@ function Progetti() {
               <h4 className="mt-6 mb-2 text-2xl font-semibold tracking-tight text-blue text-heading">
                 Appartamento vista mare
               </h4>
-              <p className="text-xl text-black">Vieste, [Anno]</p>
+              <p className="text-xl text-black">Vieste, 2023</p>
 
               <p className="my-6 text-black text-body">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -49,7 +49,7 @@ function Progetti() {
             </Link>
           </div>
           <div className="block w-full ">
-            <Link href="/">
+            <Link href="/progetti/foggia-2023">
               <Image
                 width={400}
                 height={300}
@@ -59,9 +59,9 @@ function Progetti() {
               />
 
               <h4 className="mt-6 mb-2 text-2xl font-semibold tracking-tight text-blue text-heading">
-                Appartamento vista mare
+                Living di design
               </h4>
-              <p className="text-xl text-black">Vieste, [Anno]</p>
+              <p className="text-xl text-black">Foggia, 2023</p>
 
               <p className="my-6 text-black text-body">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -71,7 +71,7 @@ function Progetti() {
             </Link>
           </div>
           <div className="block w-full ">
-            <Link href="/">
+            <Link href="/progetti/vico-del-gargano-2021">
               <Image
                 width={400}
                 height={300}
@@ -83,7 +83,7 @@ function Progetti() {
               <h4 className="mt-6 mb-2 text-2xl font-semibold tracking-tight text-blue text-heading">
                 Appartamento vista mare
               </h4>
-              <p className="text-xl text-black">Vieste, [Anno]</p>
+              <p className="text-xl text-black">Vico del Gargano, 2021</p>
 
               <p className="my-6 text-black text-body">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
+import CtaPrimary from "./Cta/CtaPrimary";
 
 function Navbar({ show }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -179,10 +180,10 @@ function Navbar({ show }) {
                 </div>
 
                 <Link
-                  href="/progetti-realizzati"
+                  href="/progetti"
                   onClick={() => setMenuOpen(false)}
                   className={`${
-                    pathname === "/progetti-realizzati"
+                    pathname === "/progetti"
                       ? "font-semibold transition-all ease-linear"
                       : ""
                   }`}
@@ -201,7 +202,7 @@ function Navbar({ show }) {
                   contatti
                 </Link>
                 <Link
-                  href="/la-nostra-consulenza"
+                  href="/consulenza"
                   className="uppercase bg-yellow text-white px-[20px] py-[20px] text-center text-lg xl:text-sm lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5"
                   onClick={() => setMenuOpen(false)}
                 >
@@ -266,9 +267,9 @@ function Navbar({ show }) {
           </div>
 
           <Link
-            href="/progetti-realizzati"
+            href="/progetti"
             className={`${
-              pathname === "/progetti-realizzati"
+              pathname === "/progetti"
                 ? "font-semibold transition-all ease-linear"
                 : ""
             }`}
@@ -289,12 +290,7 @@ function Navbar({ show }) {
 
         {/* Bottone desktop */}
         <div className="items-center justify-end hidden lg:flex">
-          <Link
-            href="/la-nostra-consulenza"
-            className="uppercase bg-yellow text-white lg:text-lg xl:text-sm lg:px-[42px] 2xl:text-base fxl:px-[60px] py-5"
-          >
-            la nostra consulenza
-          </Link>
+          <CtaPrimary link="/consulenza">la nostra consulenza</CtaPrimary>
         </div>
       </nav>
     </motion.div>

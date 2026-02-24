@@ -67,8 +67,8 @@ function ChiSiamo({ onHeroFinished }) {
       <HeroPage
         title="Da oltre 50 anni, <br />  
 <strong>passione che veste gli spazi</strong>"
-        paragraph="Una realtà dove esperienza generazionale, dedizione al lavoro, ascolto del cliente e ricerca dell’eccellenza rendono <strong>ogni spazio un progetto unico</strong>."
-        link="/"
+        paragraph="Una realtà dove esperienza generazionale, dedizione al lavoro, ascolto del <br/>cliente e ricerca dell’eccellenza rendono <strong>ogni spazio un progetto unico</strong>."
+        link="/consulenza"
         linkName="Prenota un appuntamento"
         backgroundClass="bg-[url('/assets/hero_chisiamo.webp')]"
       />

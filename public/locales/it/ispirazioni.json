@@ -18,6 +18,9 @@
             "label": "Box Doccia",
             "images": [
               {
+                "src": "/assets/ispirazioni/bagno/mansory/box_doccia/box_doccia_1.webp"
+              },
+              {
                 "src": "/assets/ispirazioni/bagno/mansory/box_doccia/box_doccia1.webp"
               },
               {
@@ -46,6 +49,12 @@
           "doccioni": {
             "label": "Doccioni",
             "images": [
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/doccioni/doccioni__1.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/doccioni/doccioni_1.webp"
+              },
               {
                 "src": "/assets/ispirazioni/bagno/mansory/doccioni/doccioni1.webp"
               },
@@ -130,10 +139,20 @@
               },
               {
                 "src": "/assets/ispirazioni/bagno/mansory/mobilebagno/mobile_bagno9.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/mobilebagno/mobile_bagno10.webp"
               }
             ]
           },
-          "pavimenti": { "label": "Pavimenti", "images": [] },
+          "pavimenti": {
+            "label": "Pavimenti",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/pavimenti/pavimenti1.webp"
+              }
+            ]
+          },
           "porte": {
             "label": "Porte",
             "images": [
@@ -161,8 +180,9 @@
             "label": "Radiatori",
             "images": [
               {
-                "src": "/assets/ispirazioni/bagno/mansory/radiatori/radiatori1.webp"
+                "src": "/assets/ispirazioni/bagno/mansory/radiatori/radiatori_1.webp"
               },
+
               {
                 "src": "/assets/ispirazioni/bagno/mansory/radiatori/radiatori2.webp"
               },
@@ -189,6 +209,9 @@
           "rivestimenti": {
             "label": "Rivestimenti",
             "images": [
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/rivestimenti/rivestimenti_1.webp"
+              },
               {
                 "src": "/assets/ispirazioni/bagno/mansory/rivestimenti/rivestimenti1.webp"
               },
@@ -218,12 +241,55 @@
               }
             ]
           },
-          "rubinetteria": { "label": "Rubinetteria", "images": [] },
-          "sanitari": { "label": "Sanitari", "images": [] },
-          "spa": { "label": "SPA", "images": [] },
-          "termoarredi": { "label": "Termoarredi", "images": [] },
-          "vaporizzatore": { "label": "Vaporizzatore", "images": [] },
-          "vasche": { "label": "Vasche da bagno", "images": [] }
+          "rubinetteria": {
+            "label": "Rubinetteria",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/rubinetti/rubinetti_1.webp"
+              }
+            ]
+          },
+          "sanitari": {
+            "label": "Sanitari",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/sanitari/sanitari1.webp"
+              }
+            ]
+          },
+          "spa": {
+            "label": "SPA",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/spa/spa1.webp"
+              }
+            ]
+          },
+
+          "vaporizzatore": {
+            "label": "Vaporizzatore",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/vaporizzatore/vaporizzatore1.webp"
+              }
+            ]
+          },
+          "vasche": {
+            "label": "Vasche da bagno",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/vasche_da_bagno/vasche_da_bagno_1.webp"
+              }
+            ]
+          },
+          "termoarredi": {
+            "label": "Termoarredi",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/bagno/mansory/termoarredi/termoarredi1.webp"
+              }
+            ]
+          }
         }
       },
       "spazio-living": {
@@ -239,18 +305,94 @@
           "description": "Pavimenti, carte da parati, colori ed elementi di arredo per accogliere i vostri momenti di condivisione, gioia e serenità."
         },
         "masonry": {
-          "battiscopa": { "label": "Battiscopa", "images": [] },
-          "camini": { "label": "Camini", "images": [] },
-          "carta-da-parati": { "label": "Carta da parati", "images": [] },
-          "forni": { "label": "Forni", "images": [] },
-          "miscelatori": { "label": "Miscelatori", "images": [] },
-          "parquet": { "label": "Parquet", "images": [] },
-          "pavimenti": { "label": "Pavimenti", "images": [] },
-          "piastrelle": { "label": "Piastrelle", "images": [] },
-          "porte": { "label": "Porte", "images": [] },
-          "radiatori": { "label": "Radiatori", "images": [] },
-          "rivestimenti": { "label": "Rivestimenti", "images": [] },
-          "stufe": { "label": "Stufe", "images": [] }
+          "battiscopa": {
+            "label": "Battiscopa",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/living/battiscopa/battiscopa1.webp"
+              }
+            ]
+          },
+          "camini": {
+            "label": "Camini",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/living/camini/camini1.webp"
+              }
+            ]
+          },
+          "carta-da-parati": {
+            "label": "Carta da parati",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/living/carta_da_parati/carta_da_parati1.webp"
+              }
+            ]
+          },
+          "forni": {
+            "label": "Forni",
+            "images": []
+          },
+          "miscelatori": {
+            "label": "Miscelatori",
+            "images": []
+          },
+          "parquet": {
+            "label": "Parquet",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/living/parquet/parquet1.webp"
+              }
+            ]
+          },
+          "pavimenti": {
+            "label": "Pavimenti",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/living/pavimenti/pavimenti1.webp"
+              }
+            ]
+          },
+          "piastrelle": {
+            "label": "Piastrelle",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/living/piastrelle/piastrelle1.webp"
+              }
+            ]
+          },
+          "porte": {
+            "label": "Porte",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/living/porte/porte1.webp"
+              }
+            ]
+          },
+          "radiatori": {
+            "label": "Radiatori",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/living/radiatori/radiatori1.webp"
+              }
+            ]
+          },
+          "rivestimenti": {
+            "label": "Rivestimenti",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/living/rivestimenti/rivestimenti1.webp"
+              }
+            ]
+          },
+          "stufe": {
+            "label": "Stufe",
+            "images": [
+              {
+                "src": "/assets/ispirazioni/living/stufe/stufe1.webp"
+              }
+            ]
+          }
         }
       }
     }
