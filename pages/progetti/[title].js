@@ -18,7 +18,18 @@ function SingleProject({ progetti, allProjects, slug }) {
       <div className="grid items-center justify-center min-h-[90svh] grid-cols-1 gap-10 pr-4 pl-4 pt-24 lg:pt-32 lg:pl-6 lg:grid-cols-2">
         <div className="flex flex-col justify-between h-full gap-6">
           <div className="flex flex-col gap-4">
-            {" "}
+            {/* Torna ai progetti */}
+            <Link
+              href="/progetti"
+              className="flex items-center gap-2 mb-6 font-medium uppercase lg:text-lg text-blue"
+            >
+              <Icon
+                icon="ic:baseline-chevron-left"
+                width="32px"
+                height="32px"
+              />
+              torna ai progetti
+            </Link>
             <div className="flex flex-wrap gap-4 font-medium text-black uppercase">
               {progetti?.type.map((item, index) => (
                 <p
@@ -68,47 +79,28 @@ function SingleProject({ progetti, allProjects, slug }) {
           />
         </div>
       </div>
-      <div className="px-4 mt-10 mb-20 lg:px-6 lg:w-[90%] mx-auto flex flex-wrap items-center justify-between gap-4">
-        {/* Torna ai progetti */}
-        <Link
-          href="/progetti"
-          className="flex items-center gap-2 font-medium uppercase lg:text-lg text-blue"
-        >
-          <Icon icon="ic:baseline-chevron-left" width="32px" height="32px" />
-          torna ai progetti
-        </Link>
+      <div className="px-4 mt-10 mb-20 lg:px-6 lg:w-[90%] mx-auto flex items-center gap-4">
+        {/* Progetto precedente */}
+        {prevProjectSlug && (
+          <Link
+            href={`/progetti/${prevProjectSlug}`}
+            className="flex items-center gap-2 font-medium uppercase lg:text-lg text-blue"
+          >
+            <Icon icon="ic:baseline-chevron-left" width="32px" height="32px" />
+            Progetto precedente
+          </Link>
+        )}
 
-        <div className="flex gap-8">
-          {/* Progetto precedente */}
-          {prevProjectSlug && (
-            <Link
-              href={`/progetti/${prevProjectSlug}`}
-              className="flex items-center gap-2 font-medium uppercase lg:text-lg text-blue"
-            >
-              <Icon
-                icon="ic:baseline-chevron-left"
-                width="32px"
-                height="32px"
-              />
-              Progetto precedente
-            </Link>
-          )}
-
-          {/* Progetto successivo */}
-          {nextProjectSlug && (
-            <Link
-              href={`/progetti/${nextProjectSlug}`}
-              className="flex items-center gap-2 font-medium uppercase lg:text-lg text-blue"
-            >
-              progetto successivo
-              <Icon
-                icon="ic:baseline-chevron-right"
-                width="32px"
-                height="32px"
-              />
-            </Link>
-          )}
-        </div>
+        {/* Progetto successivo */}
+        {nextProjectSlug && (
+          <Link
+            href={`/progetti/${nextProjectSlug}`}
+            className="flex items-center gap-2 ml-auto font-medium uppercase lg:text-lg text-blue"
+          >
+            progetto successivo
+            <Icon icon="ic:baseline-chevron-right" width="32px" height="32px" />
+          </Link>
+        )}
       </div>
     </>
   );
