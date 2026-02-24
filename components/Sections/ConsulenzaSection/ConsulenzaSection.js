@@ -69,6 +69,14 @@ export default function ConsulenzaSection() {
 
       const panels = gsap.utils.toArray(".slide");
 
+      // 1️⃣ Imposta le slide inizialmente fuori schermo tranne la prima
+      panels.forEach((panel, i) => {
+        gsap.set(panel, {
+          yPercent: i === currentIndex ? 0 : 100,
+        });
+      });
+
+      // 2️⃣ Imposta z-index in reverse
       panels
         .slice()
         .reverse()
@@ -76,6 +84,7 @@ export default function ConsulenzaSection() {
           gsap.set(panel, { zIndex: i });
         });
 
+      // Funzione per animare le slide
       function gotoPanel(index, isScrollingDown) {
         if (animating) return;
         animating = true;
@@ -114,6 +123,7 @@ export default function ConsulenzaSection() {
         gsap.delayedCall(0.8, () => (animating = false));
       }
 
+      // Observer per scroll/touch
       const intentObserver = ScrollTrigger.observe({
         type: "wheel,touch",
         onDown: () => gotoPanel(currentIndex + 1, true),
@@ -124,17 +134,17 @@ export default function ConsulenzaSection() {
 
       intentObserver.disable();
 
+      // ScrollTrigger per pin e gestione observer
       ScrollTrigger.create({
         trigger: containerRef.current,
         start: "top top",
         pin: true,
         onEnter: () => {
           intentObserver.enable();
-          gotoPanel(currentIndex + 1, true);
+          // Non chiamare gotoPanel subito: la prima è già visibile
         },
         onEnterBack: () => {
           intentObserver.enable();
-          gotoPanel(currentIndex - 1, false);
         },
         onLeave: () => intentObserver.disable(),
         onLeaveBack: () => intentObserver.disable(),

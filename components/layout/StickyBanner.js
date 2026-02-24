@@ -20,13 +20,13 @@ function StickyBanner() {
         <div className="flex flex-wrap items-center w-full gap-2 lg:w-fit">
           {" "}
           <Link
-            href="/"
+            href="/contatti"
             className="uppercase bg-blue text-white px-[10px] py-[20px] text-center text-base lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5 w-full lg:max-w-max"
           >
             Prenotate la vostra visita
           </Link>
           <Link
-            href="/"
+            href="/consulenza"
             className="uppercase border border-white text-white px-[10px] py-[20px] text-center text-base lg:px-[42px] 2xl:text-base fxl:px-[60px] md:py-5 w-full lg:max-w-max"
           >
             Come funziona?
