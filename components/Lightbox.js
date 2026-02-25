@@ -124,19 +124,19 @@ export default function Lightbox({
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="absolute flex justify-center w-[97%] max-w-[1600px] mx-auto bottom-16 lg:bottom-6 gap-4 px-2 overflow-x-auto"
+          className="absolute flex justify-center w-[97%] max-w-[1600px] mx-auto bottom-16 lg:bottom-6 gap-20 px-2  overflow-hidden"
           onClick={(e) => e.stopPropagation()}
         >
           {logos.map((logo, i) => (
             <div
               key={i}
-              className="flex items-center justify-center w-20 h-20 rounded-lg bg-white/20"
+              className="flex items-center justify-center w-24 h-auto "
             >
               <Image
                 src={logo.src}
                 alt={logo.alt}
-                width={80}
-                height={80}
+                width={100}
+                height={100}
                 className="object-contain"
               />
             </div>

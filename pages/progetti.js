@@ -55,8 +55,8 @@ function Progetti({ progetti }) {
 <strong>spazi che vivono nel tempo</strong>"
         paragraph="Da 50 anni uniamo tradizione, innovazione e ricerca di brand affermati sul mercato per <br/> realizzare i vostri spazi, trasformandoli da un desiderio a una casa che vi emoziona ogni giorno."
         link2={true}
-        linkCta1="/"
-        linkCta2="/"
+        linkCta1="#progetti"
+        linkCta2="/contatti"
         linkName1="sfogliate i progetti"
         linkName2="prenotate la vostra consulenza"
         backgroundClass="bg-[url('/assets/hero_progetti.webp')]"

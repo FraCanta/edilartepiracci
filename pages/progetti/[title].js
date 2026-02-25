@@ -79,7 +79,7 @@ function SingleProject({ progetti, allProjects, slug }) {
           />
         </div>
       </div>
-      <div className="px-4 mt-10 mb-20 lg:px-6 lg:w-[90%] mx-auto flex items-center gap-4">
+      <div className="px-4 mt-10 mb-20 lg:px-6 lg:w-[90%] mx-auto flex flex-wrap items-center gap-4">
         {/* Progetto precedente */}
         {prevProjectSlug && (
           <Link

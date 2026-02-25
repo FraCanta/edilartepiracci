@@ -44,7 +44,7 @@ function HeroPage({
                   >
                     {linkName1}
                     <Icon
-                      icon="heroicons:chevron-right-20-solid"
+                      icon="heroicons:chevron-down-20-solid"
                       width="28px"
                       height="28px"
                       className="text-white"
