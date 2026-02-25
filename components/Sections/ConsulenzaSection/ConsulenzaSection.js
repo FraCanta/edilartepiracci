@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -65,89 +63,71 @@ export default function ConsulenzaSection() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       let currentIndex = 0;
-      let animating = false;
+      let isAnimating = false;
 
       const panels = gsap.utils.toArray(".slide");
 
-      // 1️⃣ Imposta le slide inizialmente fuori schermo tranne la prima
+      // posizione iniziale
       panels.forEach((panel, i) => {
         gsap.set(panel, {
-          yPercent: i === currentIndex ? 0 : 100,
+          yPercent: i === 0 ? 0 : 100,
+          force3D: true,
         });
       });
 
-      // 2️⃣ Imposta z-index in reverse
-      panels
-        .slice()
-        .reverse()
-        .forEach((panel, i) => {
-          gsap.set(panel, { zIndex: i });
-        });
+      function goTo(index) {
+        if (isAnimating) return;
+        if (index < 0 || index >= panels.length) return;
 
-      // Funzione per animare le slide
-      function gotoPanel(index, isScrollingDown) {
-        if (animating) return;
-        animating = true;
+        isAnimating = true;
 
-        if (
-          (index === panels.length && isScrollingDown) ||
-          (index === -1 && !isScrollingDown)
-        ) {
-          intentObserver.disable();
-          animating = false;
-          return;
-        }
+        const direction = index > currentIndex;
 
-        const target = panels[index];
-        const prev = isScrollingDown ? panels[index - 1] : panels[index + 1];
+        const current = panels[currentIndex];
+        const next = panels[index];
 
-        if (prev) {
-          gsap.to(prev, {
-            yPercent: isScrollingDown ? -100 : 100,
-            duration: 0.7,
-            ease: "power2.inOut",
-          });
-        }
-
-        gsap.fromTo(
-          target,
-          { yPercent: isScrollingDown ? 100 : -100 },
-          {
-            yPercent: 0,
-            duration: 0.7,
-            ease: "power2.inOut",
+        const tl = gsap.timeline({
+          defaults: { duration: 0.8, ease: "power2.inOut" },
+          onComplete: () => {
+            currentIndex = index;
+            isAnimating = false;
           },
+        });
+
+        tl.to(current, {
+          yPercent: direction ? -100 : 100,
+          force3D: true,
+        }).fromTo(
+          next,
+          { yPercent: direction ? 100 : -100 },
+          { yPercent: 0, force3D: true },
+          "<",
         );
-
-        currentIndex = index;
-        gsap.delayedCall(0.8, () => (animating = false));
       }
+      const wheelHandler = (e) => {
+        if (isAnimating) return;
 
-      // Observer per scroll/touch
-      const intentObserver = ScrollTrigger.observe({
-        type: "wheel,touch",
-        onDown: () => gotoPanel(currentIndex + 1, true),
-        onUp: () => gotoPanel(currentIndex - 1, false),
-        tolerance: 10,
-        preventDefault: true,
-      });
+        if (e.deltaY > 0) {
+          if (currentIndex === panels.length - 1) return; // ultima slide → lascia scroll naturale
+          goTo(currentIndex + 1);
+        } else {
+          if (currentIndex === 0) return; // prima slide → lascia scroll naturale
+          goTo(currentIndex - 1);
+        }
+      };
 
-      intentObserver.disable();
+      const section = containerRef.current;
 
-      // ScrollTrigger per pin e gestione observer
       ScrollTrigger.create({
-        trigger: containerRef.current,
+        trigger: section,
         start: "top top",
+        end: "+=100%", // solo 1 viewport
         pin: true,
-        onEnter: () => {
-          intentObserver.enable();
-          // Non chiamare gotoPanel subito: la prima è già visibile
-        },
-        onEnterBack: () => {
-          intentObserver.enable();
-        },
-        onLeave: () => intentObserver.disable(),
-        onLeaveBack: () => intentObserver.disable(),
+        anticipatePin: 1,
+        onEnter: () => window.addEventListener("wheel", wheelHandler),
+        onEnterBack: () => window.addEventListener("wheel", wheelHandler),
+        onLeave: () => window.removeEventListener("wheel", wheelHandler),
+        onLeaveBack: () => window.removeEventListener("wheel", wheelHandler),
       });
     }, containerRef);
 

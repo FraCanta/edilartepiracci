@@ -138,18 +138,19 @@ export default function Home({ onHeroFinished, hasHeroAnimated }) {
           </div>
           <div className="flex flex-col items-center justify-center w-full fxl:p-10">
             <Icon
-              icon="material-symbols-light:extension-outline"
+              icon="material-symbols-light:crown-outline"
               width="100px"
               height="100px"
               className="text-yellow  w-16 h-16 lg:w-[100px] lg:h-[100px]"
             />
+
             <h3 className="mt-4 mb-2 text-sm font-medium lg:text-lg">
               Qualità
             </h3>
           </div>
           <div className="flex flex-col items-center justify-center w-full fxl:p-10">
             <Icon
-              icon="material-symbols-light:crown-outline"
+              icon="material-symbols-light:extension-outline"
               width="100px"
               height="100px"
               className="text-yellow  w-16 h-16 lg:w-[100px] lg:h-[100px]"
@@ -169,7 +170,7 @@ export default function Home({ onHeroFinished, hasHeroAnimated }) {
           </div>
           <div className="flex flex-col items-center justify-center w-full fxl:p-10">
             <Icon
-              icon="material-symbols-light:shield-with-heart-outline"
+              icon="material-symbols-light:castle-outline"
               width="100px"
               height="100px"
               className="text-yellow  w-16 h-16 lg:w-[100px] lg:h-[100px]"

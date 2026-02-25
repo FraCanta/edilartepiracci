@@ -113,7 +113,7 @@ function ChiSiamo({ onHeroFinished }) {
         <div className="grid grid-cols-2 gap-3 my-10 gap-y-6 lg:my-0 lg:gap-20 lg:grid-cols-4">
           <div className="flex flex-col items-center justify-center w-full text-center ">
             <Icon
-              icon="material-symbols-light:star-shine-rounded"
+              icon="material-symbols-light:editor-choice-outline"
               width="120px"
               height="120px"
               className="text-yellow w-14 h-14 lg:w-[100px] lg:h-[100px] "
@@ -127,7 +127,7 @@ function ChiSiamo({ onHeroFinished }) {
           </div>
           <div className="flex flex-col items-center justify-center w-full text-center">
             <Icon
-              icon="material-symbols-light:clock-loader-40"
+              icon="material-symbols-light:crown-outline"
               width="120px"
               height="120px"
               className="text-yellow w-14 h-14 lg:w-[100px] lg:h-[100px] "
@@ -141,7 +141,7 @@ function ChiSiamo({ onHeroFinished }) {
           </div>
           <div className="flex flex-col items-center justify-center w-full text-center ">
             <Icon
-              icon="material-symbols-light:person-celebrate-rounded"
+              icon="material-symbols-light:extension-outline"
               width="120px"
               height="120px"
               className="text-yellow w-14 h-14 lg:w-[100px] lg:h-[100px] "
@@ -155,7 +155,7 @@ function ChiSiamo({ onHeroFinished }) {
           </div>
           <div className="flex flex-col items-center justify-center w-full text-center ">
             <Icon
-              icon="material-symbols-light:person-celebrate-rounded"
+              icon="material-symbols-light:shield-with-heart-outline"
               width="120px"
               height="120px"
               className="text-yellow w-14 h-14 lg:w-[100px] lg:h-[100px] "
