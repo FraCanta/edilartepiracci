@@ -74,7 +74,7 @@ export default function Contatti() {
 
       <section className="relative w-full">
         {/* Overlay con card */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 lg:translate-x-0 mx-auto lg:left-32 -translate-y-1/2 z-[1000] w-[90%] lg:w-[450px] lg:h-[450px] bg-white  ">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 lg:translate-x-0 mx-auto lg:left-32 -translate-y-1/2 z-[1000] w-[90%] lg:w-[450px] lg:h-auto bg-white  ">
           {" "}
           <div className="flex flex-col justify-between h-full p-8 bg-white">
             <div>
@@ -171,16 +171,26 @@ export default function Contatti() {
                   edilaartepiracci@hotmail.com
                 </Link>
               </li>
-              <li className="flex items-center gap-2 text-base">
-                <span>
+              <li className="flex flex-col gap-2 text-base">
+                <span className="flex items-center gap-2">
                   <Icon
                     icon="material-symbols-light:schedule"
                     width="24px"
                     height="24px"
                     className="text-blue"
                   />
+                  Orari
                 </span>{" "}
-                Showroom, consigliato prendere appuntamento
+                <ul className="mt-1 space-y-1 text-sm ">
+                  <li>
+                    <span>Apertura al pubblico</span> <br /> 07:00 - 12:30{" "}
+                    <br /> 14:30 - 17:30
+                  </li>
+                  <li>
+                    <span>Showroom ( su appuntamento )</span> <br /> 08:00 -
+                    12:30 <br /> 14:30 - 19:00
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>

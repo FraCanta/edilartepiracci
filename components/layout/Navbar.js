@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import CtaPrimary from "./Cta/CtaPrimary";
@@ -9,13 +9,29 @@ function Navbar({ show }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [inspirationOpen, setInspirationOpen] = useState(false);
   const { locale, pathname } = useRouter();
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
 
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: show ? 1 : 0, y: show ? 0 : -20 }}
       transition={{ duration: 0.35, ease: "easeOut" }}
-      className="w-full h-[70px] lg:h-[100px] fixed top-0 z-[9999] backdrop-blur-sm bg-transparent "
+      className={`
+  w-full h-[70px] lg:h-[100px] fixed top-0 z-[9999]
+  transition-all duration-300
+  ${
+    scrolled
+      ? "bg-white/25 backdrop-blur-md shadow-sm"
+      : "bg-transparent backdrop-blur-md"
+  }
+`}
     >
       <nav className="grid items-center w-full h-full grid-cols-2 lg:grid-cols-3">
         {/* Logo */}
