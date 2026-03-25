@@ -1,7 +1,9 @@
 import { Icon } from "@iconify/react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useAnimationFrame } from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+
+const LOGO_SPEED = 5;
 
 export default function Lightbox({
   slides,
@@ -10,15 +12,29 @@ export default function Lightbox({
   categoryName,
   logos = [],
 }) {
-  // Stato interno: currentIndex e direction
   const [[currentIndex, direction], setPage] = useState([index ?? 0, 0]);
 
-  // Quando cambia l'index esterno
+  const x = useRef(0);
+  const containerRef = useRef(null);
+
+  useAnimationFrame(() => {
+    if (!containerRef.current) return;
+
+    x.current -= LOGO_SPEED;
+
+    const width = containerRef.current.scrollWidth / 2;
+
+    if (Math.abs(x.current) >= width) {
+      x.current = 0;
+    }
+
+    containerRef.current.style.transform = `translateX(${x.current}px)`;
+  });
+
   useEffect(() => {
     if (index !== null) setPage([index, 0]);
   }, [index]);
 
-  // Quando cambiano le slides, resetta l'indice
   useEffect(() => {
     setPage([0, 0]);
   }, [slides]);
@@ -57,6 +73,7 @@ export default function Lightbox({
               <span>{slides.length}</span>
             </span>
           </div>
+
           <button
             onClick={onClose}
             className="p-2 transition-colors duration-300 rounded-full bg-white/20 hover:bg-white"
@@ -72,7 +89,7 @@ export default function Lightbox({
 
         {/* MAIN IMAGE */}
         <div
-          className="relative w-full aspect-square lg:aspect-video lg:max-w-[97vw] lg:max-h-[70vh]"
+          className="relative w-full aspect-square lg:aspect-video lg:max-w-[97vw] 2xl:max-h-[60vh] fxl:max-h-[70vh]"
           onClick={(e) => e.stopPropagation()}
         >
           <AnimatePresence initial={false} custom={direction}>
@@ -93,7 +110,7 @@ export default function Lightbox({
                   if (swipe < -1000) paginate(1);
                   else if (swipe > 1000) paginate(-1);
                 }}
-                className="absolute inset-0"
+                className="absolute bottom-0 left-0 right-0 -top-10"
               >
                 <Image
                   src={slides[currentIndex].src}
@@ -105,42 +122,50 @@ export default function Lightbox({
             )}
           </AnimatePresence>
 
-          {/* Prev/Next buttons */}
           <button
             onClick={() => paginate(-1)}
-            className="absolute text-4xl text-white -translate-y-1/2 left-4 top-1/2"
+            className="absolute text-4xl text-white -translate-y-[40%] left-4 top-[40%]"
           >
             <Icon icon="ooui:previous-ltr" width="32px" height="32px" />
           </button>
+
           <button
             onClick={() => paginate(1)}
-            className="absolute text-4xl text-white -translate-y-1/2 right-4 top-1/2"
+            className="absolute text-4xl text-white -translate-y-[40%] right-4 top-[40%]"
           >
             <Icon icon="ooui:previous-rtl" width="32px" height="32px" />
           </button>
         </div>
+
         {/* BRAND LOGOS */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="absolute flex justify-center w-[97%] max-w-[1600px] mx-auto bottom-16 lg:bottom-6 gap-20 px-2  overflow-hidden"
+          className="absolute flex justify-center w-screen overflow-hidden bottom-24 lg:bottom-10"
           onClick={(e) => e.stopPropagation()}
         >
-          {logos.map((logo, i) => (
-            <div
-              key={i}
-              className="flex items-center justify-center w-24 h-auto "
-            >
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                width={100}
-                height={100}
-                className="object-contain"
-              />
-            </div>
-          ))}
+          <div
+            ref={containerRef}
+            className="flex gap-20 lg:gap-40 min-w-max will-change-transform"
+          >
+            {[...logos, ...logos, ...logos, ...logos, ...logos].map(
+              (logo, i) => (
+                <div
+                  key={i}
+                  className="flex items-center justify-center w-20 h-auto lg:w-30 shrink-0"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={100}
+                    height={100}
+                    className={`object-contain ${logo.invert ? "invert" : ""}`}
+                  />
+                </div>
+              ),
+            )}
+          </div>
         </motion.div>
       </motion.div>
     </AnimatePresence>

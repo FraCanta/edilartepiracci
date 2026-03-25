@@ -97,14 +97,19 @@ function IspirazionePage({ ispirazioni, slug }) {
       </Head>
 
       {/* ================= HERO + 4 ================= */}
-      <section className="grid grid-cols-1 gap-4 px-4 pt-6 mx-auto mt-20 md:grid-cols-2 lg:grid-cols-4 lg:px-6">
+      <section
+        className="grid grid-cols-1 lg:grid-cols-4 grid-rows-2
+        gap-4 px-4 pt-6 mx-auto mt-14 lg:mt-20 lg:px-6 
+        xl:h-[calc(100vh-100px)]"
+      >
+        {" "}
         {/* HERO */}
         <motion.div
           ref={heroRef}
           initial={{ opacity: 0, y: 50 }}
           animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative flex flex-col justify-center h-[400px] col-span-1 p-6 overflow-hidden rounded-xl md:col-span-2 lg:col-span-2 lg:row-span-2 md:h-auto"
+          className="relative flex flex-col justify-center h-[400px] lg:h-full col-span-1 p-6 overflow-hidden rounded-xl md:col-span-2 lg:col-span-2 lg:row-span-2"
         >
           <Image
             src={ispirazioni.hero.img}
@@ -128,7 +133,6 @@ function IspirazionePage({ ispirazioni, slug }) {
             </div>
           </div>
         </motion.div>
-
         {/* 4 CARD */}
         {firstSection.map((cat, i) => (
           <motion.div
@@ -138,7 +142,7 @@ function IspirazionePage({ ispirazioni, slug }) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="relative overflow-hidden cursor-pointer aspect-square rounded-xl"
+            className="relative overflow-hidden cursor-pointer h-[400px] lg:h-full lg:aspect-auto rounded-xl"
             onClick={() => openCategory(cat, 0)}
           >
             <Image
