@@ -728,32 +728,41 @@
             ],
             "logos": [
               {
-                "src": "/assets/ispirazioni/bagno/mansory/rubinetti/loghi/logo1.png"
+                "src": "/assets/ispirazioni/bagno/mansory/rubinetti/loghi/logo1.png",
+                "invert": false
               },
               {
-                "src": "/assets/ispirazioni/bagno/mansory/rubinetti/loghi/logo2.jpg"
+                "src": "/assets/ispirazioni/bagno/mansory/rubinetti/loghi/logo2.png",
+                "invert": true
               },
 
               {
-                "src": "/assets/ispirazioni/bagno/mansory/rubinetti/loghi/logo3.svg"
+                "src": "/assets/ispirazioni/bagno/mansory/rubinetti/loghi/logo3.svg",
+                "invert": true
               },
               {
-                "src": "/assets/ispirazioni/bagno/mansory/rubinetti/loghi/logo4.png"
+                "src": "/assets/ispirazioni/bagno/mansory/rubinetti/loghi/logo4.png",
+                "invert": true
               },
               {
-                "src": "/assets/ispirazioni/bagno/mansory/rubinetti/loghi/logo5.png"
+                "src": "/assets/ispirazioni/bagno/mansory/rubinetti/loghi/logo5.png",
+                "invert": false
               },
               {
-                "src": "/assets/ispirazioni/bagno/mansory/rubinetti/loghi/logo6.png"
+                "src": "/assets/ispirazioni/bagno/mansory/rubinetti/loghi/logo6.png",
+                "invert": false
               },
               {
-                "src": "/assets/ispirazioni/bagno/mansory/rubinetti/loghi/logo7.png"
+                "src": "/assets/ispirazioni/bagno/mansory/rubinetti/loghi/logo7.png",
+                "invert": false
               },
               {
-                "src": "/assets/ispirazioni/bagno/mansory/rubinetti/loghi/logo8.png"
+                "src": "/assets/ispirazioni/bagno/mansory/rubinetti/loghi/logo8.png",
+                "invert": false
               },
               {
-                "src": "/assets/ispirazioni/bagno/mansory/rubinetti/loghi/logo9.png"
+                "src": "/assets/ispirazioni/bagno/mansory/rubinetti/loghi/logo9.png",
+                "invert": true
               }
             ]
           },
@@ -1104,6 +1113,21 @@
             "images": [
               {
                 "src": "/assets/ispirazioni/living/parquet/parquet1.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/parquet/parquet_2.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/parquet/parquet_3.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/parquet/parquet_4.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/parquet/parquet_5.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/parquet/parquet_6.webp"
               }
             ]
           },
@@ -1120,6 +1144,33 @@
             "images": [
               {
                 "src": "/assets/ispirazioni/living/piastrelle/piastrelle1.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/piastrelle/piastrelle_2.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/piastrelle/piastrelle_3.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/piastrelle/piastrelle_4.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/piastrelle/piastrelle_5.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/piastrelle/piastrelle_6.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/piastrelle/piastrelle_7.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/piastrelle/piastrelle_8.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/piastrelle/piastrelle_9.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/piastrelle/piastrelle_10.webp"
               }
             ]
           },
@@ -1144,6 +1195,27 @@
             "images": [
               {
                 "src": "/assets/ispirazioni/living/rivestimenti/rivestimenti1.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/rivestimenti/rivestimenti_2.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/rivestimenti/rivestimenti_3.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/rivestimenti/rivestimenti_4.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/rivestimenti/rivestimenti_5.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/rivestimenti/rivestimenti_6.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/rivestimenti/rivestimenti_7.webp"
+              },
+              {
+                "src": "/assets/ispirazioni/living/rivestimenti/rivestimenti_8.webp"
               }
             ]
           },
