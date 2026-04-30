@@ -1,0 +1,219 @@
+{
+  "home": {
+    "marquee": [
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/box_doccia/loghi/logo1.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/box_doccia/loghi/logo2.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/box_doccia/loghi/logo14.png",
+        "invert": false
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/box_doccia/loghi/logo15.png",
+        "invert": false
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/box_doccia/loghi/logo16.png",
+        "invert": false
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/box_doccia/loghi/logo17.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/box_doccia/loghi/logo18.jpg",
+        "invert": false
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/doccioni/loghi/logo1.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/doccioni/loghi/logo2.png",
+        "invert": false
+      },
+
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/doccioni/loghi/logo3.svg",
+        "invert": false
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/doccioni/loghi/logo4.png",
+        "invert": false
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/doccioni/loghi/logo5.png",
+        "invert": false
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/doccioni/loghi/logo6.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/doccioni/loghi/logo7.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/doccioni/loghi/logo8.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/doccioni/loghi/logo9.png",
+        "invert": false
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo1.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo2.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo3.svg",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo4.png",
+        "invert": false
+      },
+
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo7.svg",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo8.svg",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo9.svg",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo10.png",
+        "invert": false
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo10.svg",
+        "invert": false
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo11.svg",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo12.png",
+        "invert": false
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo13.svg",
+        "invert": false
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo14.png",
+        "invert": false
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo15.svg",
+        "invert": false
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo16.svg",
+        "invert": true
+      },
+
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo18.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo19.png",
+        "invert": true
+      },
+
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo20.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo21.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo22.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo23.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo24.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/pavimenti/loghi/logo26.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/lavabi/loghi/logo1.svg",
+        "invert": false
+      },
+
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/lavabi/loghi/logo6.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/lavabi/loghi/logo7.svg",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/lavabi/loghi/logo8.svg",
+        "invert": false
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/lavabi/loghi/logo9.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/lavabi/loghi/logo10.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/lavabi/loghi/logo11.svg",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/lavabi/loghi/logo12.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/lavabi/loghi/logo13.png",
+        "invert": false
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/lavabi/loghi/logo14.png",
+        "invert": false
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/lavabi/loghi/logo15.png",
+        "invert": true
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/lavabi/loghi/logo16.png",
+        "invert": false
+      },
+      {
+        "src": "/assets/ispirazioni/bagno/mansory/lavabi/loghi/logo17.png",
+        "invert": false
+      }
+    ]
+  }
+}

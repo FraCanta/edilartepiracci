@@ -35,19 +35,14 @@ const Ispirazioni = () => {
           content="Dalle vostre idee alle nostre proposte di materiali, forme e colori per realizzare con charme ed originalità i vostri spazi."
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:domain"
-          content="edilartepiracci.com
-"
-        />
+        <meta property="twitter:domain" content="edilartepiracci.com" />
         <meta
           name="twitter:image"
           content="https://edilartepiracci.vercel.app/assets/hero_ispirazioni.webp"
         />
         <meta
           property="twitter:url"
-          content="https://www.edilartepiracci.com/ispirazioni
-/"
+          content="https://www.edilartepiracci.com/ispirazioni/"
         />
         <meta
           name="twitter:title"

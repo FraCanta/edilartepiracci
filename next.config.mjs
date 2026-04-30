@@ -5,7 +5,7 @@ const nextConfig = {
   i18n: {
     locales: ["it"],
     defaultLocale: "it",
-    localeDetection: true,
+    localeDetection: false,
   },
 
   async headers() {
@@ -18,16 +18,16 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: ["unsplash.com", "picsum.photos"],
+    remotePatterns: [],
   },
 };
 
 const ContentSecurityPolicy = `
-  default-src 'self' https://core.service.elfsight.com/  https://static.elfsight.com/ https://api.simplesvg.com/ https://api.iconify.design/ https://core.service.elfsight.com/ https://elfsightcdn.com/ https://universe-static.elfsightcdn.com/ https://service-reviews-ultimate.elfsight.com/ https://service-reviews-ultimate.elfsight.com/ 'unsafe-inline' 'unsafe-eval';
+  default-src 'self' https://cors-proxy.utils.elfsightcdn.com/ https://core.service.elfsight.com/  https://static.elfsight.com/ https://api.simplesvg.com/ https://api.iconify.design/ https://core.service.elfsight.com/ https://elfsightcdn.com/ https://universe-static.elfsightcdn.com/ https://service-reviews-ultimate.elfsight.com/ https://service-reviews-ultimate.elfsight.com/ 'unsafe-inline' 'unsafe-eval';
   child-src 'self' https://core.service.elfsight.com/ ;
   style-src 'self' https://fonts.googleapis.com/ 'unsafe-inline' data:;
   font-src 'self' https://fonts.gstatic.com/ 'unsafe-inline' data:;
-  img-src 'self' https://cdn-icons-png.flaticon.com/ https://a.tile.openstreetmap.org/ https://c.tile.openstreetmap.org/ https://b.tile.openstreetmap.org/ https://files.elfsightcdn.com/ https://phosphor.utils.elfsightcdn.com/ data: blob:;
+  img-src 'self' https://cors-proxy.utils.elfsightcdn.com/ https://cdn-icons-png.flaticon.com/ https://a.tile.openstreetmap.org/ https://c.tile.openstreetmap.org/ https://b.tile.openstreetmap.org/ https://files.elfsightcdn.com/ https://phosphor.utils.elfsightcdn.com/ data: blob:;
 `;
 
 const securityHeaders = [

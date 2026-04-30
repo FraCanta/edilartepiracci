@@ -7,6 +7,7 @@ import { Icon } from "@iconify/react";
 import { motion, useInView } from "framer-motion";
 import ispirazioniIT from "../../public/locales/it/ispirazioni.json";
 import Head from "next/head";
+import LogoMarquee from "@/components/LogoMarquee/LogoMarquee";
 
 function IspirazionePage({ ispirazioni, slug }) {
   const [currentSlides, setCurrentSlides] = useState([]);
@@ -390,15 +391,12 @@ function IspirazionePage({ ispirazioni, slug }) {
       )}
 
       {/* ================= FORNITORI ================= */}
-      <div className="flex flex-col justify-center w-full mt-10 overflow-hidden bg-sand lg:gap-10">
-        <h2 className="px-4 py-6 text-3xl font-medium lg:text-4xl lg:px-10">
+      <div className="flex flex-col justify-center w-full py-8 overflow-hidden -bottom-24 lg:bottom-0 bg-sand lg:gap-10">
+        <h2 className="px-4 pt-6 text-3xl font-medium lg:text-4xl fxl:text-5xl lg:px-10">
           Alcuni nostri fornitori
         </h2>
-        <script src="https://elfsightcdn.com/platform.js" async></script>
-        <div
-          className="elfsight-app-e0f72b47-65a7-4aae-8533-818355d85689 link_none"
-          data-elfsight-app-lazy
-        ></div>
+
+        <LogoMarquee translation={ispirazioni.marquee} />
       </div>
     </>
   );

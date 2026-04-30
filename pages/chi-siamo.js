@@ -11,10 +11,12 @@ import StickyBanner from "@/components/layout/StickyBanner";
 
 function ChiSiamo({ onHeroFinished }) {
   useEffect(() => {
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       onHeroFinished?.(); // fa comparire la navbar
     }, 2000);
-  }, []);
+
+    return () => clearTimeout(timeoutId);
+  }, [onHeroFinished]);
   return (
     <>
       <Head>
