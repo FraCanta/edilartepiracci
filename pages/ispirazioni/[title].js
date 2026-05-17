@@ -2,12 +2,20 @@
 
 import React, { useState, useRef } from "react";
 import Image from "next/image";
-import Lightbox from "@/components/Lightbox";
 import { Icon } from "@iconify/react";
 import { motion, useInView } from "framer-motion";
 import ispirazioniIT from "../../public/locales/it/ispirazioni.json";
 import Head from "next/head";
 import LogoMarquee from "@/components/LogoMarquee/LogoMarquee";
+import dynamic from "next/dynamic";
+import {
+  getInspirationCoverSrc,
+  getInspirationLightboxSrc,
+} from "@/utils/imagePaths";
+
+const Lightbox = dynamic(() => import("@/components/Lightbox"), {
+  ssr: false,
+});
 
 function IspirazionePage({ ispirazioni, slug }) {
   const [currentSlides, setCurrentSlides] = useState([]);
@@ -47,7 +55,12 @@ function IspirazionePage({ ispirazioni, slug }) {
     if (!slides.length) return;
 
     setCurrentCategory(categoryName);
-    setCurrentSlides(slides);
+    setCurrentSlides(
+      slides.map((slide) => ({
+        ...slide,
+        src: getInspirationLightboxSrc(slide.src),
+      })),
+    );
     setIndex(slideIndex);
   };
 
@@ -70,7 +83,7 @@ function IspirazionePage({ ispirazioni, slug }) {
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
         <meta name="apple-mobile-web-app-title" content="Edilarte Piracci" />
-        <link rel="manifest" href="/manifest" />
+        <link rel="manifest" href="/manifest.json" />
         <title>{ispirazioni.head.seoTitle}</title>
         <meta name="description" content={ispirazioni.head.seoDescription} />
         <meta name="author" content="Edilarte Piracci" />
@@ -113,9 +126,11 @@ function IspirazionePage({ ispirazioni, slug }) {
           className="relative flex flex-col justify-center h-[400px] lg:h-full col-span-1 p-6 overflow-hidden rounded-xl md:col-span-2 lg:col-span-2 lg:row-span-2"
         >
           <Image
-            src={ispirazioni.hero.img}
+            src={getInspirationCoverSrc(ispirazioni.hero.img)}
             fill
             alt="hero"
+            priority
+            sizes="(min-width: 1024px) 50vw, 100vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-[linear-gradient(359.99deg,rgba(21,52,72,0.8)_1.62%,rgba(21,52,72,0)_65.37%)]" />
@@ -147,11 +162,12 @@ function IspirazionePage({ ispirazioni, slug }) {
             onClick={() => openCategory(cat, 0)}
           >
             <Image
-              src={
-                categories[cat]?.images?.[0]?.src || "/assets/placeholder.png"
-              }
+              src={getInspirationCoverSrc(
+                categories[cat]?.images?.[0]?.src || "/assets/placeholder.png",
+              )}
               fill
               alt=""
+              sizes="(min-width: 1024px) 25vw, 100vw"
               className="object-cover"
             />
 
@@ -170,7 +186,7 @@ function IspirazionePage({ ispirazioni, slug }) {
       {/* ================= SEZIONE 2 ================= */}
       <section
         ref={section2Ref}
-        className="grid grid-cols-1 gap-4 px-6 py-6 md:grid-cols-2"
+        className="grid grid-cols-1 gap-4 px-6 py-6 md:grid-cols-2 [content-visibility:auto] [contain-intrinsic-size:700px]"
       >
         {/* sinistra — 2 rettangoli */}
         <div className="flex flex-col gap-4">
@@ -186,11 +202,13 @@ function IspirazionePage({ ispirazioni, slug }) {
               onClick={() => openCategory(cat, 0)}
             >
               <Image
-                src={
-                  categories[cat]?.images?.[0]?.src || "/assets/placeholder.png"
-                }
+                src={getInspirationCoverSrc(
+                  categories[cat]?.images?.[0]?.src ||
+                    "/assets/placeholder.png",
+                )}
                 fill
                 alt=""
+                sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"
               />
               <div className="absolute bottom-2 right-2">
@@ -217,12 +235,13 @@ function IspirazionePage({ ispirazioni, slug }) {
             onClick={() => openCategory(secondSection[2], 0)}
           >
             <Image
-              src={
+              src={getInspirationCoverSrc(
                 categories[secondSection[2]]?.images?.[0]?.src ||
-                "/assets/placeholder.png"
-              }
+                  "/assets/placeholder.png",
+              )}
               fill
               alt=""
+              sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
             />
             <div className="absolute bottom-2 right-2">
@@ -238,7 +257,7 @@ function IspirazionePage({ ispirazioni, slug }) {
       </section>
 
       {/* ================== SEZIONE 3 ================== */}
-      <section className="grid grid-cols-1 gap-4 px-6 pb-10 md:grid-cols-2">
+      <section className="grid grid-cols-1 gap-4 px-6 pb-10 md:grid-cols-2 [content-visibility:auto] [contain-intrinsic-size:800px]">
         {/* SINISTRA → 4 immagini 2x2 */}
         <div className="grid grid-cols-2 grid-rows-2 gap-4">
           {thirdSection.slice(0, 4).map((cat, i) => (
@@ -253,11 +272,13 @@ function IspirazionePage({ ispirazioni, slug }) {
               onClick={() => openCategory(cat, 0)}
             >
               <Image
-                src={
-                  categories[cat]?.images?.[0]?.src || "/assets/placeholder.png"
-                }
+                src={getInspirationCoverSrc(
+                  categories[cat]?.images?.[0]?.src ||
+                    "/assets/placeholder.png",
+                )}
                 fill
                 alt=""
+                sizes="(min-width: 768px) 25vw, 50vw"
                 className="object-cover"
               />
               <div className="absolute bottom-2 right-2">
@@ -284,12 +305,13 @@ function IspirazionePage({ ispirazioni, slug }) {
             onClick={() => openCategory(thirdSection[4], 0)}
           >
             <Image
-              src={
+              src={getInspirationCoverSrc(
                 categories[thirdSection[4]]?.images?.[0]?.src ||
-                "/assets/placeholder.png"
-              }
+                  "/assets/placeholder.png",
+              )}
               fill
               alt=""
+              sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
             />
             <div className="absolute bottom-2 right-2">
@@ -306,7 +328,7 @@ function IspirazionePage({ ispirazioni, slug }) {
       {extraGroups.map((group, gIndex) => (
         <section
           key={gIndex}
-          className="grid grid-cols-1 gap-4 px-6 pb-10 md:grid-cols-2"
+          className="grid grid-cols-1 gap-4 px-6 pb-10 md:grid-cols-2 [content-visibility:auto] [contain-intrinsic-size:700px]"
         >
           {/* DESTRA — quadrato */}
           {group[2] && (
@@ -319,15 +341,16 @@ function IspirazionePage({ ispirazioni, slug }) {
               className="relative h-[calc(2*10rem+1rem)] md:h-[calc(2*18rem+1rem)] rounded-xl overflow-hidden cursor-pointer"
               onClick={() => openCategory(group[2], 0)}
             >
-              <Image
-                src={
-                  categories[group[2]]?.images?.[0]?.src ||
-                  "/assets/placeholder.png"
-                }
-                fill
-                alt=""
-                className="object-cover"
-              />
+                <Image
+                  src={getInspirationCoverSrc(
+                    categories[group[2]]?.images?.[0]?.src ||
+                      "/assets/placeholder.png",
+                  )}
+                  fill
+                  alt=""
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
 
               <div className="absolute bottom-2 right-2">
                 <Icon
@@ -353,12 +376,13 @@ function IspirazionePage({ ispirazioni, slug }) {
                 onClick={() => openCategory(cat, 0)}
               >
                 <Image
-                  src={
+                  src={getInspirationCoverSrc(
                     categories[cat]?.images?.[0]?.src ||
-                    "/assets/placeholder.png"
-                  }
+                      "/assets/placeholder.png",
+                  )}
                   fill
                   alt=""
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   className="object-cover"
                 />
 

@@ -11,6 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import homeIT from "@/public/locales/it/home.json";
+import { getOptimizedAssetSrc } from "@/utils/imagePaths";
 export default function Home({ onHeroFinished, hasHeroAnimated, translation }) {
   return (
     <>
@@ -20,7 +21,7 @@ export default function Home({ onHeroFinished, hasHeroAnimated, translation }) {
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
         <meta name="apple-mobile-web-app-title" content="Edilarte Piracci" />
-        <link rel="manifest" href="/manifest" />
+        <link rel="manifest" href="/manifest.json" />
         <title>
           Edilarte Piracci | La vostra casa, come l’avete immaginata
         </title>
@@ -61,7 +62,6 @@ export default function Home({ onHeroFinished, hasHeroAnimated, translation }) {
           name="twitter:title"
           content="Edilarte Piracci | La vostra casa, come l’avete immaginata"
         />
-        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <Hero onHeroFinished={onHeroFinished} />
       <StickyBanner />
@@ -115,9 +115,10 @@ export default function Home({ onHeroFinished, hasHeroAnimated, translation }) {
         </div>
         <div className="relative aspect-square">
           <Image
-            src="/assets/combo.png"
+            src={getOptimizedAssetSrc("/assets/combo.png")}
             alt="showroom interno"
             fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
             className="object-cover object-center w-full h-full "
           />
         </div>

@@ -12,14 +12,24 @@ function HeroPage({
   link2,
   linkCta1,
   linkCta2,
-  backgroundClass, // <-- nuova prop
+  backgroundClass,
+  backgroundImage,
 }) {
   return (
     <div
-      className={`h-[100svh]  w-full flex flex-col justify-end relative ${backgroundClass} bg-cover bg-center"} `}
+      className={`h-[100svh] w-full flex flex-col justify-end relative ${
+        backgroundClass || ""
+      } bg-cover bg-center`}
+      style={
+        backgroundImage
+          ? { backgroundImage: `url("${backgroundImage}")` }
+          : undefined
+      }
     >
       <div
-        className={`${backgroundClass ? "absolute inset-0 bg-black/10" : ""}`}
+        className={`${
+          backgroundClass || backgroundImage ? "absolute inset-0 bg-black/10" : ""
+        }`}
       />
       <div className="absolute bottom-0 left-0 flex items-end w-full gap-6 px-4 py-10 text-white lg:px-10 backdrop-blur-sm bg-black/10">
         {" "}

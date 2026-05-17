@@ -1,9 +1,6 @@
-import React, { useRef, useEffect } from "react";
-import gsap from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-
-gsap.registerPlugin(ScrollTrigger);
+import { getOptimizedAssetSrc } from "@/utils/imagePaths";
 
 const steps = [
   {
@@ -12,8 +9,8 @@ const steps = [
     list: [
       "Partiamo dai vostri desideri ed esigenze.",
       "Vi proponiamo materiali, forme, colori e combinazioni.",
-      "Identifichiamo con voi le migliori soluzioni di stile, comfort e praticità nel tempo.",
-      "Curiamo ogni dettaglio per l’armonia di tutti i vostri spazi.",
+      "Identifichiamo con voi le migliori soluzioni di stile, comfort e praticita nel tempo.",
+      "Curiamo ogni dettaglio per l'armonia di tutti i vostri spazi.",
     ],
     image: "/assets/consulenza/visita_showroom.webp",
   },
@@ -51,7 +48,7 @@ const steps = [
     number: "5",
     title: "Supporto post vendita",
     list: [
-      "I materiali forniti provengono da brand affermati, tali da garantire nel tempo i ricambi e l’assistenza necessaria.",
+      "I materiali forniti provengono da brand affermati, tali da garantire nel tempo i ricambi e l'assistenza necessaria.",
     ],
     image: "/assets/placeholder.png",
   },
@@ -61,77 +58,119 @@ export default function ConsulenzaSection() {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      let currentIndex = 0;
-      let isAnimating = false;
+    if (!window.matchMedia("(min-width: 1024px)").matches) {
+      return;
+    }
 
-      const panels = gsap.utils.toArray(".slide");
+    let ctx;
+    let isMounted = true;
 
-      // posizione iniziale
-      panels.forEach((panel, i) => {
-        gsap.set(panel, {
-          yPercent: i === 0 ? 0 : 100,
-          force3D: true,
-        });
-      });
+    const setupScrollAnimation = async () => {
+      const [{ default: gsap }, { ScrollTrigger }] = await Promise.all([
+        import("gsap/dist/gsap"),
+        import("gsap/dist/ScrollTrigger"),
+      ]);
 
-      function goTo(index) {
-        if (isAnimating) return;
-        if (index < 0 || index >= panels.length) return;
-
-        isAnimating = true;
-
-        const direction = index > currentIndex;
-
-        const current = panels[currentIndex];
-        const next = panels[index];
-
-        const tl = gsap.timeline({
-          defaults: { duration: 0.8, ease: "power2.inOut" },
-          onComplete: () => {
-            currentIndex = index;
-            isAnimating = false;
-          },
-        });
-
-        tl.to(current, {
-          yPercent: direction ? -100 : 100,
-          force3D: true,
-        }).fromTo(
-          next,
-          { yPercent: direction ? 100 : -100 },
-          { yPercent: 0, force3D: true },
-          "<",
-        );
+      if (!isMounted) {
+        return;
       }
-      const wheelHandler = (e) => {
-        if (isAnimating) return;
 
-        if (e.deltaY > 0) {
-          if (currentIndex === panels.length - 1) return; // ultima slide → lascia scroll naturale
-          goTo(currentIndex + 1);
-        } else {
-          if (currentIndex === 0) return; // prima slide → lascia scroll naturale
-          goTo(currentIndex - 1);
+      gsap.registerPlugin(ScrollTrigger);
+
+      ctx = gsap.context(() => {
+        let currentIndex = 0;
+        let isAnimating = false;
+        let queuedDirection = 0;
+
+        const panels = gsap.utils.toArray(".slide");
+
+        panels.forEach((panel, i) => {
+          gsap.set(panel, {
+            yPercent: i === 0 ? 0 : 100,
+            force3D: true,
+          });
+        });
+
+        function goTo(index) {
+          if (isAnimating) return;
+          if (index < 0 || index >= panels.length) return;
+
+          isAnimating = true;
+
+          const direction = index > currentIndex;
+          const current = panels[currentIndex];
+          const next = panels[index];
+
+          const tl = gsap.timeline({
+            defaults: { duration: 0.8, ease: "power2.inOut" },
+            onComplete: () => {
+              currentIndex = index;
+              isAnimating = false;
+
+              if (queuedDirection !== 0) {
+                const nextIndex = currentIndex + queuedDirection;
+                queuedDirection = 0;
+                goTo(nextIndex);
+              }
+            },
+          });
+
+          tl.to(current, {
+            yPercent: direction ? -100 : 100,
+            force3D: true,
+          }).fromTo(
+            next,
+            { yPercent: direction ? 100 : -100 },
+            { yPercent: 0, force3D: true },
+            "<",
+          );
         }
-      };
 
-      const section = containerRef.current;
+        const wheelHandler = (e) => {
+          const direction = e.deltaY > 0 ? 1 : -1;
+          const isAtStart = currentIndex === 0;
+          const isAtEnd = currentIndex === panels.length - 1;
+          const shouldLetPageScroll =
+            (!isAnimating && direction < 0 && isAtStart) ||
+            (!isAnimating && direction > 0 && isAtEnd);
 
-      ScrollTrigger.create({
-        trigger: section,
-        start: "top top",
-        end: "+=100%", // solo 1 viewport
-        pin: true,
-        anticipatePin: 1,
-        onEnter: () => window.addEventListener("wheel", wheelHandler),
-        onEnterBack: () => window.addEventListener("wheel", wheelHandler),
-        onLeave: () => window.removeEventListener("wheel", wheelHandler),
-        onLeaveBack: () => window.removeEventListener("wheel", wheelHandler),
-      });
-    }, containerRef);
+          if (shouldLetPageScroll) {
+            return;
+          }
 
-    return () => ctx.revert();
+          e.preventDefault();
+
+          if (isAnimating) {
+            queuedDirection = direction;
+            return;
+          }
+
+          goTo(currentIndex + direction);
+        };
+        const wheelOptions = { passive: false };
+
+        ScrollTrigger.create({
+          trigger: containerRef.current,
+          start: "top top",
+          end: "+=100%",
+          pin: true,
+          anticipatePin: 1,
+          onEnter: () =>
+            window.addEventListener("wheel", wheelHandler, wheelOptions),
+          onEnterBack: () =>
+            window.addEventListener("wheel", wheelHandler, wheelOptions),
+          onLeave: () => window.removeEventListener("wheel", wheelHandler),
+          onLeaveBack: () => window.removeEventListener("wheel", wheelHandler),
+        });
+      }, containerRef);
+    };
+
+    setupScrollAnimation();
+
+    return () => {
+      isMounted = false;
+      ctx?.revert();
+    };
   }, []);
 
   return (
@@ -146,8 +185,7 @@ export default function ConsulenzaSection() {
               key={index}
               className="absolute inset-0 flex items-center slide"
             >
-              {/* LEFT TEXT */}
-              <div className="flex items-start w-1/2 gap-6 bg-white ">
+              <div className="flex items-start w-1/2 gap-6 bg-white">
                 <div className="flex items-center justify-center w-24 h-24 text-3xl rounded-full bg-sand">
                   {step.number}
                 </div>
@@ -165,12 +203,12 @@ export default function ConsulenzaSection() {
                 </div>
               </div>
 
-              {/* RIGHT IMAGE */}
               <div className="relative w-1/2 aspect-square">
                 <Image
-                  src={step.image}
+                  src={getOptimizedAssetSrc(step.image)}
                   fill
                   alt=""
+                  sizes="50vw"
                   className="object-cover w-full h-full"
                 />
               </div>
@@ -178,12 +216,11 @@ export default function ConsulenzaSection() {
           ))}
         </div>
       </section>
-      {/* MOBILE */}
+
       <section className="py-10 space-y-20 lg:hidden">
         {steps.map((step, i) => (
           <div key={i}>
             <div className="flex items-center gap-6 overflow-x-hidden">
-              {" "}
               <div className="flex items-center justify-center w-10 h-10 text-xl rounded-full bg-sand">
                 {step.number}
               </div>
@@ -196,11 +233,11 @@ export default function ConsulenzaSection() {
               ))}
             </ul>
             <div className="relative aspect-square">
-              {" "}
               <Image
                 fill
-                src={step.image}
-                className="object-cover mt-6 rounded-sm "
+                src={getOptimizedAssetSrc(step.image)}
+                sizes="100vw"
+                className="object-cover mt-6 rounded-sm"
                 alt={step.title}
               />
             </div>

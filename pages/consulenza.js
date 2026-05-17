@@ -1,7 +1,15 @@
 import HeroPage from "@/components/layout/HeroPage";
-import ConsulenzaSection from "@/components/Sections/ConsulenzaSection/ConsulenzaSection";
 import Head from "next/head";
 import React from "react";
+import { getOptimizedAssetSrc } from "@/utils/imagePaths";
+import dynamic from "next/dynamic";
+
+const ConsulenzaSection = dynamic(
+  () => import("@/components/Sections/ConsulenzaSection/ConsulenzaSection"),
+  {
+    ssr: false,
+  },
+);
 
 function Consulenza() {
   return (
@@ -12,7 +20,7 @@ function Consulenza() {
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
         <meta name="apple-mobile-web-app-title" content="Edilarte Piracci" />
-        <link rel="manifest" href="/manifest" />
+        <link rel="manifest" href="/manifest.json" />
         <title>Edilarte Piracci | Consulenza personalizzata</title>
         <meta
           name="description"
@@ -50,14 +58,13 @@ function Consulenza() {
           name="twitter:title"
           content="Edilarte Piracci | Consulenza personalizzata"
         />
-        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <HeroPage
         title={"Una consulenza <strong>personalizzata</strong>"}
         paragraph={
           "Iniziate a dare forma ai vostri spazi prenotando una <strong>consulenza gratuita</strong> nel nostro showroom"
         }
-        backgroundClass="bg-[url('/assets/hero_consulenza.webp')]"
+        backgroundImage={getOptimizedAssetSrc("/assets/hero_consulenza.webp")}
       />
       <div className="px-4 my-20 lg:px-6">
         <h3 className="text-xl text-black lg:text-3xl">

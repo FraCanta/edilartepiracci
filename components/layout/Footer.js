@@ -15,7 +15,7 @@ function Footer() {
                   src="/assets/logo/logo.svg"
                   width={170}
                   height={80}
-                  className="w-28 lg:w-[170px]"
+                  className="w-28 h-auto lg:w-[170px]"
                   alt="Edilarte Piracci Logo"
                 />
               </Link>

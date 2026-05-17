@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { getOptimizedAssetSrc } from "@/utils/imagePaths";
 
 export default function Hero({ onHeroFinished }) {
   return (
@@ -19,9 +20,11 @@ export default function Hero({ onHeroFinished }) {
         className="absolute inset-0"
       >
         <Image
-          src="/assets/hero_home2.jpg"
+          src={getOptimizedAssetSrc("/assets/hero_home2.jpg")}
           alt="hero pagina"
           fill
+          priority
+          sizes="100vw"
           className="object-cover object-center"
         />
       </motion.div>

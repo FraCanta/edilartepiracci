@@ -3,6 +3,7 @@ import { Icon } from "@iconify/react";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import Link from "next/link";
+import { getOptimizedAssetSrc } from "@/utils/imagePaths";
 
 const ContattiMap = dynamic(() => import("../components/ContattiMap"), {
   ssr: false,
@@ -17,7 +18,7 @@ export default function Contatti() {
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
         <meta name="apple-mobile-web-app-title" content="Edilarte Piracci" />
-        <link rel="manifest" href="/manifest" />
+        <link rel="manifest" href="/manifest.json" />
         <title>Edilarte Piracci | Contatti</title>
         <meta
           name="description"
@@ -60,7 +61,6 @@ export default function Contatti() {
           content="Edilarte Piracci | Contatti
 "
         />
-        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <HeroPage
         title={
@@ -69,7 +69,7 @@ export default function Contatti() {
         paragraph={
           "Prenotate un appuntamento nel nostro showroom per parlarci vostre idee: <br/> vi aiuteremo a trasformare i vostri spazi in un’<strong>esperienza unica di stile e comfort</strong>, su misura per voi."
         }
-        backgroundClass="bg-[url('/assets/hero_contatti.webp')]"
+        backgroundImage={getOptimizedAssetSrc("/assets/hero_contatti.webp")}
       />
 
       <section className="relative w-full">

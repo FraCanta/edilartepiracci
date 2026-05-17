@@ -6,6 +6,7 @@ import { Icon } from "@iconify/react";
 import Head from "next/head";
 import React from "react";
 import progettiIT from "../public/locales/it/progetti.json";
+import { getOptimizedAssetSrc } from "@/utils/imagePaths";
 function Progetti({ progetti }) {
   return (
     <>
@@ -15,7 +16,7 @@ function Progetti({ progetti }) {
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
         <meta name="apple-mobile-web-app-title" content="Edilarte Piracci" />
-        <link rel="manifest" href="/manifest" />
+        <link rel="manifest" href="/manifest.json" />
         <title>Edilarte Piracci | Progetti</title>
         <meta
           name="description"
@@ -48,7 +49,6 @@ function Progetti({ progetti }) {
 /"
         />
         <meta name="twitter:title" content="Edilarte Piracci | Progetti" />
-        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <HeroPage
         title="Dalle idee alla realtà:<br/>
@@ -59,7 +59,7 @@ function Progetti({ progetti }) {
         linkCta2="/contatti"
         linkName1="sfogliate i progetti"
         linkName2="prenotate la vostra consulenza"
-        backgroundClass="bg-[url('/assets/hero_progetti.webp')]"
+        backgroundImage={getOptimizedAssetSrc("/assets/hero_progetti.webp")}
       />
       <Reviews />
       <CardGrid />

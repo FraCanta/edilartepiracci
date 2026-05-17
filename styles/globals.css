@@ -77,19 +77,37 @@ a {
   opacity: 1;
 }
 
-.transition {
+.page-transition {
   position: fixed;
   inset: 0;
   width: 100%;
   height: 100vh;
   pointer-events: none;
   z-index: 10000; /* più alto di qualsiasi overlay della Hero */
+  contain: layout paint;
+  isolation: isolate;
 }
 
-.transition__layer {
+.page-transition__layer {
   position: absolute;
   width: 100%;
   height: 100vh;
+  z-index: calc(1000 + var(--transition-index));
+  background: var(--transition-color);
+  backface-visibility: hidden;
+  transform: translate3d(0, 100%, 0);
+  transition: transform 0.34s cubic-bezier(0, 0, 0.05, 1);
+  transition-delay: calc(var(--transition-index) * 70ms);
+  will-change: transform;
+}
+
+.page-transition--cover .page-transition__layer {
+  transform: translate3d(0, 0, 0);
+}
+
+.page-transition--exit .page-transition__layer {
+  transform: translate3d(0, -100%, 0);
+  transition-delay: calc((1 - var(--transition-index)) * 70ms);
 }
 
 .footer_bg {
@@ -100,14 +118,14 @@ a {
 }
 
 .bg-bagno {
-  background-image: url("/assets/home/card_bagno.webp");
+  background-image: url("/assets/optimized/home/card_bagno.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .bg-living {
-  background-image: url("/assets/home/card_living.webp");
+  background-image: url("/assets/optimized/home/card_living.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -121,21 +139,21 @@ a {
 }
 
 .bg-showroom {
-  background-image: url("/assets/home/showroom_section.webp");
+  background-image: url("/assets/optimized/home/showroom_section.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .bg-consulenza {
-  background-image: url("/assets/home/consulenza_section.webp");
+  background-image: url("/assets/optimized/home/consulenza_section.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .bg-progetti {
-  background-image: url("/assets/progetti/hero_progetti.jpg");
+  background-image: url("/assets/optimized/progetti/hero_progetti.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

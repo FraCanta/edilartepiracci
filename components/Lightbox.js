@@ -44,6 +44,17 @@ export default function Lightbox({
   }, [index]);
 
   useEffect(() => {
+    const nextSlide = slides[(currentIndex + 1) % slides.length];
+
+    if (!nextSlide?.src) {
+      return;
+    }
+
+    const preloadImage = new window.Image();
+    preloadImage.src = nextSlide.src;
+  }, [currentIndex, slides]);
+
+  useEffect(() => {
     setPage([0, 0]);
     setZoomLevel(1);
     setPan({ x: 0, y: 0 });
@@ -174,20 +185,23 @@ export default function Lightbox({
         }}
       >
         {/* HEADER */}
-        <div className="absolute flex items-center justify-between w-[94%] lg:w-[97%] max-w-[1600px] lg:max-w-[1920px] mx-auto top-6 text-white">
-          <div className="flex items-baseline gap-2">
-            <h2 className="text-xl font-medium uppercase md:text-2xl">
+        <div className="absolute flex items-start justify-between w-[94%] lg:w-[97%] max-w-[1600px] lg:max-w-[1920px] mx-auto top-6 text-white gap-2">
+          <div className="flex min-w-0 items-baseline gap-2 pr-1">
+            <h2 className="min-w-0 max-w-[42vw] truncate text-base font-medium uppercase leading-10 sm:max-w-none sm:text-xl md:text-2xl">
               {categoryName}
             </h2>
-            <span className="text-sm">
-              <span className="pl-6 text-2xl">{currentIndex + 1}</span> /{" "}
+            <span className="flex shrink-0 items-baseline text-xs leading-10 sm:text-sm">
+              <span className="text-xl sm:pl-6 sm:text-2xl">
+                {currentIndex + 1}
+              </span>
+              <span className="px-1">/</span>
               <span>{slides.length}</span>
             </span>
           </div>
 
           <div
             ref={zoomControlRef}
-            className="relative flex items-center gap-2"
+            className="relative flex shrink-0 items-center gap-1 sm:gap-2"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -195,7 +209,7 @@ export default function Lightbox({
                 e.stopPropagation();
                 setIsZoomSliderOpen((prev) => !prev);
               }}
-              className="px-3 h-10 text-sm transition-colors duration-200 rounded-full bg-white/20 hover:bg-white/30"
+              className="h-9 px-3 text-xs transition-colors duration-200 rounded-full bg-white/20 hover:bg-white/30 sm:h-10 sm:text-sm"
             >
               {Math.round(zoomLevel * 100)}%
             </button>
@@ -227,7 +241,7 @@ export default function Lightbox({
                 e.stopPropagation();
                 resetZoom();
               }}
-              className="w-10 h-10 text-xl transition-colors duration-200 rounded-full bg-white/20 hover:bg-white/30"
+              className="w-9 h-9 text-xl transition-colors duration-200 rounded-full bg-white/20 hover:bg-white/30 sm:h-10 sm:w-10"
               aria-label="Reset zoom"
             >
               <Icon
@@ -246,8 +260,8 @@ export default function Lightbox({
             >
               <Icon
                 icon="carbon:close"
-                width="28"
-                height="28"
+                width="24"
+                height="24"
                 className="text-white transition-transform duration-300 transform hover:text-black hover:rotate-180"
               />
             </button>
@@ -305,6 +319,7 @@ export default function Lightbox({
                   src={slides[currentIndex].src}
                   alt=""
                   fill
+                  sizes="100vw"
                   className="object-contain transition-transform duration-200 ease-out"
                   style={{
                     transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoomLevel})`,

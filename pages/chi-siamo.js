@@ -2,12 +2,15 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
-import MetricsCountdown from "@/components/MetricsCountdown.js/MetricsCountdown";
-import Team from "@/components/Sections/Team/Team";
 import HeroPage from "@/components/layout/HeroPage";
 import Head from "next/head";
-import Banner from "@/components/layout/Banner";
 import StickyBanner from "@/components/layout/StickyBanner";
+import { getOptimizedAssetSrc } from "@/utils/imagePaths";
+import dynamic from "next/dynamic";
+
+const Team = dynamic(() => import("@/components/Sections/Team/Team"), {
+  ssr: false,
+});
 
 function ChiSiamo({ onHeroFinished }) {
   useEffect(() => {
@@ -25,7 +28,7 @@ function ChiSiamo({ onHeroFinished }) {
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
         <meta name="apple-mobile-web-app-title" content="Edilarte Piracci" />
-        <link rel="manifest" href="/manifest" />
+        <link rel="manifest" href="/manifest.json" />
         <title>Edilarte Piracci | Una storia generazionale</title>
         <meta
           name="description"
@@ -64,7 +67,6 @@ function ChiSiamo({ onHeroFinished }) {
           name="twitter:title"
           content="Edilarte Piracci | Una storia generazionale"
         />
-        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <HeroPage
         title="Da oltre 50 anni, <br />  
@@ -72,7 +74,7 @@ function ChiSiamo({ onHeroFinished }) {
         paragraph="Una realtà dove esperienza generazionale, dedizione al lavoro, ascolto del <br/>cliente e ricerca dell’eccellenza rendono <strong>ogni spazio un progetto unico</strong>."
         link="/consulenza"
         linkName="Prenota un appuntamento"
-        backgroundClass="bg-[url('/assets/hero_chisiamo.webp')]"
+        backgroundImage={getOptimizedAssetSrc("/assets/hero_chisiamo.webp")}
       />
       {/* <MetricsCountdown /> */}
       <div className="grid items-center justify-center w-full grid-cols-1 gap-10 px-4 py-10 lg:gap-10 lg:grid-cols-2 lg:px-6">
@@ -100,14 +102,15 @@ function ChiSiamo({ onHeroFinished }) {
         </div>
         <div className="relative aspect-square lg:aspect-video lg:h-full">
           <Image
-            src="/assets/placeholder.png"
+            src={getOptimizedAssetSrc("/assets/placeholder.png")}
             alt="La nostra missione"
             fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
             className="object-cover w-full h-full "
           />
         </div>
       </div>
-      <div className="flex flex-col gap-4 px-4 my-10 lg:gap-10 lg:px-6">
+      <div className="flex flex-col gap-4 px-4 my-10 lg:gap-10 lg:px-6 [content-visibility:auto] [contain-intrinsic-size:420px]">
         <h2 className="text-3xl font-medium lg:text-4xl fxl:text-[50px] ">
           <span className="font-medium">La nostra </span>{" "}
           <span className="font-bold">filosofia</span>
@@ -171,8 +174,10 @@ function ChiSiamo({ onHeroFinished }) {
           </div>
         </div>
       </div>
-      <Team />
-      <div className="grid justify-center grid-cols-1 gap-10 lg:grid-cols-2 min-h-[35vh] px-4 lg:px-6 my-10">
+      <div className="[content-visibility:auto] [contain-intrinsic-size:900px]">
+        <Team />
+      </div>
+      <div className="grid justify-center grid-cols-1 gap-10 lg:grid-cols-2 min-h-[35vh] px-4 lg:px-6 my-10 [content-visibility:auto] [contain-intrinsic-size:520px]">
         <div className="flex flex-col justify-center h-full gap-10">
           <div className="flex flex-col gap-4">
             <h2 className="text-3xl font-medium leading-tight text-black lg:text-5xl ">
@@ -199,9 +204,12 @@ function ChiSiamo({ onHeroFinished }) {
         </div>
         <div className="relative h-full aspect-square lg:aspect-video">
           <Image
-            src="/assets/chisiamo/consulenza_showroom_chisiamo.webp"
+            src={getOptimizedAssetSrc(
+              "/assets/chisiamo/consulenza_showroom_chisiamo.webp",
+            )}
             alt="La nostra missione"
             fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
             className="object-cover w-full h-full "
           />
         </div>

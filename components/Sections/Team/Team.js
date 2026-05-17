@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getOptimizedAssetSrc } from "@/utils/imagePaths";
 
 const teamMembers = [
   {
@@ -46,10 +47,11 @@ export default function Team() {
             >
               {/* Avatar */}
               <Image
-                src={member.image}
+                src={getOptimizedAssetSrc(member.image)}
                 width={144}
                 height={144}
                 alt={member.name}
+                sizes="144px"
                 className="object-cover mx-auto mb-4 rounded-full w-36 h-36"
               />
 
@@ -69,9 +71,10 @@ export default function Team() {
           </h2>
           <div className="relative w-full lg:min-h-screen aspect-square lg:aspect-video">
             <Image
-              src="/assets/placeholder.png"
+              src={getOptimizedAssetSrc("/assets/placeholder.png")}
               alt="Tutto lo staff"
               fill
+              sizes="100vw"
               className="object-cover w-full h-full "
             />
           </div>

@@ -1,9 +1,14 @@
-import FAQ from "@/components/layout/FAQ";
 import HeroPage from "@/components/layout/HeroPage";
 import StickyBanner from "@/components/layout/StickyBanner";
 import Head from "next/head";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import React from "react";
+import { getOptimizedAssetSrc } from "@/utils/imagePaths";
+
+const FAQ = dynamic(() => import("@/components/layout/FAQ"), {
+  ssr: false,
+});
 
 const Ispirazioni = () => {
   return (
@@ -14,7 +19,7 @@ const Ispirazioni = () => {
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
         <meta name="apple-mobile-web-app-title" content="Edilarte Piracci" />
-        <link rel="manifest" href="/manifest" />
+        <link rel="manifest" href="/manifest.json" />
         <title>Edilarte Piracci | Ispirazione, progetto e forma</title>
         <meta
           name="description"
@@ -48,12 +53,11 @@ const Ispirazioni = () => {
           name="twitter:title"
           content="Edilarte Piracci | Ispirazione, progetto e forma"
         />
-        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <HeroPage
         title="<strong>Ispirazione, <br/>progetto e forma</strong>"
         paragraph="Un mondo in ogni stanza: dalle vostre idee alle nostre proposte di <strong>materiali, forme e colori</strong> per realizzare con charme ed originalità i vostri spazi."
-        backgroundClass="bg-[url('/assets/hero_ispirazioni.webp')]"
+        backgroundImage={getOptimizedAssetSrc("/assets/hero_ispirazioni.webp")}
       />
 
       <div className="grid justify-between w-full grid-cols-1 gap-10 px-4 mt-20 mb-10 lg:mb-6 lg:grid-cols-2 lg:px-6">
@@ -75,7 +79,9 @@ const Ispirazioni = () => {
           </p>
         </Link>
       </div>
-      <FAQ />
+      <div className="[content-visibility:auto] [contain-intrinsic-size:360px]">
+        <FAQ />
+      </div>
       <StickyBanner />
     </>
   );
