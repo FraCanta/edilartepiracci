@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function PageTransition({
   phase = "cover",
   colors = ["#306d93", "#ddd2c0"],
+  onDone,
 }) {
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      onDone?.();
+    }, 1800);
+
+    return () => clearTimeout(timeout);
+  }, [onDone]);
+
   return (
     <div className={`page-transition page-transition--${phase}`}>
       {colors.map((color, i) => (

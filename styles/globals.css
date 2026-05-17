@@ -103,11 +103,28 @@ a {
 
 .page-transition--cover .page-transition__layer {
   transform: translate3d(0, 0, 0);
+  animation: page-transition-failsafe 1.45s cubic-bezier(0, 0, 0.05, 1)
+    forwards;
+  animation-delay: calc(var(--transition-index) * 70ms);
 }
 
 .page-transition--exit .page-transition__layer {
+  animation: none;
   transform: translate3d(0, -100%, 0);
   transition-delay: calc((1 - var(--transition-index)) * 70ms);
+}
+
+@keyframes page-transition-failsafe {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  28%,
+  62% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -100%, 0);
+  }
 }
 
 .footer_bg {

@@ -90,6 +90,7 @@ export default function App({ Component, pageProps }) {
           <PageTransition
             phase={transitionPhase}
             colors={["#306d93", "#ddd2c0"]}
+            onDone={() => setIsTransitioning(false)}
           />
         )}
         <Component
